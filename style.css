@@ -1,0 +1,28 @@
+.cellHeader{
+    width: 100%;
+}
+img{
+    float: left;
+    position: relative;
+}
+h1{
+    float: left;
+    position: relative;
+}
+.cell{
+    width:50%;
+    float: left;
+    position: relative;
+}
+
+footer {
+    width:100%;
+    float: left;
+    position: relative;
+}
+
+td{
+    width:100%;
+    float: left;
+    position: relative;
+}

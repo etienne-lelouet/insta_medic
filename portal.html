@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
     <meta charset="utf-8" />
     <title>Login</title>
 </head>
@@ -27,24 +28,72 @@
             </div>
         </div>
     </header>
-    <div class="cellInscription">
+    <div class="cell cellInscription">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-6 col-lg-6">
                     <h2>JE VEUX UN COMPTE</h2>
+                    <div class="trait traitInscription">
+                        <br/>
+
+                        <h3>L’espace personnel qui me rend bien des services.</h3>
+                    </div>
+                    <div class="contenu">
+                        <p>En créant mon compte ameli, je peux : </p>
+                        <table>
+                            <tr>
+                                <td>- Suivre mes remboursements</td>
+                                <td>- Télécharger mes attestations</td>
+                                <td>- Obtenir un rendez-vous</td>
+                                <td>- Contacter ma clinique par email</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="btnInscription btn">
+                        <button type="button" class="btn btn-primary">JE CREE MON COMPTE</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="cellConnection">
+    <div class="cell cellConnection">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-6 col-lg-6">
                     <h2>J'ACCÈDE A MON COMPTE</h2>
+                    <div class="trait traitConnection">
+                        <br/>
+
+                    </div>
+                    <div class="champGlobal">
+                        <div class="champIdentifiant champInput form-group">
+                            <input type="text" class="form-control" placeholder="Mon identifiant">
+                        </div>
+                        <div class="champMdp champInput form-group">
+                            <input type="text" class="form-control" placeholder="Mon mot de passe">
+                        </div>
+                        <div class="mdpOublier">
+                            <a href="mdpOublier.html">J'ai oublié mon code</a>
+                        </div>
+                        <div class="btnIConnection btn">
+                            <button type="button" class="btn btn-primary">CONNEXION</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="piedDePage">
+            <ul>
+                <li>Informations légales</li>
+                <li>Propriété intellectuelle</li>
+                <li>Conditions d'utilisateurs</li>
+                <li>Aides</li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 </html>
