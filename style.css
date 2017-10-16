@@ -5,9 +5,22 @@ img{
     float: left;
     position: relative;
 }
+hr{
+    size: 4px;
+    color: #13314F
+}
 h1{
     float: left;
     position: relative;
+}
+h2{
+    font-size: 20px;
+}
+h3{
+    font-size: 16px;
+}
+.cellGlobal {
+    background: #E2E6EB;
 }
 .cell{
     width:50%;
