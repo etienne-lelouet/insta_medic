@@ -14,3 +14,24 @@ $ cd XXXX à voir
 $ npm install
 ```
 
+#Commande github
+```
+$ git config --global user.name "[nom]"
+Définit le nom que vous voulez associer à toutes vos opérations de commit
+
+$ git config --global user.email "[adresse email]"
+Définit l'email que vous voulez associer à toutes vos opérations de commit
+
+$ git status
+Liste tous les nouveaux fichiers et les fichiers modifiés à commiter
+
+$ git add .
+Ajoute tous les fichiers modifiés, non commiter
+
+$ git commit -m "[message descriptif]"
+Enregistre des instantanés de fichiers de façon permanente dans l'historique des versions
+
+$ git push
+Envoie tous les commits de la branche locale vers GitHub
+
+```
