@@ -6,17 +6,24 @@ img{
     position: relative;
 }
 hr{
-    size: 4px;
-    color: #13314F
+    border-top: 4px solid #13314F;
 }
 h1{
     float: left;
     position: relative;
+    width: 60%;
 }
 h2{
     font-size: 20px;
 }
 h3{
+    font-size: 20px;
+    font-size: 20px;
+    width: 30%;
+    position: relative;
+    float: right;
+}
+h4{
     font-size: 16px;
 }
 .cellGlobal {
@@ -32,6 +39,30 @@ footer {
     width:100%;
     float: left;
     position: relative;
+}
+ul {
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: table;
+    height: 50px;
+    background-color: #E2E6EB;
+}
+
+li {
+    display: table-cell;
+    width: 19.3%;
+    margin-right: 0.5%;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+}
+
+
+.piedDePage {
+    margin-top: 15px;
 }
 
 td{
