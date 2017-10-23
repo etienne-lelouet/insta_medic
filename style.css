@@ -70,3 +70,7 @@ td{
     float: left;
     position: relative;
 }
+
+.cellFormulaire {
+    width: 100%;
+}
