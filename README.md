@@ -11,6 +11,7 @@ Student project about the managment of medical data in a clinic
 ```
 $ git clone https://github.com/etienne-lelouet/insta_medic.git
 $ cd .\insta_medic\
+$ code .
 $ npm install
 ```
 
