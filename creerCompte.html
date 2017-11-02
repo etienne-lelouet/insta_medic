@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
         crossorigin="anonymous">
     <meta charset="utf-8" />
-    
+
     <title>Inscription</title>
 </head>
 
@@ -39,111 +39,107 @@
                         <div class="row">
                             <div class="form-group">
                                 <div class="cellFormulaire">
-                                    <div class="row infoPerso">
-
-                                        
-                                        <div class="row textePerso">
+                                    <form></form>
+                                    <div class="form-row infoPerso">
+                                        <div class=" textePerso">
                                             <h5>Informations Personnels</h5>
                                         </div>
-                                        <div class="row etatCivile ">
-                                            Etat civile :
-                                            <label class="radio-inline">
-                                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> M.
-                                                        </label>
-                                            <label class="radio-inline">
-                                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Mme.
-                                                        </label>
-                                            <label class="radio-inline">
-                                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Mlle.
-                                                        </label>
+                                        <fieldset class="form-group">
+                                            <div class="row">
+                                                <legend class="col-form-legend ">Etat civile:</legend>
+                                                <div class="form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> M.
+                                                    </label>
+                                                    <label class="form-check-label">
+                                                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Mme.
+                                                    </label>
+                                                    <label class="form-check-label">
+                                                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Mlle.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <div class="form-group nom formulaireContent">
+                                            <label for="inputNom">Nom :</label>
+                                            <input class="form-control formulaire" id="inputNom">
+                                        </div>
+                                        <div class="form-group nom formulaireContent">
+                                            <label for="inputNom">Prénom :</label>
+                                            <input class="form-control formulaire" id="inputNom">
+                                        </div>
+                                        <div class="form-group dateDeNaissance formulaireContent">
+                                            <label for="inputNom"> Date de naissance :</label>
+                                            <input class="form-control formulaire" id="inputNom" placeholder="JJ/MM/AAAA">
+                                        </div>
+                                        <div class="form-group telephone formulaireContent">
+                                            <label for="inputNom">Téléphone :</label>
+                                            <input class="form-control formulaire" id="inputNom">
+                                        </div>
+                                        <div class="form-group adresse formulaireContent">
+                                            <label for="inputNom">Adresse 1 :</label>
+                                            <input class="form-control formulaire" id="inputNom">
+                                        </div>
+
+                                        <div class="adresse formulaireContent ">
+                                            Adresse 2 :
+                                            <input type="text" class="form-control formulaire">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="codePostale formulaireContent ">
+                                            Code postale :
+                                            <input type="text" class="form-control formulaire">
+                                        </div>
+                                        <div class="ville formulaireContent ">
+                                            Ville :
+                                            <input type="text" class="form-control formulaire">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="infoCompte">
+                                        <div class="row texteCompte">
+                                            <h5>Informations du Compte</h5>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="mail formulaireContent ">
+                                                Mail :
+                                                <input type="text" class="form-control formulaire">
+                                            </div>
+                                            <div class="mail formulaireContent ">
+                                                Confirmation de Mail :
+                                                <input type="text" class="form-control formulaire">
+                                            </div>
                                         </div>
                                         <div class="row">
-                                            <div class="row">
-                                                <div class="nom formulaireContent">
-                                                    Nom :
-                                                    <input type="text" class="form-control formulaire">
-                                                </div>
-                                                <div class="prenom formulaireContent ">
-                                                    Prénom :
-                                                    <input type="text" class="form-control formulaire">
-                                                </div>
+                                            <div class="motDePasse formulaireContent ">
+                                                Mot de passe :
+                                                <input type="text" class="form-control formulaire">
                                             </div>
-                                            <div class="row">
-                                                <div class="dateDeNaissance formulaireContent">
-                                                    Date de naissance :
-                                                    <input type="text" class="form-control formulaire" placeholder="JJ/MM/AAAA">
-                                                </div>
-                                                <div class="telephone formulaireContent ">
-                                                    Téléphone :
-                                                    <input type="text" class="form-control formulaire">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="adresse formulaireContent ">
-                                                    Adresse 1 :
-                                                    <input type="text" class="form-control formulaire">
-                                                </div>
-                                                <div class="adresse formulaireContent ">
-                                                    Adresse 2 :
-                                                    <input type="text" class="form-control formulaire">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="codePostale formulaireContent ">
-                                                    Code postale :
-                                                    <input type="text" class="form-control formulaire">
-                                                </div>
-                                                <div class="ville formulaireContent ">
-                                                    Ville :
-                                                    <input type="text" class="form-control formulaire">
-                                                </div>
+                                            <div class="motDePasse formulaireContent ">
+                                                Confirmation de Mot de passe :
+                                                <input type="text" class="form-control formulaire">
                                             </div>
                                         </div>
+
                                     </div>
-
-                                    <div class="row">
-                                        <div class="infoCompte">
-                                            <div class="row texteCompte">
-                                                <h5>Informations du Compte</h5>
-                                            </div>
-                                            
-                                            <div class="row">
-                                                <div class="mail formulaireContent ">
-                                                    Mail :
-                                                    <input type="text" class="form-control formulaire">
-                                                </div>
-                                                <div class="mail formulaireContent ">
-                                                    Confirmation de Mail :
-                                                    <input type="text" class="form-control formulaire">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="motDePasse formulaireContent ">
-                                                    Mot de passe :
-                                                    <input type="text" class="form-control formulaire">
-                                                </div>
-                                                <div class="motDePasse formulaireContent ">
-                                                    Confirmation de Mot de passe :
-                                                    <input type="text" class="form-control formulaire">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
                                 </div>
+
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="btnInscription btn btn-lg">
-                                <button type="button" class="btn btn-primary">JE CREE MON COMPTE</button>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="btnInscription btn btn-lg">
+                            <button type="button" class="btn btn-primary">JE CREE MON COMPTE</button>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
+
+    </div>
     </div>
     <footer>
         <div class="piedDePage">
@@ -158,6 +154,3 @@
 </body>
 
 </html>
-
-
-
