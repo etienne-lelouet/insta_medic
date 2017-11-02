@@ -2,26 +2,20 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="creerCompte.html">
     <meta charset="utf-8" />
-
     <title>Inscription</title>
 </head>
 
 <body>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-        crossorigin="anonymous"></script>
     <header class="cellHeader">
         <div class="container-fluid">
             <div class="row floflo">
                 <div class="col-xs-12 col-lg-12">
                     <div class="cell-logo">
-                        <img src="logo.png" alt="logo">
+                        <img src="img/logo.png" alt="logo">
                         <h1>Clinique Geoffroy Saint-Hilaire</h1>
                     </div>
                 </div>
@@ -39,107 +33,98 @@
                         <div class="row">
                             <div class="form-group">
                                 <div class="cellFormulaire">
-                                    <form></form>
-                                    <div class="form-row infoPerso">
-                                        <div class=" textePerso">
-                                            <h5>Informations Personnels</h5>
-                                        </div>
-                                        <fieldset class="form-group">
-                                            <div class="row">
-                                                <legend class="col-form-legend ">Etat civile:</legend>
-                                                <div class="form-check form-check-inline">
-                                                    <label class="form-check-label">
+                                    <form>
+                                        <div class="form-row infoPerso">
+                                            <div class=" textePerso">
+                                                <h5>Informations Personnels</h5>
+                                            </div>
+                                            <div class="form-group formulaireContent ">
+                                                <div class="row">
+                                                    <legend class="col-form-legend ">Etat civile:</legend>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> M.
                                                     </label>
-                                                    <label class="form-check-label">
+                                                        <label class="form-check-label">
                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Mme.
                                                     </label>
-                                                    <label class="form-check-label">
+                                                        <label class="form-check-label">
                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Mlle.
                                                     </label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </fieldset>
-                                        <div class="form-group nom formulaireContent">
-                                            <label for="inputNom">Nom :</label>
-                                            <input class="form-control formulaire" id="inputNom">
+                                            <div class="form-group nom formulaireContent">
+                                                <label for="inputNom">Nom :</label>
+                                                <input class="form-control formulaire" id="inputNom">
+                                            </div>
+                                            <div class="form-group nom formulaireContent">
+                                                <label for="inputprenom">Prénom :</label>
+                                                <input class="form-control formulaire" id="inputPrenom">
+                                            </div>
+                                            <div class="form-group dateDeNaissance formulaireContent">
+                                                <label> Date de naissance :</label>
+                                                <input class="form-control formulaire" placeholder="JJ/MM/AAAA">
+                                            </div>
+                                            <div class="form-group telephone formulaireContent">
+                                                <label>Téléphone :</label>
+                                                <input class="form-control formulaire">
+                                            </div>
+                                            <div class="form-group adresse formulaireContent">
+                                                <label>Adresse 1 :</label>
+                                                <input class="form-control formulaire">
+                                            </div>
+                                            <div class="form-group adresse formulaireContent">
+                                                <label>Adresse 2 :</label>
+                                                <input class="form-control formulaire">
+                                            </div>
+                                            <div class="form-group codePostale formulaireContent">
+                                                <label>Code postale :</label>
+                                                <input class="form-control formulaire">
+                                            </div>
+                                            <div class="form-group ville formulaireContent">
+                                                <label> Ville :</label>
+                                                <input class="form-control formulaire">
+                                            </div>
                                         </div>
-                                        <div class="form-group nom formulaireContent">
-                                            <label for="inputNom">Prénom :</label>
-                                            <input class="form-control formulaire" id="inputNom">
+                                        <div class="form-row infoCompte">
+                                            <div class="texteCompte">
+                                                <h5>Informations du Compte</h5>
+                                            </div>
+                                            <div class="form-group mail formulaireContent">
+                                                <label> Mail :</label>
+                                                <input class="form-control formulaire">
+                                            </div>
+                                            <div class="form-group mail formulaireContent">
+                                                <label> Confirmation de Mail :</label>
+                                                <input class="form-control formulaire">
+                                            </div>
+                                            <div class="form-group motDePasse formulaireContent">
+                                                <label>Mot de passe : :</label>
+                                                <input class="form-control formulaire">
+                                            </div>
+                                            <div class="form-group telephone formulaireContent">
+                                                <label>Téléphone :</label>
+                                                <input class="form-control formulaire">
+                                            </div>
+                                            <div class="form-group motDePasse formulaireContent">
+                                                <label> Confirmation de Mot de passe :</label>
+                                                <input class="form-control formulaire">
+                                            </div>
                                         </div>
-                                        <div class="form-group dateDeNaissance formulaireContent">
-                                            <label for="inputNom"> Date de naissance :</label>
-                                            <input class="form-control formulaire" id="inputNom" placeholder="JJ/MM/AAAA">
-                                        </div>
-                                        <div class="form-group telephone formulaireContent">
-                                            <label for="inputNom">Téléphone :</label>
-                                            <input class="form-control formulaire" id="inputNom">
-                                        </div>
-                                        <div class="form-group adresse formulaireContent">
-                                            <label for="inputNom">Adresse 1 :</label>
-                                            <input class="form-control formulaire" id="inputNom">
-                                        </div>
-
-                                        <div class="adresse formulaireContent ">
-                                            Adresse 2 :
-                                            <input type="text" class="form-control formulaire">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="codePostale formulaireContent ">
-                                            Code postale :
-                                            <input type="text" class="form-control formulaire">
-                                        </div>
-                                        <div class="ville formulaireContent ">
-                                            Ville :
-                                            <input type="text" class="form-control formulaire">
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
-                                <div class="row">
-                                    <div class="infoCompte">
-                                        <div class="row texteCompte">
-                                            <h5>Informations du Compte</h5>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="mail formulaireContent ">
-                                                Mail :
-                                                <input type="text" class="form-control formulaire">
-                                            </div>
-                                            <div class="mail formulaireContent ">
-                                                Confirmation de Mail :
-                                                <input type="text" class="form-control formulaire">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="motDePasse formulaireContent ">
-                                                Mot de passe :
-                                                <input type="text" class="form-control formulaire">
-                                            </div>
-                                            <div class="motDePasse formulaireContent ">
-                                                Confirmation de Mot de passe :
-                                                <input type="text" class="form-control formulaire">
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="btnInscription btn btn-lg">
-                            <button type="button" class="btn btn-primary">JE CREE MON COMPTE</button>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="btnInscription btn btn-lg">
+                        <button type="button" class="btn btn-primary">JE CREE MON COMPTE</button>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
     </div>
     <footer>
         <div class="piedDePage">
