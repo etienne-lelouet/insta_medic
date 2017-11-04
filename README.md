@@ -14,8 +14,15 @@ $ cd .\insta_medic\
 $ code .
 $ npm install
 ```
+# A faire pour la première fois
+```
+$ npm i 
+ou
+$ npm install
+permet d'installer le module npm et autres
+```
 
-#Commande github
+# Commande github
 ```
 $ git config --global user.name "[nom]"
 Définit le nom que vous voulez associer à toutes vos opérations de commit
