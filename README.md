@@ -42,4 +42,7 @@ Enregistre des instantanés de fichiers de façon permanente dans l'historique d
 $ git push
 Envoie tous les commits de la branche locale vers GitHub
 
+$ git pull 
+Permet de récuperer les push des autres
+
 ```
