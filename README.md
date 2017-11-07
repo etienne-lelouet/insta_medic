@@ -14,8 +14,15 @@ $ cd .\insta_medic\
 $ code .
 $ npm install
 ```
+# A faire pour la première fois
+```
+$ npm i 
+ou
+$ npm install
+permet d'installer le module npm et autres
+```
 
-#Commande github
+# Commande github
 ```
 $ git config --global user.name "[nom]"
 Définit le nom que vous voulez associer à toutes vos opérations de commit
@@ -34,5 +41,8 @@ Enregistre des instantanés de fichiers de façon permanente dans l'historique d
 
 $ git push
 Envoie tous les commits de la branche locale vers GitHub
+
+$ git pull 
+Permet de récuperer les push des autres
 
 ```
