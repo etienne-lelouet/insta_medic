@@ -8247,7 +8247,7 @@ ul {
   height: 50px;
   background-color: #E2E6EB; }
 
-li {
+.piedDePage li {
   display: table-cell;
   width: 19.3%;
   margin-right: 0.5%;
@@ -8304,31 +8304,17 @@ label {
   margin-left: auto;
   margin-right: auto; }
 
-/*.partieGauche{
-    //width:10%;
-    background : antiquewhite;
-}
-.partieDroite{
-    //width:90%
-}
-.nav-pills{
-    flex-direction: column;
-}
-.sidebar {
-    position: fixed;
-    left: 0;
-    z-index: 1000;
-    padding: 20px 0;
-    overflow-x: hidden;
-    overflow-y: auto; 
-    border-right: 1px solid #eee;
-  }
-  
-  .sidebar .nav {
-    margin-bottom: 20px;
-  }
-  
-  .sidebar .nav-item {
-    width: 100%;
-  }
-  */
+.nav-link {
+  width: 100%; }
+  .nav-link:hover {
+    color: #fff;
+    background-color: #007bff; }
+
+.mesInfos img {
+  height: 150px; }
+
+.mesInfos {
+  margin: auto; }
+
+.mesInfos h4 {
+  text-align: center; }
