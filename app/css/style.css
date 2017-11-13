@@ -8214,6 +8214,9 @@ h1 {
 h2 {
   font-size: 20px; }
 
+.cellGlobal h2 {
+  padding: 30px 10px 10px 20px; }
+
 h3 {
   font-size: 20px;
   font-size: 20px;
@@ -8224,13 +8227,22 @@ h3 {
 h4 {
   font-size: 16px; }
 
+.mesInfos h5 {
+  padding: 30px 0;
+  text-align: center; }
+
 .cellGlobal {
   background: #E2E6EB; }
 
 .cell {
   width: 50%;
   float: left;
-  position: relative; }
+  position: relative;
+  padding: 40px;
+  background: #E2E6EB; }
+
+.compte {
+  margin: auto; }
 
 footer {
   width: 100%;
@@ -8266,8 +8278,8 @@ td {
 .cellFormulaire {
   width: 100%; }
 
-.container-fluid {
-  margin: 10px; }
+.cellInscription {
+  margin: auto; }
 
 .formulaireContent {
   width: 45%;
@@ -8315,6 +8327,28 @@ label {
 
 .mesInfos {
   margin: auto; }
+  .mesInfos h4 {
+    text-align: center; }
 
-.mesInfos h4 {
-  text-align: center; }
+.partieGauche, .partieDroite {
+  float: left; }
+
+.nav-pills {
+  padding: 15px; }
+
+.cellMain {
+  padding: 0; }
+
+.fontGris {
+  background: #E2E6EB; }
+
+.all {
+  padding: 128px; }
+
+.noPadding {
+  padding: 0; }
+
+.nav-pills .nav-link {
+  border-radius: 0;
+  border-top: 2px solid black;
+  padding: 15px; }
