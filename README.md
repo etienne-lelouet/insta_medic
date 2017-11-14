@@ -45,4 +45,6 @@ Envoie tous les commits de la branche locale vers GitHub
 $ git pull 
 Permet de récuperer les push des autres
 
+$ git pull origin master
+
 ```
