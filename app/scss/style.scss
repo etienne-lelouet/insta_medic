@@ -8,6 +8,7 @@
 img {
     float: left;
     position: relative;
+    margin:10px;
 }
 
 hr {
@@ -19,13 +20,20 @@ h1 {
     position: relative;
     width: 60%;
 }
+h1:first-of-type{
+    margin-bottom: -10px;
+    }
+
+td {
+    padding-left: 30px;
+}
 
 h2 {
     font-size: 20px;
 }
 
 .cellGlobal h2 {
-    padding: 30px 10px 10px 20px;
+    padding: 30px 10px 10px 0px;
 }
 
 h3 {
@@ -56,6 +64,7 @@ h4 {
 }
 .compte {
     margin: auto;
+    width: 70%;
 
 }
 

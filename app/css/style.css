@@ -8201,7 +8201,8 @@ a.text-dark:focus, a.text-dark:hover {
 
 img {
   float: left;
-  position: relative; }
+  position: relative;
+  margin: 10px; }
 
 hr {
   border-top: 4px solid #13314F; }
@@ -8211,11 +8212,17 @@ h1 {
   position: relative;
   width: 60%; }
 
+h1:first-of-type {
+  margin-bottom: -10px; }
+
+td {
+  padding-left: 30px; }
+
 h2 {
   font-size: 20px; }
 
 .cellGlobal h2 {
-  padding: 30px 10px 10px 20px; }
+  padding: 30px 10px 10px 0px; }
 
 h3 {
   font-size: 20px;
@@ -8242,7 +8249,8 @@ h4 {
   background: #E2E6EB; }
 
 .compte {
-  margin: auto; }
+  margin: auto;
+  width: 70%; }
 
 footer {
   width: 100%;
