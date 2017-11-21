@@ -46,5 +46,5 @@ $ git pull
 Permet de récuperer les push des autres
 
 $ git pull origin master
-
+Permet de récupérer les données depuis la branche
 ```
