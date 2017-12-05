@@ -44,15 +44,14 @@
                                     <p>En créant mon compte ameli, je peux : </p>
                                     <table>
                                         <tr>
-                                            <td>- Suivre mes remboursements</td>
-                                            <td>- Télécharger mes attestations</td>
+                                            <td>- Télécharger mes ordonnances</td>
                                             <td>- Obtenir un rendez-vous</td>
                                             <td>- Contacter ma clinique par email</td>
                                         </tr>
                                     </table>
                                 </div>
                                 <div class="btnInscription btn">
-                                    <a href="creerCompte.html" class="btn btn-primary" role="button">JE CREE MON COMPTE</a>
+                                    <a href="index.php?page=inscription" class="btn btn-primary" role="button">JE CREE MON COMPTE</a>
                                 </div>
                             </div>
                         </div>
@@ -68,21 +67,21 @@
 
                                 </div>
                                 <div class="champGlobal">
+				<form method="post" action="">
                                     <div class="champIdentifiant champInput form-group">
                                         <i class="fa fa-user" aria-hidden="true"></i>
                                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                                        <input type="text" class="form-control" placeholder="Mon identifiant">
+                                        <input type="text" class="form-control" placeholder="Mon identifiant" name="login">
                                     </div>
                                     <div class="champMdp champInput form-group">
-                                        <input type="text" class="form-control" placeholder="Mon mot de passe">
-                                    </div>
-                                    <div class="mdpOublier">
-                                        <a href="mdpOublier.html">J'ai oublié mon code</a>
+                                        <input type="text" class="form-control" placeholder="Mon mot de passe" name="password">
                                     </div>
                                     <div class="btnIConnection btn">
-                                        <a href="home.html" role="button" class="btn btn-primary">CONNEXION</a>
+					    <a href="#" role="button" class="btn btn-primary"><input type="submit" value="CONNEXION"/></a>
                                     </div>
-                                </div>
+				</div>
+				<input type="hidden" name="formvalid"> 
+				</form>
                             </div>
                         </div>
                     </div>

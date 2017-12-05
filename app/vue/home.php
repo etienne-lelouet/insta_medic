@@ -37,14 +37,14 @@
                             <nav class="nav nav-pills flex-column flex-sm-row">
                                 <div class="mesInfos">
                                     <h5>Mes Informations</h5>
-                                    <img src="img/profil.jpg" alt="photo">
-                                    <h4>Nom</h4>
-                                    <h4>Prenom</h4>
+				    <img src=<?php echo "files/".$_SESSION['id']."/".$res_user['urlphoto']; ?> alt="photo">
+				    <h4><?php echo $res_user['nom']; ?></h4>
+				    <h4><?php echo $res_user['prenom']; ?></h4>
                                 </div>
                                 <a class="flex-sm-fill text-sm-center nav-link" href="#">Active</a>
                                 <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
                                 <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
-                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Disabled</a>
+                                <a class="flex-sm-fill text-sm-center nav-link" href="index.php?page=logout">Se deconnecter</a>
                             </nav>
 
                         </div>
@@ -92,7 +92,7 @@
                 <li>Conditions d'utilisateurs</li>
                 <li>Aides</li>
             </ul>
-        </div>
+	</div>
     </footer>
 </body>
 
