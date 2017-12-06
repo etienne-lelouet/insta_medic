@@ -1,7 +1,7 @@
     <footer>
         <div class="piedDePage">
             <ul>
-                <li>Informations légales</li>
+                <li>Les informations personnelles et médicales sont stockées sur un serveur sécurisé</li>
                 <li>Propriété intellectuelle</li>
                 <li>Conditions d'utilisateurs</li>
                 <li>Aides</li>
