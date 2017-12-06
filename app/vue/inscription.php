@@ -9,21 +9,8 @@
 </head>
 
 <body>
-    <header class="cellHeader">
-        <div class="container-fluid">
-            <div class="row floflo">
-                <div class="col-xs-12 col-lg-12">
-                    <div class="cell-logo">
-                        <a href="index.html">
-                            <img src="img/logo.png" alt="logo">
-                        </a>
-                        <h1>Clinique Geoffroy Saint-Hilaire</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="cellGlobal">
+    <?php require 'header.php'; ?>
+	<div class="cellGlobal">
         <div class="container-fluid">
             <div class="row">
                 <h2>JE CREE MON COMPTE</h2>
@@ -130,18 +117,9 @@
                 </div>
                
             </div>
-        </div>
+        </div>    
     </div>
-    <footer>
-        <div class="piedDePage">
-            <ul>
-                <li>Informations légales</li>
-                <li>Propriété intellectuelle</li>
-                <li>Conditions d'utilisateurs</li>
-                <li>Aides</li>
-            </ul>
-        </div>
-    </footer>
-</body>
+    <?php require 'footer.php'; ?>
+    </body>
 
 </html>

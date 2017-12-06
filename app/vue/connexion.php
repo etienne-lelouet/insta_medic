@@ -9,24 +9,7 @@
 </head>
 
 <body>
-    <header class="cellHeader">
-        <div class="container-fluid">
-            <div class="row floflo">
-                <div class="col-xs-12 col-lg-12">
-                    <div class="cell-logo">
-                        <a href="index.html">
-                            <img src="img/logo.png" alt="logo">
-                        </a>
-                        <h1>Clinique</h1>
-                        <h1>Geoffroy Saint-Hilaire </h1>
-                    </div>
-                    <div class="cellEspacePerso">
-                        <h3> MON ESPACE PERSONNEL </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php require 'header.php'; ?>
     <div class="cellGlobal">
         <div class="container-fluid">
             <div class="row">
@@ -89,16 +72,7 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="piedDePage">
-            <ul>
-                <li>Informations légales</li>
-                <li>Propriété intellectuelle</li>
-                <li>Conditions d'utilisateurs</li>
-                <li>Aides</li>
-            </ul>
-        </div>
-    </footer>
+    <?php require 'footer.php' ?>
 </body>
 
 </html>

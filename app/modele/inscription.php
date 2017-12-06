@@ -32,9 +32,8 @@ function register_user($data)
 	    $newkey=':'.$key;
 	    $insertdata[$newkey]=$val;
     }
-
-    $query = 'INSERT INTO Personne (etat_civil, nom, prenom, date_naissance, adresse, adressecomp, code_postal, ville, telephone, login, email, password, urlphoto) 
-    VALUES (:etat_civil, :nom, :prenom, :date_naissance, :adresse, :adressecomp, :code_postal, :ville, :telephone, :login, :email, :password, :urlphoto)';
+	
+    $query = "call insertPatient('M.', 'test', 'test', '17/11/1996', '25 test' 'testtest', '75000', 'Test', '0111111111', 'test3' 'test3@test.com', 'testtsetset', 'testestsetest.jpg')"; 
     
     $query = $conn->prepare($query);
     

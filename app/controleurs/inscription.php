@@ -208,8 +208,7 @@ else
 	    
 	    if($id>0)
             {
-                $dirname=$_SERVER['DOCUMENT_ROOT'].'/insta_medic/app/files/'.$id;
-               echo $dirname; 
+                $dirname='/files/'.$id; 
 
                	if (!mkdir($dirname, 0777))
 		{
