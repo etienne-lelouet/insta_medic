@@ -47,24 +47,25 @@
                                 <h2>J'ACCÈDE A MON COMPTE</h2>
                                 <div class="trait traitConnection">
                                     <hr>
-
                                 </div>
                                 <div class="champGlobal">
-				<form method="post" action="">
-                                    <div class="champIdentifiant champInput form-group">
-                                        <i class="fa fa-user" aria-hidden="true"></i>
-                                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                                        <input type="text" class="form-control" placeholder="Mon identifiant" name="login">
-                                    </div>
-                                    <div class="champMdp champInput form-group">
-                                        <input type="text" class="form-control" placeholder="Mon mot de passe" name="password">
-                                    </div>
-                                    <div class="btnIConnection btn">
-					    <a href="#" role="button" class="btn btn-primary"><input type="submit" value="CONNEXION"/></a>
-                                    </div>
-				</div>
-				<input type="hidden" name="formvalid"> 
-				</form>
+                                    <form method="post" action="">
+                                        <div class="champIdentifiant champInput form-group">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                            <input type="text" class="form-control" placeholder="Mon identifiant" name="login">
+                                        </div>
+                                        <div class="champMdp champInput form-group">
+                                            <input type="text" class="form-control" placeholder="Mon mot de passe" name="password">
+                                        </div>
+                                        <div class="btnIConnection btn">
+                                            <a href="#" role="button" class="btn btn-primary">
+                                                <input type="submit" value="CONNEXION" />
+                                            </a>
+                                        </div>
+                                        <input type="hidden" name="formvalid ">
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

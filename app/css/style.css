@@ -8267,13 +8267,6 @@ ul {
   height: 50px;
   background-color: #E2E6EB; }
 
-.piedDePage li {
-  display: table-cell;
-  width: 19.3%;
-  margin-right: 0.5%;
-  text-align: center;
-  position: relative;
-  vertical-align: middle; }
 
 .piedDePage {
   margin-top: 15px; }
@@ -8360,3 +8353,32 @@ label {
   border-radius: 0;
   border-top: 2px solid black;
   padding: 15px; }
+
+  .piedDePage li:nth-child(0) {
+    display: table-cell;
+    margin-right: 0.5%;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+}
+.piedDePage li:nth-child(0) {
+    width: 14%;
+
+}
+.piedDePage li:nth-child(1){
+    width: 69%;
+}
+.piedDePage li:nth-child(2) {
+    width: 14%;
+}
+
+input.btnConnection {
+  background: #007bff;
+  color: white;
+}
+
+.btnConnection:hover,.btnConnection:focus {
+  color: #fff;
+  background-color: #0062cc;
+  border-color: #005cbf;
+}
