@@ -8354,21 +8354,21 @@ label {
   border-top: 2px solid black;
   padding: 15px; }
 
-  .piedDePage li:nth-child(0) {
+  .piedDePage li {
     display: table-cell;
     margin-right: 0.5%;
     text-align: center;
     position: relative;
     vertical-align: middle;
 }
-.piedDePage li:nth-child(0) {
+.piedDePage li:nth-child(1) {
     width: 14%;
 
 }
-.piedDePage li:nth-child(1){
+.piedDePage li:nth-child(2){
     width: 69%;
 }
-.piedDePage li:nth-child(2) {
+.piedDePage li:nth-child(3) {
     width: 14%;
 }
 
