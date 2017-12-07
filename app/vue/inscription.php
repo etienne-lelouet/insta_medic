@@ -138,9 +138,9 @@
                                             <div class="form-group mail formulaireContent">
                                                 <label> Mail :</label>
                                                 <?php if ($pasdemail == true): ?>
-                                                    <input name="email" class="form-control formulaire" ><span>Veuillez entrer une valeur valide</span><span></span>
+                                                    <input name="email" class="form-control formulaire " type="email" ><span>Veuillez entrer une valeur valide</span><span></span>
                                                 <?php else: ?>
-                                                    <input name="email" class="form-control formulaire" value="<?php echo $data['email']; ?>">
+                                                    <input name="email" class="form-control formulaire" type="email" value="<?php echo $data['email']; ?>">
                                                 <?php endif; ?>
                                                 <?php if($maildouble==true):?>
                                                     <span>Cet email est deja utilisé</span>
@@ -149,9 +149,9 @@
                                             <div class="form-group motDePasse formulaireContent">
                                                 <label>Mot de passe :</label>
                                                 <?php if ($pasdepassword == true): ?>
-                                                    <input type="password" name="password" class="form-control formulaire" ><span>Veuillez entrer une valeur valide</span>
+                                                    <input type="password" name="password" class="form-control formulaire" type="password" ><span>Veuillez entrer une valeur valide</span>
                                                 <?php else: ?>
-                                                    <input type="password" name="password" class="form-control formulaire" value="<?php echo $data['password']; ?>">
+                                                    <input type="password" name="password" class="form-control formulaire" type="password" value="<?php echo $data['password']; ?>">
                                                 <?php endif; ?>
                                             </div>
 
