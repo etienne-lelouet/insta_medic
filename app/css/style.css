@@ -8208,7 +8208,7 @@ h2 {
 
 h3 {
   font-size: 20px;
-  width: 30%;
+  width: 26%;
   position: relative;
   float: right; }
 
@@ -8365,9 +8365,14 @@ input.btnConnection {
 
 .champGlobal .fa{
   float: left;
-  font-size: 35%;
+  font-size: 35px;
   color:#C9D0D8;
+  padding-right: 10px;
 }
 .champGlobal .form-control{
 width:80%;
 }
+
+.form-control{
+  border:none !important;
+  }

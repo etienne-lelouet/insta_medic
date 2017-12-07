@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href=".../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
     <meta charset="utf-8" />
     <title>Inscription</title>
 </head>
 
 <body>
-    <?php require '../header.php'; ?>
+    <?php require 'header.php'; ?>
     <div class="cellGlobal">
         <div class="container-fluid">
             <div class="row">
@@ -33,7 +33,7 @@
                                                 <div class="Etat">Etat civil :</div>
                                                 <div class="form-check form-check-inline">
                                                     <label class="form-check-label">
-							<input class="form-check-input" type="radio" name="etat_civil" id="inlineRadio1" value="M."> M.
+                                                        <input class="form-check-input" type="radio" name="etat_civil" id="inlineRadio1" value="M."> M.
                                                     </label>
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="radio" name="etat_civil" id="inlineRadio2" value="Mme."> Mme.
@@ -103,11 +103,11 @@
                                         <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />
                                         <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
                                         Ajoutez une photo de profil :
-                                        <input name="image" type="file" />
+                                        <input name="image" type="file">
                                         <input type="hidden" name="formvalid">
                                         <div class="row btnSubmit">
                                             <div class="btnInscription btn btn-lg">
-                                                <input class="btn btn-primary" type="submit" value="JE CREE MON COMPTE">
+                                                <input class="btn btn-primary" type="submit" value="JE CREE MON COMPTE" style="cursor:pointer;">
                                             </div>
                                         </div>
                                     </form>
@@ -120,7 +120,7 @@
             </div>
         </div>
     </div>
-    <?php require '../footer.php'; ?>
+    <?php require 'footer.php'; ?>
 </body>
 
 </html>
