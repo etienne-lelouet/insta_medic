@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <?php require '../header.php'; ?>
+    <?php require 'header.php'; ?>
     <div class="cellGlobal">
         <div class="container-fluid">
             <div class="row">
@@ -120,7 +120,7 @@
             </div>
         </div>
     </div>
-    <?php require '../footer.php'; ?>
+    <?php require 'footer.php'; ?>
 </body>
 
 </html>
