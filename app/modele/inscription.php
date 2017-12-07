@@ -33,17 +33,19 @@ function register_user($data)
 	    $insertdata[$newkey]=$val;
     }
 	
-    $query = "call insertPatient('M.', 'test', 'test', '17/11/1996', '25 test' 'testtest', '75000', 'Test', '0111111111', 'tfzzfezefzefzefzefest3' 'test3ffzefzeze@test.com', 'testtsetset', 'testestsetest.jpg')"; 
-    
+    $query = "call insertPatient(:etat_civil, :nom, :prenom, :date_naissance, :adresse, :adressecomp, :code_postal, :ville, :telephone, :login, :email, :password, :urlphoto)"; 
+
     $query = $conn->prepare($query);
     
     if ($query -> execute($insertdata))
     {
-	    return ($conn -> lastInsertId());
+	    $res=$query->fetchAll();
+	    return $res[0]['argid'];
     }
     else
     {
-	    return false;
+	    $query -> debugDumpParams();
+	    return 0;
     }
 }
 
