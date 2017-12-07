@@ -52,15 +52,15 @@
                                     <form method="post" action="">
                                         <div class="champIdentifiant champInput form-group">
                                             <i class="fa fa-user" aria-hidden="true"></i>
-                                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                             <input type="text" class="form-control" placeholder="Mon identifiant" name="login">
                                         </div>
                                         <div class="champMdp champInput form-group">
-                                            <input type="text" class="form-control" placeholder="Mon mot de passe" name="password">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                            <input type="text" class="form-control" placeholder="Mon mot de passe" type="password" name="password">
                                         </div>
                                         <div class="btnIConnection btn">
-                                            <a href="#" role="button" class="btn btn-primary">
-                                                <input type="submit" value="CONNEXION" />
+                                            <a>
+                                                <input type="submit" value="CONNEXION" class="btn btn-primary" style="cursor:pointer;" />
                                             </a>
                                         </div>
                                         <input type="hidden" name="formvalid ">

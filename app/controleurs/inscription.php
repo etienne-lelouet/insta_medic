@@ -7,7 +7,6 @@ if (isset($_SESSION['id']))
 else
 {
     require 'modele/inscription.php';
-
     if (isset($_POST['formvalid']))
     {
         $data=array();
@@ -63,15 +62,19 @@ else
             $global=false;
         }
 
-        if(!empty($_POST['adressecomp']) && preg_match('/^([\p{L}\p{Mn}\d]+?[\p{L}\p{Mn}\p{Pd}\'\s\d]+?)$/u', $_POST['adressecomp']))
-        {
+        if(empty($_POST['adressecomp']))
+	{
+	    $data['adressecomp']=""; 
+        }
+        else if (!preg_match('/^([\p{L}\p{Mn}\d]+?[\p{L}\p{Mn}\p{Pd}\'\s\d]+?)$/u', $_POST['adressecomp']))
+	{
+	    $mauvaiseadresse = true;
+	    $global=false;
+	}
+	else
+	{
             $data['adressecomp']=$_POST['adressecomp'];
-        }
-        else
-        {
-            $data['adressecomp']="";
-        }
-
+	}
         if(!empty($_POST['code_postal']) && preg_match('/^([\d]{4,8})$/', $_POST['code_postal']))
         {
             $data['code_postal']=$_POST['code_postal'];
@@ -190,32 +193,33 @@ else
         $dimensions=getimagesize($_FILES['image']['tmp_name']);
     
         if($global)
-        {
+	{
             if ($dimensions[0]>$dimensions[1])
             {
                 $errorimage = 'Les dimensions de l\'image sont incorrectes';
                 $global=false;
-            }
-            $data['password']=md5($data['password']);
-	
+	    }
+
+            $data['password']=md5($data['password']);	
 	    $now=time();
             $fullname=$now*rand(1,9);    
 	    $urlphoto=$fullname.'.'.$extension_upload;
-
 	    $data['urlphoto']=$urlphoto;
-
 	    $id=register_user($data);
-	    
 	    if($id>0)
             {
-                $dirname='/files/'.$id; 
+	        $dirname='files/'.$id;
+		var_dump($dirname); 
 
                	if (!mkdir($dirname, 0777))
 		{
 			exit('une erreur est survenue, veuillez réessayer ultérieurement');	
 		}
 
-                $fullname = $dirname.'/'.$urlphoto; 
+
+		$fullname = $dirname.'/'.$urlphoto;
+	        var_dump($fullname);	
+
                 if(move_uploaded_file($_FILES["image"]["tmp_name"], $fullname))
                 {
                     if (mkdir($dirname.'/espaceclient', 0777))
@@ -229,7 +233,11 @@ else
 		    {
 			    exit('une erreur est survenue, veuillez réessayer ultèrieurement');
 		    }
-                }
+		}
+		else
+		{
+			exit('erreur uplaod image');
+		}
             }
         }
     }
