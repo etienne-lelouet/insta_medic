@@ -87,16 +87,16 @@
                                             </div>
                                             <div class="form-group mail formulaireContent">
                                                 <label> Mail :</label>
-                                                <input class="form-control formulaire" name="email">
+                                                <input class="form-control formulaire" type="email" name="email">
                                             </div>
                                             <div class="form-group motDePasse formulaireContent">
                                                 <label>Mot de passe :</label>
-                                                <input class="form-control formulaire" name="password">
+                                                <input class="form-control formulaire" type="password" name="password">
                                             </div>
 
                                             <div class="form-group motDePasse formulaireContent">
                                                 <label> Confirmation de Mot de passe :</label>
-                                                <input class="form-control formulaire" name="pass2">
+                                                <input class="form-control formulaire" type="password" name="pass2">
                                             </div>
                                         </div>
 

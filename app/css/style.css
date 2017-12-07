@@ -8375,3 +8375,12 @@ input.btnConnection {
   background-color: #0062cc;
   border-color: #005cbf;
 }
+
+.champGlobal .fa{
+  float: left;
+  font-size: 35%;
+  color:#C9D0D8;
+}
+.champGlobal .form-control{
+width:80%;
+}
