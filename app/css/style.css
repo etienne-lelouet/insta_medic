@@ -1296,8 +1296,7 @@ pre {
   font-size: 1rem;
   line-height: 1.5;
   color: #495057;
-  background-color: #fff;
-  background-image: none;
+  background: #fff none;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -1786,8 +1785,7 @@ fieldset[disabled] a.btn {
 
 .btn-outline-primary {
   color: #007bff;
-  background-color: transparent;
-  background-image: none;
+  background: transparent none;
   border-color: #007bff; }
   .btn-outline-primary:hover {
     color: #fff;
@@ -1807,8 +1805,7 @@ fieldset[disabled] a.btn {
 
 .btn-outline-secondary {
   color: #868e96;
-  background-color: transparent;
-  background-image: none;
+  background: transparent none;
   border-color: #868e96; }
   .btn-outline-secondary:hover {
     color: #fff;
@@ -1828,8 +1825,7 @@ fieldset[disabled] a.btn {
 
 .btn-outline-success {
   color: #28a745;
-  background-color: transparent;
-  background-image: none;
+  background: transparent none;
   border-color: #28a745; }
   .btn-outline-success:hover {
     color: #fff;
@@ -1849,8 +1845,7 @@ fieldset[disabled] a.btn {
 
 .btn-outline-info {
   color: #17a2b8;
-  background-color: transparent;
-  background-image: none;
+  background: transparent none;
   border-color: #17a2b8; }
   .btn-outline-info:hover {
     color: #fff;
@@ -1870,8 +1865,7 @@ fieldset[disabled] a.btn {
 
 .btn-outline-warning {
   color: #ffc107;
-  background-color: transparent;
-  background-image: none;
+  background: transparent none;
   border-color: #ffc107; }
   .btn-outline-warning:hover {
     color: #fff;
@@ -1891,8 +1885,7 @@ fieldset[disabled] a.btn {
 
 .btn-outline-danger {
   color: #dc3545;
-  background-color: transparent;
-  background-image: none;
+  background: transparent none;
   border-color: #dc3545; }
   .btn-outline-danger:hover {
     color: #fff;
@@ -1912,8 +1905,7 @@ fieldset[disabled] a.btn {
 
 .btn-outline-light {
   color: #f8f9fa;
-  background-color: transparent;
-  background-image: none;
+  background: transparent none;
   border-color: #f8f9fa; }
   .btn-outline-light:hover {
     color: #212529;
@@ -1933,8 +1925,7 @@ fieldset[disabled] a.btn {
 
 .btn-outline-dark {
   color: #343a40;
-  background-color: transparent;
-  background-image: none;
+  background: transparent none;
   border-color: #343a40; }
   .btn-outline-dark:hover {
     color: #fff;
@@ -2370,9 +2361,7 @@ tbody.collapse.show {
   height: 1rem;
   pointer-events: none;
   user-select: none;
-  background-color: #ddd;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: #ddd no-repeat center center;
   background-size: 50% 50%; }
 
 .custom-checkbox .custom-control-indicator {
@@ -2382,8 +2371,8 @@ tbody.collapse.show {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"); }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-indicator {
-  background-color: #007bff;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='%23fff' d='M0 2h4'/%3E%3C/svg%3E"); }
+  background: #007bff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='%23fff' d='M0 2h4'/%3E%3C/svg%3E");
+}
 
 .custom-radio .custom-control-indicator {
   border-radius: 50%; }
@@ -2934,7 +2923,7 @@ tbody.collapse.show {
       margin-left: -15px; }
       .card-deck .card {
         display: flex;
-        flex: 1 0 0%;
+        flex: 100px;
         flex-direction: column;
         margin-right: 15px;
         margin-bottom: 0;
@@ -2949,7 +2938,7 @@ tbody.collapse.show {
     .card-group {
       flex-flow: row wrap; }
       .card-group .card {
-        flex: 1 0 0%;
+        flex: 100px;
         margin-bottom: 0; }
         .card-group .card + .card {
           margin-left: 0;
@@ -3664,8 +3653,8 @@ button.close {
     height: 5px; }
   .tooltip .arrow::before {
     position: absolute;
-    border-color: transparent;
-    border-style: solid; }
+    border: solid transparent;
+  }
   .tooltip.bs-tooltip-top, .tooltip.bs-tooltip-auto[x-placement^="top"] {
     padding: 5px 0; }
     .tooltip.bs-tooltip-top .arrow, .tooltip.bs-tooltip-auto[x-placement^="top"] .arrow {
@@ -3748,8 +3737,8 @@ button.close {
   .popover .arrow::after {
     position: absolute;
     display: block;
-    border-color: transparent;
-    border-style: solid; }
+    border: solid transparent;
+  }
   .popover .arrow::before {
     content: "";
     border-width: 0.8rem; }
@@ -8222,10 +8211,9 @@ h2 {
   font-size: 20px; }
 
 .cellGlobal h2 {
-  padding: 30px 10px 10px 0px; }
+  padding: 30px 10px 10px; }
 
 h3 {
-  font-size: 20px;
   font-size: 20px;
   width: 30%;
   position: relative;
@@ -8258,8 +8246,7 @@ footer {
   position: relative; }
 
 ul {
-  list-style-type: none;
-  list-style-position: outside;
+  list-style: none outside;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -8300,7 +8287,7 @@ td {
   width: 100%; }
 
 label {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   margin-right: 15px; }
 
 .textePerso {

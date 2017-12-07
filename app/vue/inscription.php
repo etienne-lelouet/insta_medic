@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href=".../node_modules/font-awesome/css/font-awesome.min.css">
     <meta charset="utf-8" />
     <title>Inscription</title>
 </head>
 
 <body>
-    <?php require 'header.php'; ?>
+    <?php require '../header.php'; ?>
     <div class="cellGlobal">
         <div class="container-fluid">
             <div class="row">
@@ -120,7 +120,7 @@
             </div>
         </div>
     </div>
-    <?php require 'footer.php'; ?>
+    <?php require '../footer.php'; ?>
 </body>
 
 </html>
