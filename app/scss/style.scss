@@ -30,7 +30,6 @@ h2 {
 
 h3 {
     font-size: 20px;
-    font-size: 20px;
     width: 30%;
     position: relative;
     float: right;
@@ -66,8 +65,7 @@ footer {
 }
 
 ul {
-    list-style-type: none;
-    list-style-position: outside;
+    list-style: none outside;
     margin: 0;
     padding: 0;
     width: 100%;
