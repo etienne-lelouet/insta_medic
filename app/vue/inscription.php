@@ -33,7 +33,7 @@
                                                 <div class="Etat">Etat civil :</div>
                                                 <div class="form-check form-check-inline">
                                                     <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="etat_civil" id="inlineRadio1" value="M."> M.
+							<input class="form-check-input" type="radio" name="etat_civil" id="inlineRadio1" value="M."> M.
                                                     </label>
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="radio" name="etat_civil" id="inlineRadio2" value="Mme."> Mme.
