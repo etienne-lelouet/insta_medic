@@ -1,12 +1,13 @@
 <?php
-header('Content-type: text/html; charset=UTF-8');
-include 'config.php';
+
+
+require 'config.php';
 
 function verifier_doublons($fieldname, $fieldvalue)
 {   
     $conn = connexion();
     
-    $query=$conn->prepare('SELECT count(*) AS nb, idPersonne FROM Personne WHERE '.$fieldname.' = :fieldvalue');
+    $query=$conn->prepare('SELECT count(*) AS nb FROM Personne WHERE '.$fieldname.' = :fieldvalue');
 
     $query->bindParam(':fieldvalue', $fieldvalue);
 
@@ -17,7 +18,8 @@ function verifier_doublons($fieldname, $fieldvalue)
     if ($res['nb']==0) 
     {
         return false;
-    } else 
+    } 
+    else 
     {
         return true;
     }

@@ -19,9 +19,11 @@ if (isset($_POST['formvalid'])) {
     {
            
         $global=false;
-	$mauvaislogin=true;    
+	$mauvaispass=true;    
     }
 
+    if (!$global)
+    {
     $password=md5($password);
     $rows=validate($login, $password);
 
@@ -34,6 +36,7 @@ if (isset($_POST['formvalid'])) {
     else 
     {
 	$coupleincorrect=true;	    
+    }
     }
 }
 

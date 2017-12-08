@@ -63,7 +63,7 @@
                                                 <input type="submit" value="CONNEXION" class="btn btn-primary" style="cursor:pointer;" />
                                             </a>
                                         </div>
-                                        <input type="hidden" name="formvalid ">
+                                        <input type="hidden" name="formvalid">
                                     </form>
                                 </div>
                             </div>

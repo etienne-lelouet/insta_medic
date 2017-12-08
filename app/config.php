@@ -9,8 +9,19 @@ function connexion ()
     
     $conn= null;
 
-    $conn = new PDO('mysql:host='.$dbhost.';dbname='.$dbname, $dbuser, $dbpass);
-    $conn->exec('SET CHARACTER SET utf8');
+    try 
+    {
+	    $conn = new PDO('mysql:host='.$dbhost.';dbname='.$dbname, $dbuser, $dbpass);
+	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+	    $conn->setAttribute(PDO::ATTR_TIMEOUT, 5); 
+            $conn->exec('SET CHARACTER SET utf8');
+    }
+    catch (PDOException $error) 
+    {
+	    echo '<b>An error occured!</b><br />' . $error->getMessage();
+	    exit();
+    }	    
     return $conn;
 }
 

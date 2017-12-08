@@ -14,13 +14,23 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-lg-12 cellMain">
-                <div class="col-sm-3 col-md-2 col-lg-2 partieGauche menu">
+               <div class="col-sm-3 col-md-2 col-lg-2 partieGauche menu">
                     <div class="container-fluid fontGris">
                         <div class="row">
                             <nav class="nav nav-pills flex-column flex-sm-row">
                                 <div class="mesInfos">
-                                    <h5>Mes Informations</h5>
-                                    <img src=<?php echo "files/".$_SESSION[ 'id']. "/".$res_user[ 'urlphoto']; ?> alt="photo">
+				    <h5>Mes Informations</h5>
+				<?php
+				    $url = "files/".$_SESSION['id']. "/".$res_user['urlphoto'];
+				    if (file_exists($url))
+				    {  
+					    echo '<img src="'.$url.'">';
+				    }
+				    else
+				    {
+					    echo '<img src="files/default.jpg">';
+				    }
+                                  ?>
                                     <h4>
                                         <?php echo $res_user['nom']; ?>
                                     </h4>
@@ -28,9 +38,7 @@
                                         <?php echo $res_user['prenom']; ?>
                                     </h4>
                                 </div>
-                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Active</a>
-                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
-                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
+                                <a class="flex-sm-fill text-sm-center nav-link" href="#">Mon Compte</a>
                                 <a class="flex-sm-fill text-sm-center nav-link" href="index.php?page=logout">Se deconnecter</a>
                             </nav>
 
@@ -44,7 +52,7 @@
                             <div class="col-lg-6">
                                 <h4>Adresse</h4>
                                 <p>
-                                    <?php echo $res_user['adresse']; ?>
+                                    <a href="index.php?page=listespe" />PRENDRE RENDEZ VOUS</a>
                                 </p>
 
                                 <h4>Subheading</h4>

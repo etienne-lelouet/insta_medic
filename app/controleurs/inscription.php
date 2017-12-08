@@ -151,17 +151,23 @@ else
             $passdiff=true;
         }
 
-        if(verifier_doublons('login', $data['login']))
-        {
-            $global=false;
-            $logindouble=true;
-        }
+	if (isset($data['login']))
+	{
+	    if(verifier_doublons('login', $data['login']))
+	    {
+		 $global=false;
+		 $logindouble=true;
+	    }
+	}
 
-        if(verifier_doublons('email', $data['email']))
-        {
-            $global=false;
-  	    $maildouble=true;
-        }
+	if (isset($data['email']))
+	{
+		if(verifier_doublons('email', $data['email']))
+		{
+		    $global=false;
+		    $maildouble=true;
+		}
+	}
 	
 
         ////On rentre dans l'upload d'image
@@ -209,7 +215,6 @@ else
 	    if($id>0)
             {
 	        $dirname='files/'.$id;
-		var_dump($dirname); 
 
                	if (!mkdir($dirname, 0777))
 		{
@@ -217,8 +222,7 @@ else
 		}
 
 
-		$fullname = $dirname.'/'.$urlphoto;
-	        var_dump($fullname);	
+		$fullname = $dirname.'/'.$urlphoto;	
 
                 if(move_uploaded_file($_FILES["image"]["tmp_name"], $fullname))
                 {
