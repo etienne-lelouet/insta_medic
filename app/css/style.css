@@ -8233,10 +8233,6 @@ h4 {
   margin: auto;
   width: 70%; }
 
-footer {
-  width: 100%;
-  float: left;
-  position: relative; }
 
 ul {
   list-style: none outside;
@@ -8376,3 +8372,11 @@ width:80%;
 .form-control{
   border:none !important;
   }
+
+footer {
+  width: 100%;
+  float: left;
+  position:fixed;
+  left:0px;
+  bottom:0px; }
+  
