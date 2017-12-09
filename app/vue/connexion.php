@@ -56,7 +56,7 @@
                                         </div>
                                         <div class="champMdp champInput form-group">
                                             <i class="fa fa-lock" aria-hidden="true"></i>
-                                            <input type="text" class="form-control" placeholder="Mon mot de passe" type="password" name="password">
+                                            <input class="form-control" placeholder="Mon mot de passe" type="password" name="password">
                                         </div>
                                         <div class="btnIConnection btn">
                                             <a>

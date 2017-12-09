@@ -2,11 +2,15 @@
 
 if (!isset($_SESSION['id']))
 {
-    header('Location: index.php');
+    	header('Location: index.php');
 }
-require 'modele/accueil.php';
+require_once 'modele/accueil.php';
 
 $res_user=getinfo($_SESSION['id']);
 
-require 'vue/home.php';
+//include de home si $_GET['page'] n'est pas defini ou $_GET['page'] = accueil	 
 
+if (!isset($_GET['page']) || $_GET['page'] == 'accueil')
+{
+	require 'vue/home.php';
+}

@@ -4,24 +4,9 @@
 <head>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/csscustom.css" />
     <meta charset="utf-8" />
     <title>SELECTIONNEZ LE CRENEAU HORAIRE</title>
-    <style>
-	table
-	{
-		border-collapse:collapse;
-	}
-	table, td
-	{
-		height:50px;
-		width:100px;
-	}
-	table, tr
-	{
-		width:200px;
-	}
-    </style>
-
 </head>
 
 <body>
@@ -42,7 +27,7 @@
 				echo '</td>';
 				if (!is_array($val))
 				{
-					echo '<td class="cliquable">pas de rdv ici</td>';
+					echo '<td class="cliquable"><a href="index.php?page=reserver&start_time='.$key.'">CRENEAU DISPONIBLE</a></td>';
 				}
 				else
 				{
@@ -57,6 +42,6 @@
             </div>
         </div>
     </div>	  
-    <?php  require 'footer.php'; ?>
+    <?php require 'footer.php'; ?>
 </body>
 </html>

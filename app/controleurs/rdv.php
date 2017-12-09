@@ -41,6 +41,4 @@ while($beginworkday < $endworkday)
 	$beginworkday=$beginworkday+1800;
 }
 
-var_dump($planning);
-
 require 'vue/rdv.php';
