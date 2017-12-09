@@ -2246,14 +2246,14 @@ fieldset[disabled] a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #13314f;
+  border-color: #13314f;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: #101c29;
+  border-color: #101c29;
 }
 
 .btn-primary:focus,
@@ -8564,9 +8564,6 @@ input.btnConnection {
   width: 80%;
 }
 
-.form-control {
-  border: none !important;
-}
 
 span {
   color: red;
@@ -8579,4 +8576,9 @@ span {
 
 .infoCompte {
   padding: 25px 0 0 0;
+}
+
+.fa-lock:before {
+  content: "\f023";
+  font-size: 39px;
 }
