@@ -12,7 +12,7 @@
     <?php require 'header.php'; ?>
     <div class="cellGlobal">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row" style="margin: 30px 0 0 0;">
                 <h2>JE CREE MON COMPTE</h2>
             </div>
             <div class="trait traitConnection">
@@ -167,7 +167,7 @@
                                         <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />
                                         <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
                                         Ajoutez une photo de profil :
-                                        <input name="image" type="file">
+                                        <input name="image" type="file" style="margin: 30px 0 0 0;">
                                         <input type="hidden" name="formvalid">
                                         <div class="row btnSubmit">
                                             <div class="btnInscription btn btn-lg">
