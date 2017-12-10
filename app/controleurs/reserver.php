@@ -16,8 +16,15 @@ if (!isset($_POST['formvalid']))
 
 if (isset($_POST['formvalid']))
 {
-	echo 'normalement ça reserve';
-	//insertRDV($_POST['startRDV');	
+	if (insertRDV($_POST['idMedecin'], $_SESSION['id'],$_POST['startRDV']))
+	{
+		header('location: index.php?page=success');
+	}
+	else
+	{
+		$erreurrdv='erreur lors de la reservation, veuillez réessayer';
+		require 'vue/reserver.php';
+	}	
 }
 
 

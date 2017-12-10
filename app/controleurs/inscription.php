@@ -168,6 +168,14 @@ else
 		    $maildouble=true;
 		}
 	}
+
+	if(!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name'])) 
+	{
+		$global=false;
+		$errorimage='Pas d\'image mise en ligne, veuillez réessayer';
+		require 'vue/inscription.php';
+		exit();
+	}
 	
 
         ////On rentre dans l'upload d'image

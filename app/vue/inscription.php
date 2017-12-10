@@ -167,7 +167,7 @@
                                         <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />
                                         <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
                                         Ajoutez une photo de profil :
-                                        <input name="image" type="file" style="margin: 30px 0 0 0;">
+					<input name="image" type="file" style="margin: 30px 0 0 0;"><?php echo $errorimage; ?>
                                         <input type="hidden" name="formvalid">
                                         <div class="row btnSubmit">
                                             <div class="btnInscription btn btn-lg">

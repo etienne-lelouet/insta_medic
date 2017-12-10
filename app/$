@@ -32,12 +32,11 @@
 					<div class="container-fluid fontGris tableauHoraire">
 						<h6>Choissisz le créneau</h6>
 						<form action="" method="post">
-						<input type="text" name="date" placeholder="dd.mm.yyyy">
+						<input type="text" name="date">
 						<input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
 						<input type="submit" value="Aller à cette date">
 						</form>
-						<div>
-						<center>Planning de <?php echo $resmed['prenom'].' '.$resmed['nom'].' le '.date('d/m/Y', $begin_day_ts); ?></center>
+						<?php echo date('d/m/Y', $begin_day_ts); ?>
 						<table>
 							<tr>
 								<th>Horaire</th>
@@ -67,14 +66,13 @@
 						}
 						else
 						{
-							echo '<th class="rdv">Rendez vous avec '.$val['etat_civil'].' '.$val['prenom'].' '.$val['nom'].'</th>';
+							echo '<th class="rdv">'.var_dump($val).'</th>';
 						}
 					}
 					echo '</tr>';
 				  }
 				?>
 						</table>
-						</div>
 					</div>
 				</div>
 			</div>
