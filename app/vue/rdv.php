@@ -16,7 +16,7 @@
 			<div class="col-xs-12 col-lg-12 cellMain">
 				<?php require 'barre.php' ?>
 				<div class="col-sm-9 col-md-10 col-lg-10 partieDroite">
-					<div class="container-fluid fontGris">
+					<div class="container-fluid fontGris tableauHoraire">
 						<h6>Choissisz le créneau</h6>
 						<table>
 							<tr>

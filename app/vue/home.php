@@ -13,8 +13,8 @@
     <?php require 'header.php'; ?>
     <div class="container-fluid">
         <div class="row">
-	    <div class="col-xs-12 col-lg-12 cellMain">
-		<?php require 'barre.php'; ?>
+            <div class="col-xs-12 col-lg-12 cellMain">
+                <?php require 'barre.php'; ?>
                 <div class="col-sm-9 col-md-10 col-lg-10 partieDroite">
                     <div class="container-fluid fontGris">
                         <div class="row all">
