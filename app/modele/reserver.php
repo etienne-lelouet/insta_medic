@@ -28,7 +28,7 @@ function insertRDV($idmedecin, $idpatient, $startRDV)
 		}
 		else if ($res['nb'] == 0)
 		{
-			echo 'non non';
+		
 			$query3 = 'INSERT INTO lien (idMedecin, idPatient) VALUES (:idPersonne_1, :idPersonne)';
 			$query3 = $conn->prepare($query3);
 			$query3->bindParam(':idPersonne_1', $idmedecin);
