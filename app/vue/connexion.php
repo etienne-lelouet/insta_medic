@@ -25,7 +25,7 @@
                                         <h4>L’espace personnel qui me rend bien des services.</h4>
                                     </div>
                                     <div class="contenu">
-                                        <p>En créant mon compte ameli, je peux : </p>
+                                        <p>En créant mon compte, je peux : </p>
                                         <table>
                                             <tr>
                                                 <td>- Télécharger mes ordonnances</td>

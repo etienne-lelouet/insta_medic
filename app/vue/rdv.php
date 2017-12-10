@@ -29,7 +29,7 @@
 					<div class="container-fluid fontGris tableauHoraire">
 						<h6>Choissisz le créneau</h6>
 						<form action="" method="post">
-							<input type="text" name="date" placeholder="DD/MM/AAAA" style="float: left;">
+							<input type="text" name="date" placeholder="DD.MM.AAAA" style="float: left;">
 							<input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
 							<input type="submit" value="Aller à cette date" class="btn btn-primary" style="float: left;">
 						</form>

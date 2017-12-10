@@ -27,7 +27,7 @@ require_once 'controleurs/accueil.php';
                             </h4>
                     </div>
                     <a class="flex-sm-fill text-sm-center nav-link" href="index.php">Mon Compte</a>
-                    <a class="flex-sm-fill text-sm-center nav-link" href="">Mes rendez-vous</a>
+                    <a class="flex-sm-fill text-sm-center nav-link" href="#">Editer Mes Informations</a>
                     <a class="flex-sm-fill text-sm-center nav-link" href="index.php?page=logout">Se deconnecter</a>
                 </nav>
             </div>
