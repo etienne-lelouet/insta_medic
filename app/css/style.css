@@ -8383,7 +8383,7 @@ hr {
   border-top: 4px solid #13314F;
 }
 
-td {
+.contenu td {
   padding-left: 30px;
   width: 100%;
   float: left;
