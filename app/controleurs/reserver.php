@@ -1,20 +1,22 @@
 <?php
-
-if (!isset($_GET['start_time'])
+if (!isset($_POST['startRDV']) || !isset($_POST['idMedecin']))
 {
-	header('location: index.php?page=specialite');
+	header('location: index.php?page=listespe');
 }
 
 require 'modele/reserver.php';
 
+if (!isset($_POST['formvalid']))
+{
+	$res=getMedInfo($_POST['idMedecin']);
+	$res=$res[0];
+	require 'vue/reserver.php';
 
+}
 
+if (isset($_POST['formvalid']))
+{
+	echo 'ui ui';
+}
 
-
-
-
-
-
-
-require 'vue/reserver.php';
 

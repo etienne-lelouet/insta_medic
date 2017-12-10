@@ -4,9 +4,14 @@
 <head>
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/csscustom.css" />
 	<meta charset="utf-8" />
-	<title>SELECTIONNEZ LE CRENEAU HORAIRE</title>
+	<style>
+	.cliquable:hover
+	{
+		background-color : #E4E4A1;
+	}
+	</style>
+	<title>SELECTIONNEZ UN CRENEAU HORAIRE</title>
 </head>
 
 <body>
@@ -24,23 +29,24 @@
 								<th>Disponibilité</th>
 							</tr>
 							<?php
-                          foreach($planning as $key => $val)
-			  {
-			 	echo '<tr>';
-				echo '<td>';
-				echo date('H:i', $key);
-				echo '</td>';
-				if (!is_array($val))
-				{
-					echo '<th><a class="cliquable" href="index.php?page=reserver&start_time='.$key.'">CRENEAU DISPONIBLE</a></th>';
-				}
-				else
-				{
-					echo '<th class="rdv">'.$val['libelleRdv'].'</th>';
-				}
-				echo '</tr>';
-			  }
-                     	?>
+				  foreach($planning as $key => $val)
+				  {
+					echo '<tr class="cliquable">';
+					echo '<td>';
+					echo date('H:i', $key);
+					echo '</td>';
+					if (!is_array($val))
+					{ 
+						echo '<th><form action="index.php?page=reserver" method="post"><input type="hidden" name="startRDV" value="'.$key.'"><input type="hidden" name="idMedecin" value="'.$_POST['id'].'"><input type="submit" value="CRENEAU DISPONIBLE"></form></th>';
+
+					}
+					else
+					{
+						echo '<th class="rdv">'.$val['libelleRdv'].'</th>';
+					}
+					echo '</tr>';
+				  }
+				?>
 						</table>
 					</div>
 				</div>
