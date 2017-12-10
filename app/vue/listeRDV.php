@@ -22,6 +22,12 @@
 				<?php require 'barre.php' ?>
 				<div class="col-sm-9 col-md-10 col-lg-10 partieDroite">
 					<div class="container-fluid fontGris tableauHoraire">
+					<?php
+					foreach ($res as $val)
+					{
+						echo '<p>Rendez vous le '.date('d/m/y', $val['startRDV']).'à '.date('H:i', $val['startRDV']).' avec '.$val['nom'].' '.$val['prenom'].' du service de '.$val['libelle'].'</p>';
+					}
+					?>
 					</div>
 				</div>
 			</div>

@@ -9,11 +9,6 @@ require 'modele/listeRDV.php';
 
 $res = getListeRDV($_SESSION['id']);
 
-var_dump($res);
-
-
-
-
 require 'vue/listeRDV.php'
 
 ?>
