@@ -8322,6 +8322,8 @@ a.text-dark:hover {
     clip: auto;
 }
 
+/******************************************** css custom ******************************************/
+
 .cellHeader {
     width: 100%;
 }
@@ -8505,6 +8507,7 @@ label {
 
 .fontGris {
     background: #f2f2f2;
+    padding: 20px 15px;
 }
 
 .all {
@@ -8624,4 +8627,19 @@ td {
     bottom: 0px;
     width: 100%;
     margin: 5px 5px;
+}
+
+.cliquable:hover
+{
+  background-color : #E4E4A1;
+}
+
+.tableauHoraire tr:nth-child(odd).cliquable:hover
+{
+  background-color : #E4E4A1;
+}
+
+h7 {
+  font-size: 18px;
+  text-decoration: underline;
 }
