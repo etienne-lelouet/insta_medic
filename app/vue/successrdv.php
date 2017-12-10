@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
 	<meta charset="utf-8">
-	<title>CONFIRMEZ CES INFORMATIONS</title>
+	<title>Etat du rendez-vous</title>
 </head>
 
 <body>
@@ -16,20 +16,17 @@
 				<?php require 'barre.php' ?>
 				<div class="col-sm-9 col-md-10 col-lg-10 partieDroite">
 					<div class="container-fluid fontGris confirmationRDV">
-						<h6>CONFIRMEZ CES INFORMATIONS</h6>
+						<h6>Etat du rendez-vous</h6>
 						<form action="" method="POST">
-							<h5> Praticien :</h5>
-							<p><?php echo $res['etat_civil'].' '.$res['nom'].' '.$res['prenom']; ?> </p>
-							<p><?php echo $res['email']; ?> </p>
-							<p><?php echo $res['telephone']; ?> </p>
-							<br/>
-							<p> Rendez-vous le :
+							<p> Le rendez-vous du :
 								<?php echo date('d-m-Y', $_POST['startRDV']).' à '.date('H:i', $_POST['startRDV']); ?>
 							</p>
+							<p>avec le praticien
+								<?php echo $res['etat_civil'].' '.$res['nom'].' '.$res['prenom']; ?> a bien été confirmé.</p>
 							<input type="hidden" name="startRDV" value="<?php echo $_POST['startRDV']; ?> ">
 							<input type="hidden" name="idMedecin" value="<?php echo $_POST['idMedecin']; ?> ">
 							<input type="hidden" name="formvalid">
-							<input type="submit" value="CONFIRMER CES INFORMATIONS" class="btn btn-primary">
+							<input type="submit" value="Retour à l'accueil" class="btn btn-primary" href="index.php">
 						</form>
 					</div>
 				</div>
