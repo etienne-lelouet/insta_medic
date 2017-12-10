@@ -8324,322 +8324,328 @@ a.text-dark:hover {
 
 /******************************************** css custom ******************************************/
 
-.cellHeader {
-    width: 100%;
-}
-
-img {
-    float: left;
-    position: relative;
-    margin: 10px;
-}
-
-hr {
-    border-top: 4px solid #13314F;
-}
-
 h1 {
-    float: left;
-    position: relative;
-    width: 60%;
+  float: left;
+  position: relative;
+  width: 60%;
 }
 
 h1:first-of-type {
-    margin-bottom: -10px;
-}
-
-td {
-    padding-left: 30px;
+  margin-bottom: -10px;
 }
 
 h2 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .cellGlobal h2 {
-    padding: 30px 10px 10px;
+  padding: 30px 10px 10px;
 }
 
 h3 {
-    font-size: 20px;
-    width: 26%;
-    position: relative;
-    float: right;
+  font-size: 20px;
+  width: 26%;
+  position: relative;
+  float: right;
 }
 
 h4 {
-    font-size: 16px;
-}
-
-.mesInfos h5 {
-    padding: 30px 0;
-    text-align: center;
-}
-
-.cellGlobal {
-    background: #f2f2f2;
-}
-
-.cell {
-    width: 50%;
-    float: left;
-    position: relative;
-    padding: 40px;
-    background: #f2f2f2;
-}
-
-.compte {
-    margin: auto;
-    width: 70%;
-}
-
-footer {
-    width: 100%;
-    float: left;
-    position: relative;
-}
-
-ul {
-    list-style: none outside;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: table;
-    height: 50px;
-    background-color: #f2f2f2;
-}
-
-.piedDePage {
-    margin-top: 15px;
-}
-
-td {
-    width: 100%;
-    float: left;
-    position: relative;
-}
-
-.cellFormulaire {
-    width: 100%;
-}
-
-.cellInscription {
-    margin: auto;
-}
-
-.formulaireContent {
-    width: 45%;
-    position: relative;
-    float: left;
-    margin: 10px;
-}
-
-.etatCivile {
-    margin: 10px;
-    width: 100%;
-}
-
-label {
-    margin-bottom: 0;
-    margin-right: 15px;
-}
-
-.textePerso {
-    width: 100%;
-}
-
-.texteCompte {
-    width: 100%;
-}
-
-.Etat {
-    float: left;
-    padding-right: 30px;
-}
-
-.texteTitre {
-    padding: 15px;
-}
-
-.btnSubmit {
-    width: 100%;
-}
-
-.btn {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.nav-link {
-    width: 100%;
-}
-
-.nav-link:hover {
-    color: #fff;
-    background-color: #13314f;
-}
-
-.mesInfos img {
-    height: 150px;
-}
-
-.mesInfos {
-    margin: auto;
+  font-size: 16px;
 }
 
 .mesInfos h4 {
-    text-align: center;
+  text-align: center;
 }
 
-.partieGauche,
-.partieDroite {
-    float: left;
+h5 {
+  font-size: 18px;
+  text-decoration: underline;
 }
 
-.nav-pills {
-    padding: 15px;
+.mesInfos h5 {
+  padding: 30px 0;
+  text-align: center;
 }
 
-.cellMain {
-    padding: 0;
+h6 {
+  font-size: 22px;
+  padding: 20px 0;
 }
 
-.fontGris {
-    background: #f2f2f2;
-    padding: 20px 15px;
+img {
+  float: left;
+  position: relative;
+  margin: 10px;
 }
 
-.all {
-    padding: 128px;
+hr {
+  border-top: 4px solid #13314F;
 }
 
-.noPadding {
-    padding: 0;
+td {
+  padding-left: 30px;
+  width: 100%;
+  float: left;
+  position: relative;
 }
 
-.nav-pills .nav-link {
-    border-radius: 0;
-    border-top: 2px solid black;
-    padding: 15px;
+ul {
+  list-style: none outside;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: table;
+  height: 50px;
+  background-color: #f2f2f2;
+}
+
+label {
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+span {
+  color: red;
+  font-size: smaller;
+}
+
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+.piedDePage {
+  margin-top: 15px;
+}
+
+.pageIndex footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  margin: 5px 5px;
 }
 
 .piedDePage li {
-    display: table-cell;
-    margin-right: 0.5%;
-    text-align: center;
-    position: relative;
-    vertical-align: middle;
+  display: table-cell;
+  margin-right: 0.5%;
+  text-align: center;
+  position: relative;
+  vertical-align: middle;
 }
 
 .piedDePage li:nth-child(1) {
-    width: 14%;
+  width: 14%;
 }
 
 .piedDePage li:nth-child(2) {
-    width: 69%;
+  width: 69%;
 }
 
 .piedDePage li:nth-child(3) {
-    width: 14%;
+  width: 14%;
 }
 
+
+/* BTN */
+
 input.btnConnection {
-    background: #13314f;
-    color: white;
+  background: #13314f;
+  color: white;
 }
 
 .btnConnection:hover,
 .btnConnection:focus {
-    color: #fff;
-    background-color: #0062cc;
-    border-color: #005cbf;
-}
-
-.champGlobal .fa {
-    float: left;
-    font-size: 35px;
-    color: #C9D0D8;
-    padding-right: 10px;
-}
-
-.champGlobal .form-control {
-    width: 80%;
-}
-
-span {
-    color: red;
-    font-size: smaller;
-}
-
-.btnInscription {
-    padding: 30px 0 0 0;
-}
-
-.infoCompte {
-    padding: 25px 0 0 0;
-}
-
-.fa-lock:before {
-    content: "\f023";
-    font-size: 39px;
-}
-
-h6 {
-    font-size: 22px;
-    padding: 20px 0;
-}
-
-.specialite {
-    padding: 10px 0;
-}
-
-.praticien {
-    padding: 10px 0;
+  color: #fff;
+  background-color: #0062cc;
+  border-color: #005cbf;
 }
 
 input.btn.btn-primary {
-    cursor: pointer;
+  cursor: pointer;
 }
 
+.btnSubmit {
+  width: 100%;
+}
+
+.btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btnInscription {
+  padding: 30px 0 0 0;
+}
+
+
+/* TABLEAU */
+
 .tableauHoraire table {
-    width: 80%
+  width: 80%
 }
 
 .tableauHoraire th,
 td {
-    text-align: left;
-    padding: 8px;
+  text-align: left;
+  padding: 8px;
 }
 
 .tableauHoraire tr:nth-child(odd) {
-    background-color: #dddddd8c
+  background-color: #dddddd8c
 }
 
 .tableauHoraire tr:first-child th {
-    background-color: #868e96;
-    color: white;
+  background-color: #868e96;
+  color: white;
 }
 
-.pageIndex footer {
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
-    margin: 5px 5px;
+.cliquable:hover {
+  background-color: #E4E4A1;
 }
 
-.cliquable:hover
-{
-  background-color : #E4E4A1;
+.tableauHoraire tr:nth-child(odd).cliquable:hover {
+  background-color: #E4E4A1;
 }
 
-.tableauHoraire tr:nth-child(odd).cliquable:hover
-{
-  background-color : #E4E4A1;
+/* PAGE */
+
+.fontGris {
+  background: #f2f2f2;
+  padding: 20px 15px;
 }
 
-h7 {
-  font-size: 18px;
-  text-decoration: underline;
+.cellHeader {
+  width: 100%;
+}
+
+.cellGlobal {
+  background: #f2f2f2;
+}
+
+.cell {
+  width: 50%;
+  float: left;
+  position: relative;
+  padding: 40px;
+  background: #f2f2f2;
+}
+
+.cellFormulaire {
+  width: 100%;
+}
+
+.cellInscription {
+  margin: auto;
+}
+
+.partieGauche,
+.partieDroite {
+  float: left;
+}
+
+.compte {
+  margin: auto;
+  width: 70%;
+}
+
+.formulaireContent {
+  width: 45%;
+  position: relative;
+  float: left;
+  margin: 10px;
+}
+
+.etatCivile {
+  margin: 10px;
+  width: 100%;
+}
+
+.textePerso {
+  width: 100%;
+}
+
+.texteCompte {
+  width: 100%;
+}
+
+.Etat {
+  float: left;
+  padding-right: 30px;
+}
+
+.texteTitre {
+  padding: 15px;
+}
+
+.nav-link {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background-color: #13314f;
+}
+
+.mesInfos img {
+  height: 150px;
+}
+
+.mesInfos {
+  margin: auto;
+}
+
+.nav-pills {
+  padding: 15px;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+  border-top: 2px solid black;
+  padding: 15px;
+}
+
+.cellMain {
+  padding: 0;
+}
+
+.all {
+  padding: 128px;
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.champGlobal .fa {
+  float: left;
+  font-size: 35px;
+  color: #C9D0D8;
+  padding-right: 10px;
+}
+
+.fa-lock:before {
+  content: "\f023";
+  font-size: 39px;
+}
+
+.champGlobal .form-control {
+  width: 80%;
+}
+
+.infoCompte {
+  padding: 25px 0 0 0;
+}
+
+.specialite {
+  padding: 10px 0;
+}
+
+.praticien {
+  padding: 10px 0;
 }

@@ -18,7 +18,7 @@
 					<div class="container-fluid fontGris confirmationRDV">
 						<h6>CONFIRMEZ CES INFORMATIONS</h6>
 						<form action="" method="POST">
-							<h7> Praticien :</h7>
+							<h5> Praticien :</h5>
 							<p><?php echo $res['etat_civil'].' '.$res['nom'].' '.$res['prenom']; ?> </p>
 							<p><?php echo $res['email']; ?> </p>
 							<p><?php echo $res['telephone']; ?> </p>
