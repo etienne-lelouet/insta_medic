@@ -16,7 +16,8 @@ if (!isset($_POST['formvalid']))
 
 if (isset($_POST['formvalid']))
 {
-	echo 'ui ui';
+	echo 'normalement ça reserve';
+	//insertRDV($_POST['startRDV');	
 }
 
 
