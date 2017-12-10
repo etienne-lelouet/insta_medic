@@ -4,24 +4,13 @@
 <head>
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
-	<meta charset="utf-8" />
-<<<<<<< HEAD
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">		
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  	<script>
-  	$(function(){
-    		$( "#datepicker" ).datepicker();
-  	});
-  </script>
+	<meta charset="utf-8">
 	<style>
 	.cliquable:hover
 	{
 		background-color : #E4E4A1;
 	}
 	</style>
-=======
->>>>>>> 7b6e340e3d5ba9b7ee2879c55c6f11a556d7bd1d
 	<title>SELECTIONNEZ UN CRENEAU HORAIRE</title>
 </head>
 
@@ -55,17 +44,12 @@
 					echo '</td>';
 					if (!is_array($val))
 					{ 
-<<<<<<< HEAD
-						echo '<th class="cliquable"><form action="index.php?page=reserver" method="post"><input type="hidden" name="startRDV" value="'.$key.'"><input type="hidden" name="idMedecin" value="'.$_POST['id'].'"><input type="submit" value="CRENEAU DISPONIBLE"></form></th>';
-=======
 						echo '<th><form action="index.php?page=reserver" method="post">
 						<input type="hidden" name="startRDV" value="'.$key.'">
 						<input type="hidden" name="idMedecin" value="'.$_POST['id'].'">
 						<input type="submit" value="CRENEAU DISPONIBLE" class="btn btn-primary">
 						</form>
 						</th>';
->>>>>>> 7b6e340e3d5ba9b7ee2879c55c6f11a556d7bd1d
-
 					}
 					else
 					{
