@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
 	<meta charset="utf-8">
 	<style>
-		.cliquable:hover {
+		tr:hover {
 			background-color: #E4E4A1;
 		}
 
