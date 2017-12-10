@@ -24,9 +24,9 @@
 					<div class="container-fluid fontGris tableauHoraire">
 						<h6>Choissisz le créneau</h6>
 						<form action="" method="post">
-						<input type="text" name="date" placeholder="dd.mm.yyyy">
+						<input type="text" name="date" placeholder="DD/MM/AAAA">
 						<input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
-						<input type="submit" value="Aller à cette date">
+						<input type="submit" value="Aller à cette date" class="btn btn-primary">
 						</form>
 						<div>
 						<center>Planning de <?php echo $resmed['prenom'].' '.$resmed['nom'].' le '.date('d/m/Y', $begin_day_ts); ?></center>
@@ -47,7 +47,7 @@
 									echo '<th><form action="index.php?page=reserver" method="post">
 									<input type="hidden" name="startRDV" value="'.$key.'">
 									<input type="hidden" name="idMedecin" value="'.$_POST['id'].'">
-									<input type="submit" value="CRENEAU DISPONIBLE" class="btn btn-primary">
+									<input type="submit" value="CRENEAU DISPONIBLE" class="btn btn-primary ">
 									</form>
 									</th>';
 								}
