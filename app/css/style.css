@@ -8451,6 +8451,10 @@ footer {
   width: 14%;
 }
 
+.piedDePage li a {
+  display: block;
+}
+
 
 /* BTN */
 
@@ -8507,9 +8511,10 @@ td {
   background-color: #dddddd8c
 }
 
-tbody tr.cliquable:hover{
+tbody tr.cliquable:hover {
   background-color: #E4E4A1;
 }
+
 
 /* PAGE */
 

@@ -16,8 +16,9 @@ if (!isset($_POST['formvalid']))
 
 if (isset($_POST['formvalid']))
 {
-	echo 'normalement ça reserve';
+	//echo 'normalement ça reserve';
 	//insertRDV($_POST['startRDV');	
+	require 'vue/successrdv.php';
 }
 
 
