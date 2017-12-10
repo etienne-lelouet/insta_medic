@@ -16,7 +16,6 @@ function insertRDV($idmedecin, $idpatient, $startRDV)
 
 	if ($query -> execute())
 	{
-		echo 'ui ui';
 		$query2 = 'SELECT count(*) AS nb FROM lien WHERE idMedecin = :idPersonne_1 AND idPatient = :idPersonne';
 		$query2 = $conn->prepare($query2);
 		$query2->bindParam(':idPersonne', $idpatient);
