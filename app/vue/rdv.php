@@ -6,10 +6,15 @@
 	<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
 	<meta charset="utf-8">
 	<style>
-	.cliquable:hover
-	{
-		background-color : #E4E4A1;
-	}
+		.cliquable:hover {
+			background-color: #E4E4A1;
+		}
+
+		center {
+			width: 100%;
+			float: left;
+			padding: 20px;
+		}
 	</style>
 	<title>SELECTIONNEZ UN CRENEAU HORAIRE</title>
 </head>
@@ -24,18 +29,20 @@
 					<div class="container-fluid fontGris tableauHoraire">
 						<h6>Choissisz le créneau</h6>
 						<form action="" method="post">
-						<input type="text" name="date" placeholder="DD/MM/AAAA">
-						<input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
-						<input type="submit" value="Aller à cette date" class="btn btn-primary">
+							<input type="text" name="date" placeholder="DD/MM/AAAA" style="float: left;">
+							<input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
+							<input type="submit" value="Aller à cette date" class="btn btn-primary" style="float: left;">
 						</form>
 						<div>
-						<center>Planning de <?php echo $resmed['prenom'].' '.$resmed['nom'].' le '.date('d/m/Y', $begin_day_ts); ?></center>
-						<table>
-							<tr>
-								<th>Horaire</th>
-								<th>Disponibilité</th>
-							</tr>
-							<?php
+							<center>Planning de
+								<?php echo $resmed['prenom'].' '.$resmed['nom'].' le '.date('d/m/Y', $begin_day_ts); ?>
+							</center>
+							<table>
+								<tr>
+									<th>Horaire</th>
+									<th>Disponibilité</th>
+								</tr>
+								<?php
 				  			foreach($planning as $key => $val)
 				  			{
 								echo '<tr>';
@@ -69,7 +76,7 @@
 								echo '</tr>';
 							 }
 							?>
-						</table>
+							</table>
 						</div>
 					</div>
 				</div>
@@ -80,4 +87,3 @@
 </body>
 
 </html>
-

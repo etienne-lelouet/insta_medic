@@ -24,7 +24,6 @@ function insertRDV($idmedecin, $idpatient, $startRDV)
 		$res = $query2->fetch(PDO::FETCH_ASSOC);
 		if ($res['nb']>0)
 		{
-			echo 'ui ui';
 			return true;
 		}
 		else if ($res['nb'] == 0)
