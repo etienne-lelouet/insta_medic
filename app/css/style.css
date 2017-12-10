@@ -8564,7 +8564,6 @@ input.btnConnection {
   width: 80%;
 }
 
-
 span {
   color: red;
   font-size: smaller;
@@ -8581,4 +8580,36 @@ span {
 .fa-lock:before {
   content: "\f023";
   font-size: 39px;
+}
+
+h6 {
+  font-size: 22px;
+  padding: 20px 0;
+}
+
+.specialite {
+  padding: 10px 0;
+}
+.praticien {
+  padding: 10px 0;
+}
+
+input.btn.btn-primary {
+  cursor: pointer;
+}
+
+table{
+  width:80%
+}
+
+th,td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #ced4da}
+
+tr:first-child th {
+  background-color: #4CAF50;
+  color: white;
 }
