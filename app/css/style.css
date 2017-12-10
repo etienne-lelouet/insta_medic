@@ -8607,9 +8607,9 @@ th,td {
   padding: 8px;
 }
 
-tr:nth-child(even){background-color: #ced4da}
+tr:nth-child(odd){background-color: #dddddd8c}
 
 tr:first-child th {
-  background-color: #4CAF50;
+  background-color: #868e96;
   color: white;
 }

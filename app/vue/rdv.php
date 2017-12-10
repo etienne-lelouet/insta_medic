@@ -32,7 +32,7 @@
 				echo '</td>';
 				if (!is_array($val))
 				{
-					echo '<th class="cliquable"><a href="index.php?page=reserver&start_time='.$key.'">CRENEAU DISPONIBLE</a></th>';
+					echo '<th><a class="cliquable" href="index.php?page=reserver&start_time='.$key.'">CRENEAU DISPONIBLE</a></th>';
 				}
 				else
 				{
