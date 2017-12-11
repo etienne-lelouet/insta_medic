@@ -21,7 +21,7 @@ function verifier_doublons($fieldname, $fieldvalue)
     } 
     else 
     {
-        return true;
+        return true;//quelqu'un utilise deja donc peut pas s'inscrire
     }
 }
 

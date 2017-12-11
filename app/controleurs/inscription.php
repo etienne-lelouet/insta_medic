@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_SESSION['id']))
+if (isset($_SESSION['id'])) //si personne est connecté 
 {
     header('location: index.php');
 }
@@ -10,7 +10,7 @@ else
     if (isset($_POST['formvalid']))
     {
         $data=array();
-        $global=true;
+        $global=true; //pas erreur
 
         if(!empty($_POST['etat_civil']))
         {
@@ -19,7 +19,7 @@ else
         else
         {
             $pasdetatcivil=true;
-            $global=false;
+            $global=false; //erreur 
         }
 
         if(!empty($_POST['nom']) && preg_match('/^(?:[\p{L}\p{Mn}]+?[\p{L}\p{Mn}\p{Pd}\'\s]+?)+$/u', $_POST['nom']))
