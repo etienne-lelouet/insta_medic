@@ -11,7 +11,7 @@
 <body>
     <?php require 'header.php'; ?>
     <div class="pageIndex">
-        <div class="cellGlobal" style="height:600px">
+        <div class="cellGlobal">
             <div class="container-fluid">
                 <div class="row">
                     <div class="cell cellInscription col-xs-6 col-lg-6 ">
