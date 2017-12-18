@@ -2,18 +2,17 @@
 require_once 'config.php';
 
 
-function insertRDV($idmedecin, $idpatient, $startRDV, $description)
+function insertRDV($idmedecin, $idpatient, $startRDV)
 {
 	$conn=connexion();
-	$query = 'INSERT INTO RDV (startRDV, endRDV, idPersonne, idPersonne_1, libelleRDV) VALUES (:startRDV, :endRDV, :idPersonne, :idPersonne_1, :description)';
+	$query = 'INSERT INTO RDV (startRDV, endRDV, idPersonne, idPersonne_1) VALUES (:startRDV, :endRDV, :idPersonne, :idPersonne_1)';
 
 	$query = $conn->prepare($query);
 	$endRDV = intval($startRDV)+1800;
 	$query->bindParam(':startRDV', $startRDV);
 	$query->bindParam(':endRDV', $endRDV);
 	$query->bindParam(':idPersonne', $idpatient);
-	$query->bindParam(':idPersonne_1', $idmedecin);
-	$query->bindParam(':description', $description);
+	$query->bindParam('idPersonne_1', $idmedecin);
 
 	if ($query -> execute())
 	{
@@ -29,7 +28,7 @@ function insertRDV($idmedecin, $idpatient, $startRDV, $description)
 		}
 		else if ($res['nb'] == 0)
 		{
-		
+			echo 'non non';
 			$query3 = 'INSERT INTO lien (idMedecin, idPatient) VALUES (:idPersonne_1, :idPersonne)';
 			$query3 = $conn->prepare($query3);
 			$query3->bindParam(':idPersonne_1', $idmedecin);

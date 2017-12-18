@@ -16,7 +16,7 @@ if (!isset($_POST['formvalid']))
 
 if (isset($_POST['formvalid']))
 {
-	if (insertRDV($_POST['idMedecin'], $_SESSION['id'],$_POST['startRDV']))
+	if (insertRDV($_POST['idMedecin'], $_SESSION['id'], $_POST['startRDV'], $_POST['description']))
 	{
 		header('location: index.php?page=listeRDV');
 	}

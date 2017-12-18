@@ -6,6 +6,13 @@
 	<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
 	<meta charset="utf-8">
 	<title>CONFIRMEZ CES INFORMATIONS</title>
+	<style>
+	.description
+	{
+		width:50%;
+		margin-bottom:20px;
+	}
+	</style>
 </head>
 
 <body>
@@ -26,6 +33,7 @@
 							<p> Rendez-vous le :
 								<?php echo date('d-m-Y', $_POST['startRDV']).' à '.date('H:i', $_POST['startRDV']); ?>
 							</p>
+							<input type="textarea" class="description" name="description" placeholder="Ecrivez une courte description de votre demande">
 							<input type="hidden" name="startRDV" value="<?php echo $_POST['startRDV']; ?> ">
 							<input type="hidden" name="idMedecin" value="<?php echo $_POST['idMedecin']; ?> ">
 							<input type="hidden" name="formvalid">

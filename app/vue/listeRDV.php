@@ -6,12 +6,9 @@
 	<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
 	<meta charset="utf-8">
 	<style>
-	.passe
-	{
-		background-color : #ffffff;
-		padding-top : 10px;
-		padding-left: 10px;
-	}
+	tr:hover {
+			background-color: #E4E4A1;
+		}
 	</style>
 	<title>SELECTIONNEZ UN CRENEAU HORAIRE</title>
 </head>
@@ -25,39 +22,49 @@
 				<div class="col-sm-9 col-md-10 col-lg-10 partieDroite">
 					<div class="container-fluid fontGris tableauHoraire">
 						<div class="avenir">
-							<u><h4>Vos rendez vous à venir :</h4></u>
+						<h6>Vos prochains RDVs:</h6>
+						<table>
+							<tr>
+								<th>Date</th>
+								<th>Heure</th>
+								<th>Praticien</th>
+								<th>Service</th>
+							</tr>
 							<?php
-							foreach ($resfutur as $val) //on affiche tous els futurs RDV ici
+							foreach ($resfutur as $val) 
 							{
-									if (!empty($val['libelleRDV'])) //si le rendez vous a un libelle on affiche un texte different
-									{
-										echo '<p>Rendez vous le '.date('d/m/y', $val['startRDV']).'à '.date('H:i', $val['startRDV']).' avec '.$val['nom'].' '.$val['prenom'].' du service de '.$val['libelle'].' description : '.$val['libelleRDV'].'</p>';
-									
-									}
-									else
-									{
-										echo '<p>Rendez vous le '.date('d/m/y', $val['startRDV']).'à '.date('H:i', $val['startRDV']).' avec '.$val['nom'].' '.$val['prenom'].' du service de '.$val['libelle'].'</p>';
-									}
+										echo '<tr>';
+										echo '<th class="tabrdv">'.date('d/m/y', $val['startRDV']).'</th>';
+										echo '<th class="tabrdv">'.date('H:i', $val['startRDV']).'</th>';
+										echo '<th class="tabrdv">'.$val['nom'].' '.$val['prenom'].'</th>';
+										echo '<th class="tabrdv">'.$val['libelle'].'</th>';
+										echo '</tr>';
 							}
 							?>
+							</table>
 						</div>
 					</div>
-					<div class="container-fluid fontGris tableauHoraire" style="margin-top:10px;">
-							<u><h4>Vos rendez vous passés :</h4></u>
+					<div class="container-fluid fontGris tableauHoraire" >
+					<h6>Vos anciens RDVs:</h6>
+						<table>
+							<tr>
+								<th>Date</th>
+								<th>Heure</th>
+								<th>Praticien</th>
+								<th>Service</th>
+							</tr>
 							<?php
 							foreach ($respasse as $val)
 							{
-								if (!empty($val['libelleRDV'])) //si le rendez vous a un libelle on affiche un texte different
-								{
-										echo '<p>Rendez vous le '.date('d/m/y', $val['startRDV']).'à '.date('H:i', $val['startRDV']).' avec '.$val['nom'].' '.$val['prenom'].' du service de '.$val['libelle'].' description : '.$val['libelleRDV'].'</p>';
-									
-								}
-								else
-								{
-										echo '<p>Rendez vous le '.date('d/m/y', $val['startRDV']).'à '.date('H:i', $val['startRDV']).' avec '.$val['nom'].' '.$val['prenom'].' du service de '.$val['libelle'].'</p>';
-								}
+								echo '<tr>';
+									echo '<th class="tabrdv">'.date('d/m/y', $val['startRDV']).'</th>';
+									echo '<th class="tabrdv">'.date('H:i', $val['startRDV']).'</th>';
+									echo '<th class="tabrdv">'.$val['nom'].' '.$val['prenom'].'</th>';
+									echo '<th class="tabrdv">'.$val['libelle'].'</th>';
+									echo '</tr>';	
 							}
 							?>
+							</table>
 					</div>
 				</div>
 			</div>
