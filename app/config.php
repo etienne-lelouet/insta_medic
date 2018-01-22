@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Europe/Paris');
+
 header('Content-type: text/html; charset=UTF-8'); //connection à la base de donnée
 function connexion ()
 {

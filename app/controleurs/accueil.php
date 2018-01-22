@@ -10,7 +10,19 @@ $res_user=getinfo($_SESSION['id']);
 
 //include de home si $_GET['page'] n'est pas defini ou $_GET['page'] = accueil	 
 
-if (!isset($_GET['page']) || $_GET['page'] == 'accueil')
+if ($res_user['status'] == 2)
 {
-	require 'vue/home.php';
+	if (!isset($_GET['page']) || $_GET['page'] == 'accueil')
+	{
+		require 'vue/home_medecin.php';
+	}
 }
+else if ($res_user['status'] == 1)
+{
+	if (!isset($_GET['page']) || $_GET['page'] == 'accueil')
+	{
+		require 'vue/home_user.php';
+	}
+
+}
+
