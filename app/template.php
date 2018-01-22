@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
     <meta charset="utf-8" />
-    <title>Inscription</title>
+    <title>Template</title>
 </head>
 
 <body>
