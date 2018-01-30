@@ -20,7 +20,7 @@
                         <div class="row all">
                             <div class="col-lg-6">
                                 <p>
-                                    <a href="index.php?page=listespe" />VOIR MES PATIENTS</a>
+                                    <a href="index.php?page=listepa" />VOIR MES PATIENTS</a>
 				                </p>
 			    	            <p>
                                 	<a href="index.php?page=listeRDV">VOIR MES RENDEZ VOUS</a>
