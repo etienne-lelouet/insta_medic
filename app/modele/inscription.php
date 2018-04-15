@@ -1,6 +1,5 @@
 <?php
 
-
 require 'config.php';
 
 function verifier_doublons($fieldname, $fieldvalue)
@@ -38,21 +37,18 @@ function register_user($data)
     }
 	
     $query = "call insertPatient(:etat_civil, :nom, :prenom, :date_naissance, :adresse, :adressecomp, :code_postal, :ville, :telephone, :login, :email, :password, :urlphoto)"; 
-
+	
     $query = $conn->prepare($query);
-
+	
     if ($query -> execute($insertdata))
     {
-        $res=$query->fetchAll();
-        var_dump($res);
+	echo 'oui';        
+	$res = $query->fetch(PDO::FETCH_ASSOC));
+	var_dump($res);
         exit();
-	    return $res[0]['argid'];
-    }
-    else
-    {
-        $query -> debugDumpParams();
-        exit();
-	    return 0;
+    }else{
+        $query -> debugDumpParams();	
+        return 0;
     }
 }
 
