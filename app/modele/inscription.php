@@ -21,7 +21,7 @@ function verifier_doublons($fieldname, $fieldvalue)
     } 
     else 
     {
-        return true;//quelqu'un utilise deja donc peut pas s'inscrire
+        return true;
     }
 }
 
@@ -29,6 +29,9 @@ function register_user($data)
 {
     $conn=connexion();
     $insertdata=array();
+
+    var_dump($conn);
+    exit();
     foreach ($data as $key => &$val)
     {
 	    $newkey=':'.$key;
