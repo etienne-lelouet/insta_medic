@@ -30,8 +30,7 @@ function register_user($data)
     $conn=connexion();
     $insertdata=array();
 
-    var_dump($conn);
-    exit();
+
     foreach ($data as $key => &$val)
     {
 	    $newkey=':'.$key;
@@ -41,6 +40,7 @@ function register_user($data)
     $query = "call insertPatient(:etat_civil, :nom, :prenom, :date_naissance, :adresse, :adressecomp, :code_postal, :ville, :telephone, :login, :email, :password, :urlphoto)"; 
 
     $query = $conn->prepare($query);
+
     if ($query -> execute($insertdata))
     {
         $res=$query->fetchAll();
