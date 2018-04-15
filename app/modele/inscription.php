@@ -38,10 +38,10 @@ function register_user($data)
     $query = "call insertPatient(:etat_civil, :nom, :prenom, :date_naissance, :adresse, :adressecomp, :code_postal, :ville, :telephone, :login, :email, :password, :urlphoto)"; 
 
     $query = $conn->prepare($query);
-    
     if ($query -> execute($insertdata))
     {
-	    $res=$query->fetchAll();
+        $res=$query->fetchAll();
+        exit(var_dump($res));
 	    return $res[0]['argid'];
     }
     else
