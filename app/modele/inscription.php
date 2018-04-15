@@ -41,12 +41,14 @@ function register_user($data)
     if ($query -> execute($insertdata))
     {
         $res=$query->fetchAll();
-        exit(var_dump($res));
+        var_dump($res);
+        exit();
 	    return $res[0]['argid'];
     }
     else
     {
-	    $query -> debugDumpParams();
+        $query -> debugDumpParams();
+        exit();
 	    return 0;
     }
 }
