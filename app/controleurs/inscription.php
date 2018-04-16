@@ -169,27 +169,24 @@ if (isset($_SESSION['id'])) //si personne est connecté
             if ($id > 0) {
                 $dirname = 'files/' . $id;
 
-                try {
-                    mkdir($dirname, 0777);
-                } catch (Exception $e) {
-                    exit($e . ' creation dossier numero ID');
+                if (!mkdir($dirname, 0777)) {
+                    exit('une erreur est survenue lors de la creation du dossier ID '.$dirname);
                 }
 
                 $fullname = $dirname . '/' . $urlphoto;
-                try {
-                    move_uploaded_file($_FILES["image"]["tmp_name"], $fullname);
+
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $fullname)) {
                     if (mkdir($dirname . '/espaceclient', 0777)) {
                         session_start();
                         $_SESSION['id'] = $id;
                         $_SESSION['level'] = 1;
                         header('location: index.php');
+                    } else {
+                        exit('une erreur est survenue lors de la création de dosiier espaceclient fullname :'.$fullname);
                     }
-                } catch (Exception $e) {
-                    exit($e . ' move + création dossier espaceclient');
+                } else {
+                    exit('erreur uplaod image');
                 }
-
-            } else {
-                exit("erreur lors de la creation de l'utilisateur, veuillez recharger cette page");
             }
         }
     }
