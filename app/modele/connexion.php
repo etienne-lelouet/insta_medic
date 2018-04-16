@@ -2,15 +2,15 @@
 include 'config.php';
 
 function validate($login, $password)
-{  
+{
     $conn = connexion();
-    
-    $query=$conn->prepare('SELECT count(*) AS nb, idPersonne FROM Personne WHERE login = :login AND password = :password');
+
+    $query = $conn->prepare('SELECT count(*) AS nb, idPersonne FROM Personne WHERE login = :login AND password = :password');
 
     $query->bindParam(':login', $login);
     $query->bindParam(':password', $password);
 
-    $query -> execute();
+    $query->execute();
 
     $res = $query->fetch(PDO::FETCH_ASSOC);
 

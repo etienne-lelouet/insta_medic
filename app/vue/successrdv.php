@@ -19,10 +19,10 @@
 						<h6>Etat du rendez-vous</h6>
 						<form action="" method="POST">
 							<p> Le rendez-vous du :
-								<?php echo date('d-m-Y', $_POST['startRDV']).' à '.date('H:i', $_POST['startRDV']); ?>
+								<?php echo date('d-m-Y', $_POST['startRDV']) . ' à ' . date('H:i', $_POST['startRDV']); ?>
 							</p>
 							<p>avec le praticien
-								<?php echo $res['etat_civil'].' '.$res['nom'].' '.$res['prenom']; ?> a bien été confirmé.</p>
+								<?php echo $res['etat_civil'] . ' ' . $res['nom'] . ' ' . $res['prenom']; ?> a bien été confirmé.</p>
 							<input type="hidden" name="startRDV" value="<?php echo $_POST['startRDV']; ?> ">
 							<input type="hidden" name="idMedecin" value="<?php echo $_POST['idMedecin']; ?> ">
 							<input type="hidden" name="formvalid">

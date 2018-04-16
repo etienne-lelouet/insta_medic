@@ -19,21 +19,20 @@
                     <div class="container-fluid fontGris">
                         <h6>Selectionnez la spécialité : </h6>
                         <?php
-                          foreach($res as $spe)
-                          {                
-			        echo '<form action="index.php?page=listemedecins" method="post">';  
-				echo '<div class="row specialite">';
-				echo '<div class="col-sm-7 col-md-8 col-lg-8">';
-				echo $spe['libelle'];
-				echo '<input type="hidden" name="id" value="'.$spe['idSpecialite'].'" />';
-				echo '</div>';
-				echo '<div class="col-sm-5 col-md-4 col-lg-4">';
-				echo '<input type="submit" value="Valider" class="btn btn-primary"/>';
-				echo '</div>';
-				echo '</div>';
-				echo '</form>';
-			  }
-                     ?>
+                        foreach ($res as $spe) {
+                            echo '<form action="index.php?page=listemedecins" method="post">';
+                            echo '<div class="row specialite">';
+                            echo '<div class="col-sm-7 col-md-8 col-lg-8">';
+                            echo $spe['libelle'];
+                            echo '<input type="hidden" name="id" value="' . $spe['idSpecialite'] . '" />';
+                            echo '</div>';
+                            echo '<div class="col-sm-5 col-md-4 col-lg-4">';
+                            echo '<input type="submit" value="Valider" class="btn btn-primary"/>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</form>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

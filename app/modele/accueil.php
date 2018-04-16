@@ -2,20 +2,20 @@
 require_once 'config.php';
 
 function getinfo($id)
-{  
+{
     $conn = connexion();
-    
-    $query='SELECT * FROM Personne WHERE idPersonne = :id';
 
-    $query = $conn -> prepare($query);
+    $query = 'SELECT * FROM Personne WHERE idPersonne = :id';
 
-    $query -> bindparam(':id', $id);   
+    $query = $conn->prepare($query);
 
-    $query -> execute();
+    $query->bindparam(':id', $id);
 
-    $res = $query -> fetch(PDO::FETCH_ASSOC);
+    $query->execute();
+
+    $res = $query->fetch(PDO::FETCH_ASSOC);
 
     return $res;
 }
-  
+
 ?>

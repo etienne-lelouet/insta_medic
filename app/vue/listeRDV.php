@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
 	<meta charset="utf-8">
 	<style>
-	tr:hover {
+		tr:hover {
 			background-color: #E4E4A1;
 		}
 	</style>
@@ -22,30 +22,29 @@
 				<div class="col-sm-9 col-md-10 col-lg-10 partieDroite">
 					<div class="container-fluid fontGris tableauHoraire">
 						<div class="avenir">
-						<h6>Vos prochains RDVs:</h6>
-						<table>
-							<tr>
-								<th>Date</th>
-								<th>Heure</th>
-								<th>Praticien</th>
-								<th>Service</th>
-							</tr>
-							<?php
-							foreach ($resfutur as $val) 
-							{
+							<h6>Vos prochains RDVs:</h6>
+							<table>
+								<tr>
+									<th>Date</th>
+									<th>Heure</th>
+									<th>Praticien</th>
+									<th>Service</th>
+								</tr>
+								<?php
+									foreach ($resfutur as $val) {
 										echo '<tr>';
-										echo '<th class="tabrdv">'.date('d/m/y', $val['startRDV']).'</th>';
-										echo '<th class="tabrdv">'.date('H:i', $val['startRDV']).'</th>';
-										echo '<th class="tabrdv">'.$val['nom'].' '.$val['prenom'].'</th>';
-										echo '<th class="tabrdv">'.$val['libelle'].'</th>';
+										echo '<th class="tabrdv">' . date('d/m/y', $val['startRDV']) . '</th>';
+										echo '<th class="tabrdv">' . date('H:i', $val['startRDV']) . '</th>';
+										echo '<th class="tabrdv">' . $val['nom'] . ' ' . $val['prenom'] . '</th>';
+										echo '<th class="tabrdv">' . $val['libelle'] . '</th>';
 										echo '</tr>';
-							}
-							?>
+									}
+								?>
 							</table>
 						</div>
 					</div>
-					<div class="container-fluid fontGris tableauHoraire" >
-					<h6>Vos anciens RDVs:</h6>
+					<div class="container-fluid fontGris tableauHoraire">
+						<h6>Vos anciens RDVs:</h6>
 						<table>
 							<tr>
 								<th>Date</th>
@@ -54,17 +53,16 @@
 								<th>Service</th>
 							</tr>
 							<?php
-							foreach ($respasse as $val)
-							{
-								echo '<tr>';
-									echo '<th class="tabrdv">'.date('d/m/y', $val['startRDV']).'</th>';
-									echo '<th class="tabrdv">'.date('H:i', $val['startRDV']).'</th>';
-									echo '<th class="tabrdv">'.$val['nom'].' '.$val['prenom'].'</th>';
-									echo '<th class="tabrdv">'.$val['libelle'].'</th>';
-									echo '</tr>';	
-							}
-							?>
-							</table>
+						foreach ($respasse as $val) {
+							echo '<tr>';
+							echo '<th class="tabrdv">' . date('d/m/y', $val['startRDV']) . '</th>';
+							echo '<th class="tabrdv">' . date('H:i', $val['startRDV']) . '</th>';
+							echo '<th class="tabrdv">' . $val['nom'] . ' ' . $val['prenom'] . '</th>';
+							echo '<th class="tabrdv">' . $val['libelle'] . '</th>';
+							echo '</tr>';
+						}
+						?>
+						</table>
 					</div>
 				</div>
 			</div>

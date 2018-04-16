@@ -4,7 +4,7 @@ require 'config.php';
 
 function getListeRDV($id)
 {
-	$conn=connexion();
+	$conn = connexion();
 	$query = 'SELECT t1.*, t2.*, t3.*, t4.libelle 
 		  FROM RDV t1, Personne t2, Medecin t3, Specialite t4
 		  WHERE t1.idPersonne = :id
@@ -14,7 +14,7 @@ function getListeRDV($id)
 	$query = $conn->prepare($query);
 	$query->bindparam(':id', $id);
 	$query->execute();
-	$res=$query->fetchAll(PDO::FETCH_ASSOC);
+	$res = $query->fetchAll(PDO::FETCH_ASSOC);
 
 	return $res;
 

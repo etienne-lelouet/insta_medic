@@ -9,16 +9,13 @@ require_once 'controleurs/accueil.php';
                     <div class="mesInfos">
                         <h5>Mes Informations</h5>
                         <?php
-				    $url = "files/".$_SESSION['id']. "/".$res_user['urlphoto'];
-				    if (file_exists($url))
-				    {  
-					    echo '<img src="'.$url.'">';
-				    }
-				    else
-				    {
-					    echo '<img src="files/default.jpg">';
-				    }
-                                  ?>
+                        $url = "files/" . $_SESSION['id'] . "/" . $res_user['urlphoto'];
+                        if (file_exists($url)) {
+                            echo '<img src="' . $url . '">';
+                        } else {
+                            echo '<img src="files/default.jpg">';
+                        }
+                        ?>
                             <h4>
                                 <?php echo $res_user['nom']; ?>
                             </h4>

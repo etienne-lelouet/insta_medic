@@ -21,10 +21,10 @@
                             <div class="col-lg-6">
                                 <p>
                                     <a href="index.php?page=listespe" />PRENDRE RENDEZ VOUS</a>
-				</p>
-				<p>
-                                	<a href="index.php?page=listeRDV">VOIR MES RENDEZ VOUS</a>
-				</p>
+                                </p>
+                                <p>
+                                    <a href="index.php?page=listeRDV">VOIR MES RENDEZ VOUS</a>
+                                </p>
                             </div>
                         </div>
                     </div>

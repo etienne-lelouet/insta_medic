@@ -7,11 +7,10 @@
 	<meta charset="utf-8">
 	<title>CONFIRMEZ CES INFORMATIONS</title>
 	<style>
-	.description
-	{
-		width:50%;
-		margin-bottom:20px;
-	}
+		.description {
+			width: 50%;
+			margin-bottom: 20px;
+		}
 	</style>
 </head>
 
@@ -26,12 +25,15 @@
 						<h6>CONFIRMEZ CES INFORMATIONS</h6>
 						<form action="" method="POST">
 							<h5> Praticien :</h5>
-							<p><?php echo $res['etat_civil'].' '.$res['nom'].' '.$res['prenom']; ?> </p>
-							<p><?php echo $res['email']; ?> </p>
-							<p><?php echo $res['telephone']; ?> </p>
+							<p>
+								<?php echo $res['etat_civil'] . ' ' . $res['nom'] . ' ' . $res['prenom']; ?> </p>
+							<p>
+								<?php echo $res['email']; ?> </p>
+							<p>
+								<?php echo $res['telephone']; ?> </p>
 							<br/>
 							<p> Rendez-vous le :
-								<?php echo date('d-m-Y', $_POST['startRDV']).' à '.date('H:i', $_POST['startRDV']); ?>
+								<?php echo date('d-m-Y', $_POST['startRDV']) . ' à ' . date('H:i', $_POST['startRDV']); ?>
 							</p>
 							<input type="textarea" class="description" name="description" placeholder="Ecrivez une courte description de votre demande">
 							<input type="hidden" name="startRDV" value="<?php echo $_POST['startRDV']; ?> ">
