@@ -35,7 +35,8 @@ function register_user($data)
 	    $insertdata[$newkey]=$val;
     }
 	
-    $query = "call insertPatient(:etat_civil, :nom, :prenom, :date_naissance, :adresse, :adressecomp, :code_postal, :ville, :telephone, :login, :email, :password, :urlphoto)"; 
+    $query = "call insertPatient(:etat_civil, :nom, :prenom, :date_naissance, :adresse, :adressecomp, :code_postal, :ville, :telephone, 
+    :login, :email, :password, :urlphoto)"; 
 
     $query = $conn->prepare($query);
     

@@ -2,7 +2,7 @@
 
 if (!isset($_SESSION['id']))
 {
-    	header('Location: index.php');
+    header('Location: index.php');
 }
 require_once 'modele/accueil.php';
 

@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-if (isset($_SESSION['id']) || $_GET['page']=="inscription")//si id du tableau est crée il set...
+if (isset($_SESSION['id']) || $_GET['page']=="inscription")
 {
-        if (!empty($_GET['page']) && is_file('controleurs/'.$_GET['page'].'.php')) //si oui etla personne demande une page en particulier si existe
+        if (!empty($_GET['page']) && is_file('controleurs/'.$_GET['page'].'.php'))
         {
-                require_once 'controleurs/'.$_GET['page'].'.php';//donc on le redirige
-                //require : prend tous le contenu et copier le script 
-                //require once; inclue le fichier seulement s'il n'est pas inclut
+                require_once 'controleurs/'.$_GET['page'].'.php';
         } 
         else 
         {

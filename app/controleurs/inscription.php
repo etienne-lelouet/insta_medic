@@ -207,52 +207,52 @@ else
         $dimensions=getimagesize($_FILES['image']['tmp_name']);
     
         if($global)
-	{
+	    {
             if ($dimensions[0]>$dimensions[1])
             {
                 $errorimage = 'Les dimensions de l\'image sont incorrectes';
                 $global=false;
-	    }
+	        }
 
-            $data['password']=md5($data['password']);	
+        $data['password']=md5($data['password']);	
 	    $now=time();
-            $fullname=$now*rand(1,9);    
+        $fullname=$now*rand(1,9);    
 	    $urlphoto=$fullname.'.'.$extension_upload;
 	    $data['urlphoto']=$urlphoto;
 	    $id=register_user($data);
 	    if($id>0)
-            {
+        {
 	        $dirname='files/'.$id;
 
-               	if (!mkdir($dirname, 0777))
-		{
-			exit('une erreur est survenue, veuillez réessayer ultérieurement');	
-		}
-
-
-		$fullname = $dirname.'/'.$urlphoto;	
-
-                if(move_uploaded_file($_FILES["image"]["tmp_name"], $fullname))
-                {
-                    if (mkdir($dirname.'/espaceclient', 0777))
-                    {
-                        session_start();
-                        $_SESSION['id']=$id;
-			$_SESSION['level']=1;
-			header ('location: index.php');
-		    }
-		    else 
+            if (!mkdir($dirname, 0777))
 		    {
-			    exit('une erreur est survenue, veuillez réessayer ultèrieurement');
+			    exit('une erreur est survenue, veuillez réessayer ultérieurement');	
 		    }
-		}
-		else
-		{
-			exit('erreur uplaod image');
-		}
-            }
+
+
+		    $fullname = $dirname.'/'.$urlphoto;	
+
+            if(move_uploaded_file($_FILES["image"]["tmp_name"], $fullname))
+            {
+                if (mkdir($dirname.'/espaceclient', 0777))
+                {
+                    session_start();
+                    $_SESSION['id']=$id;
+                    $_SESSION['level']=1;
+                    header ('location: index.php');
+		        }
+		        else 
+		        {
+			        exit('une erreur est survenue, veuillez réessayer ultèrieurement');
+		        }
+		    }
+		    else
+		    {
+			    exit('erreur uplaod image');
+		    }
         }
     }
+}
     require 'vue/inscription.php';
 }
 

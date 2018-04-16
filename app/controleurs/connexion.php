@@ -25,12 +25,12 @@ if (isset($_POST['formvalid'])) {
     if (!$global)
     {
     $password=md5($password);
-    $rows=validate($login, $password);
+    $res=validate($login, $password);
 
     if ($rows['nb']==1) 
     {
         session_start();
-        $_SESSION['id']=$rows['idPersonne'];
+        $_SESSION['id']=$res['idPersonne'];
         header('location: index.php');
     } 
     else 
