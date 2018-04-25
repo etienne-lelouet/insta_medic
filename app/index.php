@@ -1,7 +1,10 @@
 <?php
+
 session_start();
 
-if (isset($_SESSION['id']) || $_GET['page']=="inscription")
+require_once "config.php";
+
+if (isset($_SESSION['id']) || $_GET['page']=="inscription" || isset($_GET['query']))
 {
         if (!empty($_GET['page']) && is_file('controleurs/'.$_GET['page'].'.php'))
         {
@@ -11,7 +14,6 @@ if (isset($_SESSION['id']) || $_GET['page']=="inscription")
         {
                 require_once 'controleurs/accueil.php';
         }
-
 }
 else
 {

@@ -1,7 +1,5 @@
 <?php
 
-require 'config.php';
-
 function getListeRDV($id)
 {
 	$conn=connexion();

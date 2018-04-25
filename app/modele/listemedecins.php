@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+
 function liste ($id)
 {
 	$conn = connexion();

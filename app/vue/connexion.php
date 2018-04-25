@@ -59,6 +59,9 @@
                                                 <i class="fa fa-lock" aria-hidden="true"></i>
                                                 <input class="form-control" placeholder="Mon mot de passe" type="password" name="password">
                                             </div>
+                                            <?php if ($coupleincorrect == true) : ?>
+                                                <span>Identifiant/mot de passe invalide</span>
+                                            <?php endif; ?>
                                             <div class="btnIConnection btn">
                                                 <a>
                                                     <input type="submit" value="CONNEXION" class="btn btn-primary" style="cursor:pointer;" />

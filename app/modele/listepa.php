@@ -1,7 +1,5 @@
 <?php
 
-require 'config.php';
-
 function getListepa($id)
 {
 	$conn=connexion($id);

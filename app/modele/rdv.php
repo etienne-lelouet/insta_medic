@@ -1,7 +1,5 @@
 <?php
 
-require 'config.php';
-
 
 function liste_rdv_medecin($id, $timestamp)
 {
