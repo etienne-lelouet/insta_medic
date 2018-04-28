@@ -39,135 +39,84 @@
                                                         <input class="form-check-input" type="radio" name="etat_civil" id="inlineRadio2" value="Mme."> Mme.
                                                     </label>
                                                     <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="etat_civil" id="inlineRadio3" value="Autre"> Autre
+                                                        <input class="form-check-input" type="radio" name="etat_civil" id="inlineRadio3" value="Autre" checked="checked"> Autre
                                                     </label>
-                                                    <?php if ($pasdetatcivil == true) : ?>
-                                                        <span>Veuillez cocher une des cases</span>
-                                                    <?php endif; ?>
                                                 </div>
                                             </div>
 
                                             <div class="form-group nom formulaireContent">
-                                                <label for="inputNom">Nom :</label>
-                                                <?php if ($pasdenom == true) : ?>
-                                                    <input name="nom" class="form-control formulaire" id="inputNom"><span>Veuillez entrer une valeur valide</span>
-                                                <?php else : ?>
-                                                    <input name="nom" class="form-control formulaire" id="inputNom" value="<?php echo $data['nom']; ?>">
-                                                <?php endif; ?>
+                                                <label for="nom">Nom :</label>
+                                                <input id="nom" name="nom" class="form-control formulaire">
                                             </div>
 
                                             <div class="form-group prenom formulaireContent">
-                                                <label for="inputprenom">Prénom :</label>
-                                                <?php if ($pasdeprenom == true) : ?>
-                                                    <input name="prenom" class="form-control formulaire" id="inputPrenom" ><span>Veuillez entrer une valeur valide</span>
-                                                <?php else : ?>
-                                                    <input name="prenom" class="form-control formulaire" id="inputPrenom" value="<?php echo $data['prenom']; ?>">
-                                                <?php endif; ?>
+                                                <label for="prenom">Prénom :</label>
+                                                <input id="prenom" name="prenom" class="form-control formulaire">
                                             </div>
 
                                             <div class="form-group dateDeNaissance formulaireContent">
                                                 <label> Date de naissance :</label>
-                                                <?php if ($pasdedate == true) : ?>
-                                                    <input type="text" name="date_naissance" class="form-control formulaire" placeholder="JJ/MM/AAAA" ><span>Veuillez entrer une valeur valide</span>
-                                                <?php else : ?>
-                                                    <input type="text" name="date_naissance" class="form-control formulaire" placeholder="JJ/MM/AAAA" value="<?php echo $data['date_naissance']; ?>">
-                                                <?php endif; ?>
+                                                <input type="text" id="date_naissance" name="date_naissance" class="form-control formulaire" placeholder="JJ/MM/AAAA">
                                             </div>
 
                                             <div class="form-group adresse formulaireContent">
                                                 <label>Adresse 1 :</label>
-                                                <?php if ($pasdadresse == true) : ?>
-                                                    <input name="adresse"class="form-control formulaire" ><span>Veuillez entrer une valeur valide</span>
-                                                <?php else : ?>
-                                                    <input name="adresse"class="form-control formulaire" value="<?php echo $data['adresse']; ?>">
-                                                <?php endif; ?>
+                                                <input id="adresse" name="adresse" class="form-control formulaire">
                                             </div>
 
                                             <div class="form-group adresse formulaireContent">
                                                 <label>Adresse 2 :</label>
-                                                <?php if ($expression == true) : ?>
-                                                    <input name="adressecomp" class="form-control formulaire" ><span>Veuillez entrer une valeur valide</span>
-                                                <?php else : ?>
-                                                    <input name="adressecomp" class="form-control formulaire" value="<?php echo $data['adressecomp']; ?>">
-                                                <?php endif; ?>
+                                                <input id="adressecomp" name="adressecomp" class="form-control formulaire">
                                             </div>
+
                                             <div class="form-group codePostale formulaireContent">
                                                 <label>Code postal :</label>
-                                                <?php if ($pasdecode == true) : ?>
-                                                    <input name="code_postal" class="form-control formulaire" ><span>Veuillez entrer une valeur valide</span>
-                                                <?php else : ?>
-                                                    <input name="code_postal" class="form-control formulaire" value="<?php echo $data['code_postal']; ?>">
-                                                <?php endif; ?>
+                                                <input id="code_postal" name="code_postal" class="form-control formulaire">
                                             </div>
+
                                             <div class="form-group ville formulaireContent">
                                                 <label> Ville :</label>
-                                                <?php if ($pasdeville == true) : ?>
-                                                    <input name="ville" class="form-control formulaire" ><span>Veuillez entrer une valeur valide</span>
-                                                <?php else : ?>
-                                                    <input name="ville" class="form-control formulaire" value="<?php echo $data['ville']; ?>">
-                                                <?php endif; ?>
+                                                <input id="ville" name="ville" class="form-control formulaire">
+
                                             </div>
+
                                             <div class="form-group telephone formulaireContent">
                                                 <label>Téléphone :</label>
-                                                <?php if ($pasdetelephone == true) : ?>
-                                                    <input name="telephone" class="form-control formulaire" ><span>Veuillez entrer une valeur valide</span>
-                                                <?php else : ?>
-                                                    <input name="telephone" class="form-control formulaire" value="<?php echo $data['telephone']; ?>">
-                                                <?php endif; ?>
+                                                <input id="telephone" name="telephone" class="form-control formulaire">
                                             </div>
                                         </div>
+
                                         <div class="form-row infoCompte">
+
                                             <div class="texteTitre texteCompte">
                                                 <h5>Informations du Compte</h5>
                                             </div>
+
                                             <div class="form-group mail formulaireContent">
                                                 <label> Login :</label>
-                                                <?php if ($pasdelogin == true) : ?>
-                                                    <input id="login" name="login" class="form-control formulaire" ><span>Veuillez entrer une valeur valide</span>
-                                                <?php else : ?>
-                                                    <input id="login" name="login" class="form-control formulaire" value="<?php echo $data['login']; ?>">
-                                                <?php endif; ?>
-                                                <?php if ($logindouble == true) : ?>
-                                                    <span>Cet identifiant est deja utilisé</span>
-                                                <?php endif; ?>
+                                                <input id="login" name="login" class="form-control formulaire">
                                             </div>
+
                                             <div class="form-group mail formulaireContent">
                                                 <label> Mail :</label>
-                                                <?php if ($pasdemail == true) : ?>
-                                                    <input id="email" name="email" class="form-control formulaire " type="email" ><span>Veuillez entrer une valeur valide</span><span></span>
-                                                <?php else : ?>
-                                                    <input id="email" name="email" class="form-control formulaire" type="email" value="<?php echo $data['email']; ?>">
-                                                <?php endif; ?>
-                                                <?php if ($maildouble == true) : ?>
-                                                    <span>Cet email est deja utilisé</span>
-                                                <?php endif; ?>
+                                                <input id="email" name="email" class="form-control formulaire " type="email">
                                             </div>
+
                                             <div class="form-group motDePasse formulaireContent">
                                                 <label>Mot de passe :</label>
-                                                <?php if ($pasdepassword == true) : ?>
-                                                    <input id="password" type="password" name="password" class="form-control formulaire" type="password" ><span>Veuillez entrer une valeur valide</span>
-                                                <?php else : ?>
-                                                    <input id="password" type="password" name="password" class="form-control formulaire" type="password" value="<?php echo $data['password']; ?>">
-                                                <?php endif; ?>
+                                                <input id="password" type="password" name="password" class="form-control formulaire" type="password">
                                             </div>
 
                                             <div class="form-group motDePasse formulaireContent">
                                                 <label> Confirmation de Mot de passe :</label>
-                                                <?php if ($pasdepass2 == true) : ?>
-                                                    <input type="password" name="pass2" class="form-control formulaire" ><span>Veuillez entrer une valeur valide</span>
-                                                <?php else : ?>
-                                                    <input type="password" name="pass2" class="form-control formulaire" value="<?php echo $_POST['pass2']; ?>">
-                                                <?php endif; ?>
+                                                <input id="pass2" type="password" name="pass2" class="form-control formulaire">
                                             </div>
-                                            <?php if ($passdiff == true) : ?>
-                                                <span>Veuillez entrer deux mots de passe identiques</span>
-                                            <?php endif; ?>
                                         </div>
 
                                         <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />
                                         <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
                                         Ajoutez une photo de profil :
-					                    <input name="image" type="file" style="margin: 30px 0 0 0;"><?php echo $errorimage; ?>
+                                        <input id="image" name="image" type="file" style="margin: 30px 0 0 0;">
                                         <input type="hidden" name="formvalid">
                                         <!-- 1er fois sur la page, si tu as déjà valider une fois c'est ok , sinon non -->
                                         <div class="row btnSubmit">
@@ -187,11 +136,32 @@
     <?php require 'footer.php'; ?>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 <script src="vue/inscription.js"></script>
 <script type="text/javascript">
-    var array = <?php echo json_encode($errorlist); ?>
 
-    console.log(array);
+    var arrayError = <?php echo json_encode($errorlist); ?>;
+
+    if (arrayError !=null){
+
+        var keysError = Object.keys(arrayError);
+
+        keysError.forEach(function (value) {
+            $("#" + value).after("<span id=\"error" + value + "\">" + arrayError[value] + "</span>");
+        });
+    }
+
+    var arrayData = <?php echo json_encode($data); ?>;
+
+    if(arrayData !=null){
+
+        var keysData = Object.keys(arrayData);
+
+        keysData.forEach(function (value) {
+            $("#" + value).val(arrayData[value]);
+        });
+    }
+
 </script>
 </html>

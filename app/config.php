@@ -27,4 +27,32 @@ function connexion ()
     return $conn;
 }
 
+$regexValidation = array 
+(
+    "etat_civil" => '/^.*$/',
+    "nom" => '/^(?:[\p{L}\p{Mn}]+?[\p{L}\p{Mn}\p{Pd}\'\s]+?)+$/u',
+    "prenom" => '/^(?:[\p{L}\p{Mn}]+?[\p{L}\p{Mn}\p{Pd}\'\s]+?)+$/u',
+    "date_naissance" => '/^(([0-2][0-9]|3[0-1])(\/)(0[0-9]|1[0-2])(\/)[0-9]{4})$/',
+    "adresse" => '/^([0-9]+?\s[\p{L}\p{Mn}\p{Pd}\'\s]+?)$/u',
+    "adressecomp" => '/^([\p{L}\p{Mn}\d]+?[\p{L}\p{Mn}\p{Pd}\'\s\d]+?)$/u',
+    "code_postal" => '/^([\d]{4,8})$/',
+    "ville" => '/^(?:[\p{L}\p{Mn}]+?[\p{L}\p{Mn}]+?)+$/u',
+    "telephone" => '/^(0[\d]{9})$/',
+    "login" => '/^[a-zA-Z]\w{3,14}$/',
+    "password" => '/^([\d\p{L}$&*@#%!\-\s]+)$/',
+    "pass2" => '/^([\d\p{L}$&*@#%!\-\s]+)$/',
+    "email" => '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/'
+);
+
+$notMandatory = array
+(
+    "adressecomp"
+);
+
+$fieldNumber = 13;
+
+if(isset($_GET['regexQuery']))
+{
+    exit(json_encode($regexValidation));
+}
 ?>

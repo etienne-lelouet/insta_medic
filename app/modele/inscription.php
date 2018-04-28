@@ -31,11 +31,11 @@ function register_user($data){
     :login, :email, :password, :urlphoto)";
 
     $query = $conn->prepare($query);
-
+    var_dump($insertdata);
     if ($query->execute($insertdata)) {
         $res = $query->fetchAll();
         return $res[0]['argid'];
-    } else {
+    } else {    
         $query->debugDumpParams();
         return 0;
     }
