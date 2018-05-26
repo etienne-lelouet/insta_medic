@@ -37,9 +37,10 @@ function register_user($data)
     $query = $conn->prepare($query);
 
     if ($query->execute($insertdata)) {
-        echo 'oui';
         $res = $query->fetch(PDO::FETCH_ASSOC);
-        $id = $res['LAST_INSERT_ID'];
+        $id = $res["LAST_INSERT_ID()"];
+	
+	return $id;
     } else {
         $query->debugDumpParams();
         return 0;
