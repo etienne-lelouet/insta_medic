@@ -12,7 +12,6 @@ if (isset($_SESSION['id'])) //si personne est connecté
         $global = true; //pas erreur
 
         $postKeys = array_keys($regexValidation);
-        $_POST['login']  = 'test25';
         foreach ($_POST as $key => $value) {
             if (in_array($key, $postKeys)) {
                 $compteur++;
@@ -50,7 +49,6 @@ if (isset($_SESSION['id'])) //si personne est connecté
         
             ////On rentre dans l'upload d'image
             $maxsize = $_POST['MAX_FILE_SIZE'];
-            $path = $_SERVER['DOCUMENT_ROOT'] . '/clinique/files/';
             
             if (!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name'])) {
                 $errorlist['image'] = 'Pas d\'image mise en ligne, veuillez réessayer';
@@ -99,7 +97,7 @@ if (isset($_SESSION['id'])) //si personne est connecté
             if ($id > 0) {
                 $dirname = 'files/' . $id;
 
-                if (!mkdir($dirname, 0777)) {
+                if (!mkdir($dirname, 750)) {
                     require 'vue/inscription.php';
                     exit();
                 }
@@ -107,7 +105,7 @@ if (isset($_SESSION['id'])) //si personne est connecté
                 $fullname = $dirname . '/' . $urlphoto;
 
                 if (move_uploaded_file($_FILES['image']['tmp_name'], $fullname)) {
-                    if (mkdir($dirname . '/espaceclient', 0777)) {
+                    if (mkdir($dirname . '/espaceclient', 0750)) {
                         session_start();
                         $_SESSION['id'] = $id;
                         $_SESSION['level'] = 1;

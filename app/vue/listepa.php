@@ -17,21 +17,22 @@
                 <div class="col-sm-9 col-md-10 col-lg-10 partieDroite">
                     <div class="container-fluid fontGris">
                         <div class="avenir">
-						<h6>Vos prochains RDVs:</h6>
+						<h6>Vos Patients:</h6>
                             <table>
                                 <tr>
-                                    <th>Date</th>
-                                    <th>Heure</th>
-                                    <th>Praticien</th>
-                                    <th>Service</th>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Hospitalisé</th>
+                                    <th>Chambre</th>
                                 </tr>
                                 <?php
-                                foreach ($res as $val) 
-                                {
+                                foreach ($res as $val) {
                                     echo '<tr>';
-                                    echo '<th class="tabrdv">'.$val['nom'].' '.$val['prenom'].'</th>';
-                                    echo '<th class="tabrdv">'.$val['libelle'].'</th>';
-                                    echo '</tr>';
+                                    echo '<th class="tabrdv"><a href="index.php?page=personne&id=' . $val['idPatient'] . '">' . $val['nom'] . '</a></th>';
+                                    echo '<th class="tabrdv">' . $val['prenom'] . '</th>';
+                                    echo '<th class="tabrdv">Non</th>';
+                                    echo '<th class="tabrdv">-</th>';
+                                    echo '</tr></a>';
                                 }
                                 ?>
                             </table>
@@ -41,7 +42,7 @@
             </div>
         </div>
     </div>
-    <?php  require 'footer.php'; ?>
+    <?php require 'footer.php'; ?>
 </body>
 
 </html>

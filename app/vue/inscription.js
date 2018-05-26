@@ -6,13 +6,12 @@ $(document).ready(function () {
         var field = $("#" + elem);
 
         if (elem == "login" || elem == "email") {
-            $.get("index.php", { page: 'query', queryType: 'validate', field: elem, value: field.val() }, function (data) {
-                data = JSON.parse(data);
-                if (data.res == true) {
-                    $.get("index.php", { page: 'query', queryType: 'checkdoublons', field: elem, value: field.val() }, function (data) {
-                        console.log(data);
-                        data = JSON.parse(data);
-                        if (data.res == true) {
+            $.get("index.php", { page: 'query', queryType: 'validate', field: elem, value: field.val() }, function (dataValid) {
+                dataValid = JSON.parse(dataValid);
+                if (dataValid.res == true) {
+                    $.get("index.php", { page: 'query', queryType: 'checkdoublons', field: elem, value: field.val() }, function (dataDouble) {
+                        dataDouble = JSON.parse(dataDouble);
+                        if (dataDouble.res == true) {
                             formValid(field);
                         }
                         else {
@@ -24,9 +23,7 @@ $(document).ready(function () {
                     formError(field);
                 }
             });
-        }
-
-        if (field.length) {
+        } else if (field.length) {
             if (field.val().length > 3) {
                 $.get("index.php", { page: 'query', queryType: 'validate', field: elem, value: field.val() }, function (data) {
                     data = JSON.parse(data);

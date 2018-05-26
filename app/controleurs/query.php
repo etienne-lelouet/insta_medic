@@ -2,7 +2,6 @@
 
 require_once 'modele/inscription.php';
 require_once 'config.php';
-
 function checkdoublons()
 {
     if ($_GET['field'] == 'login') {
@@ -16,7 +15,7 @@ function checkdoublons()
             }
         }
     } else if ($_GET['field'] == 'email') {
-        if (filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)) {
+        if (filter_var($_GET['value'], FILTER_VALIDATE_EMAIL)) {
             if (verifier_doublons('email', $_GET['value'])) {
                 $res = array("res" => false);
                 exit(json_encode($res));
@@ -27,6 +26,7 @@ function checkdoublons()
         }
     }
 }
+
 
 function validate($regex, $value)
 {

@@ -22,8 +22,7 @@ if (isset($_POST['formvalid'])) {
     if (!$global) {
         $password = md5($password);
         $res = validate($login, $password);
-
-        if ($rows['nb'] == 1) {
+        if ($res['nb'] == 1) {
             session_start();
             $_SESSION['id'] = $res['idPersonne'];
             header('location: index.php');

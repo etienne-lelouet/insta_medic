@@ -21,7 +21,6 @@
                                     <h2>JE VEUX UN COMPTE</h2>
                                     <div class="trait traitInscription">
                                         <hr>
-
                                         <h4>L’espace personnel qui me rend bien des services.</h4>
                                     </div>
                                     <div class="contenu">
