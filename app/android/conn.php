@@ -6,6 +6,7 @@ require_once 'modele.class.php';
 
 require_once '../config.php';
 
+
 if (isset($_REQUEST['login']))
 {
     if (!preg_match('/^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/', $_REQUEST['login'])) {
@@ -36,4 +37,5 @@ else
 $result [] = Modele :: verifConnexion($login, $mdp);
 
 print(json_encode($result));
+
 ?>

@@ -18,19 +18,13 @@ class Modele
 
         $password = md5($password);
 
-
-        $requete = "SELECT t1.idPersonne, t1.nom, t1.prenom, t2.idService, t3.nom"
-            . " FROM Personne t1, Infirmier t2, Service t3"
-            . " WHERE t1.idPersonne = t2.idPersonne"
-            . " AND t2.idService = t3.idService"
-            . " AND t1.STATUS = 3" //3 correspond au statut infirmier
-        . " AND t1.login = :login"
-            . " AND password = password";
-
+        $requete = "SELECT count(*), t1.*, t2.idService, t3.nomService FROM Personne t1, Infirmier t2, Service t3
+        WHERE t1.login = :login AND t1.password = :password 
+        AND t1.status = 3 AND t1.idPersonne = t2.idPersonne AND t2.idService = t3.idService";
 
         $select = Modele::$pdo->prepare($requete);
 
-        $donnes = array(":login" => $login, ":password" => $password);
+        $data = array(":login" => $login, ":password" => $password);
 
         $select->execute($donnes);
 
