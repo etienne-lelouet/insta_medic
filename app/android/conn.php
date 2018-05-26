@@ -13,7 +13,7 @@ if (isset($_REQUEST['login']))
 
         exit('{"erreur":"login invalide"}"');
     }
-
+    echo 'pute';
     $login = $_REQUEST['login'];
 }
 else
