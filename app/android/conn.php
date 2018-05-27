@@ -36,6 +36,6 @@ else
 $result [] = Modele :: verifConnexion($login, $password);
 
 
-//print(json_encode($result));
+print(json_encode($result));
 
 ?>
