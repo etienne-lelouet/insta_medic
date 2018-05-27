@@ -13,7 +13,6 @@ if (isset($_REQUEST['login']))
 
         exit('{"erreur":"login invalide"}"');
     }
-    echo 'pute';
     $login = $_REQUEST['login'];
 }
 else
@@ -35,6 +34,7 @@ else
 }
 
 $result [] = Modele :: verifConnexion($login, $mdp);
+var_dump($result);
 
 print(json_encode($result));
 
