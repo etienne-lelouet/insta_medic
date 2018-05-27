@@ -14,7 +14,8 @@ class Modele
 
     public static function verifConnexion($login, $password)
     {
-        Modele::connexion();
+	
+	Modele::connexion();
 
         $password = md5($password);
 
@@ -26,10 +27,10 @@ class Modele
 
         $data = array(":login" => $login, ":password" => $password);
 
-        $select->execute($donnes);
+        $select->execute($data);
 
         $res = $select->fetch();
-
+	
         return $res;
     }
 

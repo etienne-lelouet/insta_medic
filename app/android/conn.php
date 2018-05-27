@@ -33,9 +33,9 @@ else
     exit('{"error":"mdp non renseigné"}');
 }
 
-$result [] = Modele :: verifConnexion($login, $mdp);
-var_dump($result);
+$result [] = Modele :: verifConnexion($login, $password);
 
-print(json_encode($result));
+
+//print(json_encode($result));
 
 ?>
