@@ -6,7 +6,7 @@ class Modele
     public static function connexion()
     {
         try {
-            Modele::$pdo = new PDO("mysql:host=163.172.49.216;dbname=Clinique", "wef", "ppe2018wef");
+            Modele::$pdo = new PDO("mysql:host=163.172.49.216;dbname=Clinique", "wef", "ppe2018wef", array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         } catch (exception $e) {
             echo $e . '</br />';
         }
@@ -19,7 +19,7 @@ class Modele
 
         $password = md5($password);
 
-        $requete = "SELECT count(*), t1.*, t2.idService, t3.nomService FROM Personne t1, Infirmier t2, Service t3
+        $requete = "SELECT count(*) as nb, t1.*, t2.idService, t3.nomService FROM Personne t1, Infirmier t2, Service t3
         WHERE t1.login = :login AND t1.password = :password 
         AND t1.status = 3 AND t1.idPersonne = t2.idPersonne AND t2.idService = t3.idService";
 
@@ -28,9 +28,8 @@ class Modele
         $data = array(":login" => $login, ":password" => $password);
 
         $select->execute($data);
-
-        $res = $select->fetch();
-	
+        $res = $select->fetchAll(PDO::FETCH_ASSOC); 
+		
         return $res;
     }
 
