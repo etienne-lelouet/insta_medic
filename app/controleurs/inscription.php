@@ -49,7 +49,7 @@ if (isset($_SESSION['id'])) //si personne est connecté
         
             ////On rentre dans l'upload d'image
             $maxsize = $_POST['MAX_FILE_SIZE'];
-            
+
             if (!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name'])) {
                 $errorlist['image'] = 'Pas d\'image mise en ligne, veuillez réessayer';
                 require 'vue/inscription.php';
@@ -98,29 +98,41 @@ if (isset($_SESSION['id'])) //si personne est connecté
                 $dirname = 'files/' . $id;
 
                 if (!mkdir($dirname, 750)) {
+                    $errorlist['error'] = 'Une erreur s\'est produite lors de la creation de votre dossier perso, veuillez réessayer plus tard';
                     require 'vue/inscription.php';
                     exit();
                 }
+                if (!mkdir($dirname . '/documents', 0750)) {
+                    $errorlist['error'] = 'Une erreur s\'est produite pour la creation de votre espace perso, veuillez réessayer plus tard';
+                    require 'vue/inscription.php';
+                    exit();
+                }
+                if (!copy('files/index/index.php', $dirname . '/documents/index.php')) {
+                    $errorlist['error'] = 'Impossible de copier le fichier de visualisation';
+                    require 'vue/inscription.php';
+                    exit();
 
+                }
                 $fullname = $dirname . '/' . $urlphoto;
 
-                if (move_uploaded_file($_FILES['image']['tmp_name'], $fullname)) {
-                    if (mkdir($dirname . '/espaceclient', 0750)) {
-                        session_start();
-                        $_SESSION['id'] = $id;
-                        $_SESSION['level'] = 1;
-                        header('location: index.php');
-                    } else {
-                        require 'vue/inscription.php';
-                        exit();
-                    }
-                } else {
+                if (!move_uploaded_file($_FILES['image']['tmp_name'], $fullname)) {
+                    $errorlist['error'] = 'Une erreur s\'est produite lors de l\'upload de votre photo, veuillez réessayer plus tard';
                     require 'vue/inscription.php';
                     exit();
+
                 }
+                session_start();
+                $_SESSION['id'] = $id;
+                $_SESSION['level'] = 1;
+                header('location: index.php');
+            } else {
+                $errorlist['error'] = 'Une erreur s\'est produite, lors de la création de votre compte, veuillez réessayer plus tard';
+                require 'vue/inscription.php';
+                exit();
             }
         }
     }
-    require 'vue/inscription.php';
 }
+require 'vue/inscription.php';
+
 ?>

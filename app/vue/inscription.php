@@ -1,3 +1,6 @@
+<?php
+var_dump($errorlist);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -123,6 +126,7 @@
                                             <div class="btnInscription btn btn-lg">
                                                 <input class="btn btn-primary" id="submitButton" type="submit" value="JE CREE MON COMPTE" style="cursor:pointer;">
                                             </div>
+                                            <div id="error"></div>
                                         </div>
                                     </form>
                                 </div>
@@ -146,6 +150,7 @@
     if (arrayError !=null){
 
         var keysError = Object.keys(arrayError);
+        console.log(arrayError);
 
         keysError.forEach(function (value) {
             $("#" + value).after("<span id=\"error" + value + "\">" + arrayError[value] + "</span>");

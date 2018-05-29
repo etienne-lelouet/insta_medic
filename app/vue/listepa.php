@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -22,16 +23,40 @@
                                 <tr>
                                     <th>Nom</th>
                                     <th>Prenom</th>
-                                    <th>HospitalisÃ©</th>
+                                    <th>Hospitalisé</th>
+                                    <th>Service</th>
                                     <th>Chambre</th>
                                 </tr>
                                 <?php
                                 foreach ($res as $val) {
                                     echo '<tr>';
-                                    echo '<th class="tabrdv"><a href="index.php?page=personne&id=' . $val['idPatient'] . '">' . $val['nom'] . '</a></th>';
-                                    echo '<th class="tabrdv">' . $val['prenom'] . '</th>';
-                                    echo '<th class="tabrdv">Non</th>';
-                                    echo '<th class="tabrdv">-</th>';
+                                    echo '<td><a href="index.php?page=personne&id=' . $val['idPersonne'] . '">' . $val['nom'] . '</a></td>';
+                                    echo '<td class="tabrdv">' . $val['prenom'] . '</td>';
+                                    if ($val['hospitalise'] == true)
+                                    {
+                                        echo '<td class="tabrdv">OUI</td>';
+                                    }
+                                    else
+                                    {
+                                        
+                                    echo '<td class="tabrdv">Non</td>';
+                                    }
+                                    if ($val['hospitalise'] == true && isset($val['nomService']))
+                                    {
+                                        echo '<td class="tabrdv">'.$val['nomService'].'</td>';
+                                    }
+                                    else
+                                    {
+                                        echo '<td class="tabrdv">-</td>';
+                                    }
+                                    if ($val['hospitalise'] == true && isset($val['idChambre']))
+                                    {
+                                        echo '<td class="tabrdv">'.$val['idChambre'].'</td>';
+                                    }
+                                    else
+                                    {
+                                        echo '<td class="tabrdv">-</td>';
+                                    }
                                     echo '</tr></a>';
                                 }
                                 ?>

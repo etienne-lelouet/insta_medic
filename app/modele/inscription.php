@@ -32,8 +32,8 @@ function register_user($data){
 
     $query = $conn->prepare($query);
     if ($query->execute($insertdata)) {
-        $res = $query->fetchAll();
-        return $res[0]['argid'];
+        $res = $query->fetchAll();  
+        return $res[0]['LAST_INSERT_ID()'];
     } else {    
         $query->debugDumpParams();
         return 0;

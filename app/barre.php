@@ -26,7 +26,7 @@ require_once 'controleurs/accueil.php';
                             <?php echo $res_user['prenom']; ?>
                         </h4>
                     </div>
-                    <a class="flex-sm-fill text-sm-center nav-link" href="index.php">Mon Compte</a>
+                    <a class="flex-sm-fill text-sm-center nav-link" href="index.php">Accueil</a>
                     <a class="flex-sm-fill text-sm-center nav-link" href="index.php?page=logout">Se deconnecter</a>
                 </nav>
             </div>

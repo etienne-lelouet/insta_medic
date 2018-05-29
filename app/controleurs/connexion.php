@@ -22,9 +22,11 @@ if (isset($_POST['formvalid'])) {
     if (!$global) {
         $password = md5($password);
         $res = validate($login, $password);
+
         if ($res['nb'] == 1) {
             session_start();
             $_SESSION['id'] = $res['idPersonne'];
+            $_SESSION['status'] = $res['status'];
             header('location: index.php');
         } else {
             $coupleincorrect = true;
