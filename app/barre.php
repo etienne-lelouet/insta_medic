@@ -19,14 +19,15 @@ require_once 'controleurs/accueil.php';
                                 echo '<img src="files/default.jpg">';
                             }
                          ?>
-                            <h4>
-                        <?php echo $res_user['nom']; ?>
+                        <h4>
+                            <?php echo $res_user['nom']; ?>
                         </h4>
                         <h4>
                             <?php echo $res_user['prenom']; ?>
                         </h4>
                     </div>
                     <a class="flex-sm-fill text-sm-center nav-link" href="index.php">Accueil</a>
+                    <a class="flex-sm-fill text-sm-center nav-link" href="index.php?page=personne&id=<?php echo $_SESSION['id']; ?>">Mes informations personnelles</a>
                     <a class="flex-sm-fill text-sm-center nav-link" href="index.php?page=logout">Se deconnecter</a>
                 </nav>
             </div>

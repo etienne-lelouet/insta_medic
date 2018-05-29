@@ -2,7 +2,6 @@
 
     function check_if_exists_lien($idPatient, $idMedecin)
     {
-
         $conn = connexion();
         $query = "SELECT count(*) AS nb FROM lien WHERE idMedecin = :idMedecin AND idPatient = :idPatient";
         $query = $conn->prepare($query);
@@ -19,3 +18,4 @@
             return false;   
         }
     }
+?>
