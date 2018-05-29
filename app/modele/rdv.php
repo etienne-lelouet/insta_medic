@@ -1,6 +1,6 @@
 <?php
 
-
+//Selectionne tous les RDVs pour le medecin selectionné aujourd'hui
 function liste_rdv_medecin($id, $timestamp)
 {
 	$conn=connexion();
@@ -22,6 +22,7 @@ function liste_rdv_medecin($id, $timestamp)
 	return $res;
 }
 
+//Selectionne la liste des rendez vous du patient selectionné aujourd'hui
 function liste_rdv_patient($id, $timestamp)
 {
 	$conn=connexion();
@@ -55,7 +56,7 @@ function getMedInfo($idMedecin)
 	$query = $conn->prepare($query);
 	$query->bindParam(':idMedecin', $idMedecin);
 	$query->execute();					                
-	$res = $query->fetchAll(PDO::FETCH_ASSOC);
+	$res = $query->fetch(PDO::FETCH_ASSOC);
 	return $res;
 }
 

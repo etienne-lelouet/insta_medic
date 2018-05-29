@@ -34,8 +34,8 @@
 							<input type="submit" value="Aller à cette date" class="btn btn-primary" style="float: left;">
 						</form>
 						<div>
-							<center>Planning de
-								<?php echo $resmed['prenom'].' '.$resmed['nom'].' le '.date('d/m/Y', $begin_day_ts); ?>
+							<center>
+								Planning de<?php echo $resmed['prenom'].' '.$resmed['nom'].' le '.date('d/m/Y', $begin_day_ts); ?>
 							</center>
 							<table>
 								<tr>
@@ -43,39 +43,29 @@
 									<th>Disponibilité</th>
 								</tr>
 								<?php
-				  			foreach($planning as $key => $val)
-				  			{
-								echo '<tr>';
-								echo '<td>';
-								echo date('H:i', $key); //date argument (format du temxp) times temps unix
-								echo '</td>';
-								if (!is_array($val))
-								{ 
-									echo '<th><form action="index.php?page=reserver" method="post">
-									<input type="hidden" name="startRDV" value="'.$key.'">
-									<input type="hidden" name="idMedecin" value="'.$_POST['id'].'">
-									<input type="submit" value="CRENEAU DISPONIBLE" class="btn btn-primary ">
-									</form>
-									</th>';
-								}
-								else
-								{
-									if ($val[1]=='passe')
+									foreach($planning as $key => $val)
 									{
-										echo '<th class="done">Ce creneau horaire est passé</th>';
+										echo '<tr>';
+										echo '<td>';
+										echo date('H:i', $key); //date argument (format du temxp) times temps unix
+										echo '</td>';
+										if (!$val)
+										{ 
+											echo '
+											<th><form action="index.php?page=reserver" method="post">
+											<input type="hidden" name="startRDV" value="'.$key.'">
+											<input type="hidden" name="idMedecin" value="'.$_POST['id'].'">
+											<input type="submit" value="CRENEAU DISPONIBLE" class="btn btn-primary ">
+											</form>
+											</th>';
+										}
+										else
+										{
+											echo $val;
+										}
+										
 									}
-									else if ($val[1]=='autreRDV')
-									{
-										echo '<th class="rdv">Ce créneau horaire est déja réservé</th>';
-									}
-									else
-									{
-										echo '<th class="rdv">Rendez vous avec '.$val['etat_civil'].' '.$val['prenom'].' '.$val['nom'].'</th>';
-									}
-								}
-								echo '</tr>';
-							 }
-							?>
+								?>
 							</table>
 						</div>
 					</div>

@@ -31,20 +31,20 @@
 								<th>Service</th>
 							</tr>
 							<?php
-						foreach ($resfutur as $val) {
-							echo '<tr>';
-							echo '<th class="tabrdv">' . date('d/m/y', $val['startRDV']) . '</th>';
-							echo '<th class="tabrdv">' . date('H:i', $val['startRDV']) . '</th>';
-							echo '<th class="tabrdv">' . $val['nom'] . ' ' . $val['prenom'] . '</th>';
-							echo '<th class="tabrdv">' . $val['libelle'] . '</th>';
-							echo '</tr>';
-						}
-						?>
+								foreach ($resfutur as $val) {
+									echo '<tr>';
+									echo '<th class="tabrdv">' . date('d/m/y', $val['startRDV']) . '</th>';
+									echo '<th class="tabrdv">' . date('H:i', $val['startRDV']) . '</th>';
+									echo '<th class="tabrdv">' . $val['nom'] . ' ' . $val['prenom'] . '</th>';
+									echo '<th class="tabrdv">' . $val['libelle'] . '</th>';
+									echo '</tr>';
+								}
+							?>
 							</table>
 						</div>
 					</div>
 					<div class="container-fluid fontGris tableauHoraire" >
-					<h6>Vos anciens RDVs:</h6>
+						<h6>Vos anciens RDVs:</h6>
 						<table>
 							<tr>
 								<th>Date</th>
@@ -53,16 +53,16 @@
 								<th>Service</th>
 							</tr>
 							<?php
-						foreach ($respasse as $val) {
-							echo '<tr>';
-							echo '<th class="tabrdv">' . date('d/m/y', $val['startRDV']) . '</th>';
-							echo '<th class="tabrdv">' . date('H:i', $val['startRDV']) . '</th>';
-							echo '<th class="tabrdv">' . $val['nom'] . ' ' . $val['prenom'] . '</th>';
-							echo '<th class="tabrdv">' . $val['libelle'] . '</th>';
-							echo '</tr>';
-						}
-						?>
-							</table>
+								foreach ($respasse as $val) {
+									echo '<tr>';
+									echo '<th class="tabrdv">' . date('d/m/y', $val['startRDV']) . '</th>';
+									echo '<th class="tabrdv">' . date('H:i', $val['startRDV']) . '</th>';
+									echo '<th class="tabrdv">' . $val['nom'] . ' ' . $val['prenom'] . '</th>';
+									echo '<th class="tabrdv">' . $val['libelle'] . '</th>';
+									echo '</tr>';
+								}
+							?>
+						</table>
 					</div>
 				</div>
 			</div>

@@ -43,38 +43,46 @@ $res = liste_rdv_medecin($_POST['id'], $begin_day_ts);
 $res2 = liste_rdv_patient($_SESSION['id'], $begin_day_ts);
 
 $resmed = getMedInfo($_POST['id']);
-$resmed = $resmed[0];
+$resmed = $resmed;
 $now = time();
 $beginworkday=$begin_day_ts+32400;
 $endworkday=$begin_day_ts+64800;
 $planning=array();
 while($beginworkday < $endworkday)
 {
-	if($beginworkday > $now +3600)
+	if($beginworkday > $now +1800)
 	{
-		foreach ($res as $value)
-		{
-			if ($beginworkday == $value['startRDV'])
-			{
-				$planning[$beginworkday]=array(1 => 'autreRDV');
-				$beginworkday=$beginworkday+1800;
-				break;
-			}
-		}
 		foreach ($res2 as $value)
 		{
 			if ($beginworkday == $value['startRDV'])
 			{
-				$planning[$beginworkday]=$value;
+				$resTemp = getMedInfo($value['idPersonne_1']);
+				$planning[$beginworkday]='<th class="rdv">Rendez vous avec '.$resTemp['etat_civil'].' '.$resTemp['nom'].' '.$resTemp['prenom'].'</th>';
+				$beginworkday=$beginworkday+1800;
+				continue(2);
+			}
+		}
+		foreach ($res as $value)
+		{
+			if ($beginworkday == $value['startRDV'])
+			{
+				// if($value['idPersonne'] == $_SESSION['id'])
+				// {
+				// 	$resTemp = getMedInfo($value['idPersonne_1']);
+				// 	$planning[$beginworkday]='<th class="rdv">Rendez vous avec '.$resTemp['etat_civil'].' '.$resTemp['nom'].' '.$resTemp['prenom'].'</th>';
+				// 	break;
+				// }
+				$planning[$beginworkday]='<th class="rdv">Ce créneau horaire est déja réservé</th>';
 				$beginworkday=$beginworkday+1800;
 				break;
 			}
 		}
-		$planning[$beginworkday]=false;
+
+		$planning[$beginworkday] = false;
 	}
 	else
 	{
-		$planning[$beginworkday]=array(1 => 'passe');
+		$planning[$beginworkday]='<th class="done">Ce creneau horaire est passé</th>';
 	}	
 	$beginworkday=$beginworkday+1800;
 }

@@ -1,6 +1,3 @@
-<?php
-var_dump($errorlist);
-?>
 <!DOCTYPE html>
 <html>
 
@@ -116,7 +113,7 @@ var_dump($errorlist);
                                             </div>
                                         </div>
 
-                                        <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />
+                                        <input type="hidden" name="MAX_FILE_SIZE" value="3500000" />
                                         <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
                                         Ajoutez une photo de profil :
                                         <input id="image" name="image" type="file" style="margin: 30px 0 0 0;">

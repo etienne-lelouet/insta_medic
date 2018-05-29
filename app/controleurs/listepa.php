@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 require 'modele/listepa.php';
 

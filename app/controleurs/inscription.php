@@ -10,12 +10,13 @@ if (isset($_SESSION['id'])) //si personne est connecté
         $data = array();
         $errorlist = array();
         $global = true; //pas erreur
-
+        $compteur=0;
         $postKeys = array_keys($regexValidation);
         foreach ($_POST as $key => $value) {
             if (in_array($key, $postKeys)) {
                 $compteur++;
                 if (empty($value) && in_array($key, $notMandatory)) {
+                    $data[$key] = "";
                     continue;
                 } else if (empty($value) || !preg_match($regexValidation[$key], $value)) {
                     $errorlist[$key] = 'Veuillez entrer une valeur valide';
@@ -47,8 +48,8 @@ if (isset($_SESSION['id'])) //si personne est connecté
 
         if (empty($errorlist)) {
         
-            ////On rentre dans l'upload d'image
-            $maxsize = $_POST['MAX_FILE_SIZE'];
+            //On rentre dans l'upload d'image
+            $maxsize = 3500000;
 
             if (!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name'])) {
                 $errorlist['image'] = 'Pas d\'image mise en ligne, veuillez réessayer';
@@ -77,13 +78,13 @@ if (isset($_SESSION['id'])) //si personne est connecté
                 exit();
             }
 
-            $dimensions = getimagesize($_FILES['image']['tmp_name']);
+            // $dimensions = getimagesize($_FILES['image']['tmp_name']);
 
-            if ($dimensions[0] > $dimensions[1]) {
-                $errorlist['image'] = 'Les dimensions de l\'image sont incorrectes : il faut qu\'elle soit en mode portrait';
-                require 'vue/inscription.php';
-                exit();
-            }
+            // if ($dimensions[0] > $dimensions[1]) {
+            //     $errorlist['image'] = 'Les dimensions de l\'image sont incorrectes : il faut qu\'elle soit en mode portrait';
+            //     require 'vue/inscription.php';
+            //     exit();
+            // }
 
             $data['password'] = md5($data['password']);
             $now = time();
@@ -91,7 +92,6 @@ if (isset($_SESSION['id'])) //si personne est connecté
             $fullname = $now * rand(1, 9);
             $urlphoto = $fullname . '.' . $extension_upload;
             $data['urlphoto'] = $urlphoto;
-
             $id = register_user($data);
 
             if ($id > 0) {
