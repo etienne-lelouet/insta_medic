@@ -9,6 +9,16 @@
     <title>
         <?php echo $res['prenom'].' '.$res['nom']; ?>
     </title>
+    <style>
+        .information img {
+  max-width: 200px;
+}
+
+iframe {
+  min-width: 1020px;
+  min-height: 200px;
+}
+</style>
 </head>
 
 <body>
@@ -21,37 +31,37 @@
                     <div class="container-fluid fontGris">
                         <div class="information">
                             <div class="informationGeneral">
-                            <h6>Les informations générales :<h6>
+                            <h6>Les informations générales :</h6>
                                 <!-- ici les informations générales -->
                                 <?php echo '<img src="files/'.$res['idPersonne'].'/'.$res['urlphoto'].'" />'; ?>
-                                <?php echo $res['nom']; ?>
-                                <?php echo $res['prenom']; ?>
-                                <?php echo $res['date_naissance']; ?>
-                                <?php echo $res['adresse']; ?>
-                                <?php echo $res['adressecomp']; ?>
-                                <?php echo $res['date_naissance']; ?>
-                                <?php echo $res['Ville']; ?>
-                                <?php echo $res['code_postal']; ?>
-                                <?php echo $res['telephone']; ?>
-                                <?php echo $res['emeail']; ?>
+                                <p><?php echo $res['nom']; ?>
+                                <?php echo $res['prenom']; ?></p>
+                                <p><?php echo $res['adresse']; ?></p>
+                                <p><?php echo $res['adressecomp']; ?></p>
+                                <p><?php echo $res['Ville']; ?>
+                                <?php echo $res['code_postal']; ?></p>
+
+                                <p><?php echo $res['date_naissance']; ?></p>
+                                <p><?php echo $res['telephone']; ?></p>
+                                <p><?php echo $res['email']; ?></p>
                             </div>
                             <div class="informationAutre">
-                            <h6>Les autres informations :<h6>
+                            <h6>Les autres informations :</h6>
                                 <?php if($res['status'] == 1) : ?>
 
                                 <!-- si on a affaire a un patient-->
-                                <?php echo $res['Taille']; ?>
-                                <?php echo $res['Poids']; ?>
-                                <?php echo $res['GroupeSanguin']; ?>
+                                <p><?php echo $res['Taille']; ?></p>
+                                <p><?php echo $res['Poids']; ?></p>
+                                <p><?php echo $res['GroupeSanguin']; ?></p>
 
                                 <?php endif; ?>
 
                                 <?php if($res['status'] == 2) : ?>
 
                                 <!-- si on a affaire a un medecin-->
-                                <?php echo $res['grade']; ?>
-                                <?php echo $res['nomService']; ?>
-                                <?php echo $res['dateEmbauche']; ?>
+                                <p><?php echo $res['grade']; ?></p>
+                                <p><?php echo $res['nomService']; ?></p>
+                                <p><?php echo $res['dateEmbauche']; ?></p>
 
                                 <?php endif; ?>
 
