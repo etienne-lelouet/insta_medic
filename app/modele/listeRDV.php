@@ -15,6 +15,21 @@ function getListeRDV($id)
 	$res=$query->fetchAll(PDO::FETCH_ASSOC);
 
 	return $res;
+}
 
+function getListeRDVMedecin($id)
+{
+	$conn=connexion();
+	$query = 'SELECT t1.*, t2.*, t3.*, t4.libelle 
+		  FROM RDV t1, Personne t2
+		  WHERE t1.idPersonne_1 = :id
+		  AND t1.idPersonne = t2.idPersonne
+		  AND t2.idPersonne = t3.idPersonne';
+	$query = $conn->prepare($query);
+	$query->bindparam(':id', $id);
+	$query->execute();
+	$res=$query->fetchAll(PDO::FETCH_ASSOC);
+
+	return $res;
 }
 

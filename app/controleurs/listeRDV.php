@@ -1,27 +1,39 @@
 <?php
 
-if (!isset($_SESSION['id']))	
-{
+if (!isset($_SESSION['id'])) {
 	header('location: index.php');
 }
 
 require 'modele/listeRDV.php';
 
-$res = getListeRDV($_SESSION['id']); // on récupère tous les rendez vous
-$now = time();
-$resfutur=array();
-$respasse=array();
-foreach ($res as $val) //on les stocke dans deux arrays différentes selon si ils sont passés ou non
-{
-	if ($val['startRDV']>$now)
+if ($_SESSION['status'] == 1) {
+	$res = getListeRDV($_SESSION['id']); // on récupère tous les rendez vous
+	$now = time();
+	$resfutur = array();
+	$respasse = array();
+	foreach ($res as $val) //on les stocke dans deux arrays différentes selon si ils sont passés ou non
 	{
-		$resfutur[]=$val;
+		if ($val['startRDV'] > $now) {
+			$resfutur[] = $val;
+		} else {
+			$respasse[] = $val;
+		}
 	}
-	else
+} else if ($_SESSION['status'] == 1) {
+	$res = getListeRDVMedecin($_SESSION['id']); // on récupère tous les rendez vous
+	$now = time();
+	$resfutur = array();
+	$respasse = array();
+	foreach ($res as $val) //on les stocke dans deux arrays différentes selon si ils sont passés ou non
 	{
-		$respasse[]=$val;
+		if ($val['startRDV'] > $now) {
+			$resfutur[] = $val;
+		} else {
+			$respasse[] = $val;
+		}
 	}
 }
+
 require 'vue/listeRDV.php'
 
 ?>
