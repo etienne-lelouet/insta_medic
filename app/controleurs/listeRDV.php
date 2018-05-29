@@ -19,7 +19,7 @@ if ($_SESSION['status'] == 1) {
 			$respasse[] = $val;
 		}
 	}
-} else if ($_SESSION['status'] == 1) {
+} else if ($_SESSION['status'] == 2) {
 	$res = getListeRDVMedecin($_SESSION['id']); // on récupère tous les rendez vous
 	$now = time();
 	$resfutur = array();

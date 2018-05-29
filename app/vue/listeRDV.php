@@ -14,7 +14,8 @@
 </head>
 
 <body>
-	<?php require 'header.php'; ?>
+
+	<?php require 'header.php';?>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12 col-lg-12 cellMain">
@@ -33,10 +34,11 @@
 							</tr>
 							<?php
 								foreach ($resfutur as $val) {
+									var_dump($val['idPersonne']);
 									echo '<tr>';
 									echo '<th class="tabrdv">' . date('d/m/y', $val['startRDV']) . '</th>';
 									echo '<th class="tabrdv">' . date('H:i', $val['startRDV']) . '</th>';
-									echo '<th class="tabrdv">' . $val['nom'] . ' ' . $val['prenom'] . '</th>';
+									echo '<th class="tabrdv"><a href="index.php?page=personne&id='.$val['idPersonne'] .'" />' . $val['nom'] . ' ' . $val['prenom'] . '</a></th>';
 									echo '<th class="tabrdv">' . $val['libelle'] . '</th>';
 									echo '</tr>';
 								}
@@ -45,6 +47,7 @@
 						</div>
 					</div>
 					<div class="container-fluid fontGris tableauHoraire" >
+					
 						<h6>Vos anciens RDVs:</h6>
 						<table>
 							<tr>
@@ -58,7 +61,7 @@
 									echo '<tr>';
 									echo '<th class="tabrdv">' . date('d/m/y', $val['startRDV']) . '</th>';
 									echo '<th class="tabrdv">' . date('H:i', $val['startRDV']) . '</th>';
-									echo '<th class="tabrdv">' . $val['nom'] . ' ' . $val['prenom'] . '</th>';
+									echo '<th class="tabrdv"<a href="index.php?page=personne&id='.$val['idPersonne'] .'" />' . $val['nom'] . ' ' . $val['prenom'] . '</a></th>';
 									echo '<th class="tabrdv">' . $val['libelle'] . '</th>';
 									echo '</tr>';
 								}
@@ -80,7 +83,7 @@
 									echo '<tr>';
 									echo '<th class="tabrdv">' . date('d/m/y', $val['startRDV']) . '</th>';
 									echo '<th class="tabrdv">' . date('H:i', $val['startRDV']) . '</th>';
-									echo '<th class="tabrdv">' . $val['nom'] . ' ' . $val['prenom'] . '</th>';
+									echo '<th class="tabrdv"><a href="index.php?page=personne&id='.$val['idPersonne'] .'" />' . $val['nom'] . ' ' . $val['prenom'] . '</a></th>';
 									echo '</tr>';
 								}
 							?>
@@ -100,7 +103,7 @@
 									echo '<tr>';
 									echo '<th class="tabrdv">' . date('d/m/y', $val['startRDV']) . '</th>';
 									echo '<th class="tabrdv">' . date('H:i', $val['startRDV']) . '</th>';
-									echo '<th class="tabrdv">' . $val['nom'] . ' ' . $val['prenom'] . '</th>';
+									echo '<th class="tabrdv"><a href="index.php?page=personne&id="'.$val['idPersonne'] .'" />' . $val['nom'] . ' ' . $val['prenom'] . '</a></th>';
 									echo '</tr>';
 								}
 							?>
