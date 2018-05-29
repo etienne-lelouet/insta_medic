@@ -35,6 +35,10 @@ else
 
 $result [] = Modele :: verifConnexion($login, $password);
 
+if ($result[0]['nb'] == 0)
+{
+    exit('{"erreur":"couple d\'identifiants inconnus"}"');
+}
 
 print(json_encode($result));
 
