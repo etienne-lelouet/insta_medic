@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
     <meta charset="utf-8" />
-    <title><?php echo $res['prenom'].' '.$res['nom']; ?></title>
+    <title>
+        <?php echo $res['prenom'].' '.$res['nom']; ?>
+    </title>
 </head>
 
 <body>
@@ -17,49 +19,47 @@
                 <?php require 'barre.php' ?>
                 <div class="col-sm-9 col-md-10 col-lg-10 partieDroite">
                     <div class="container-fluid fontGris">
-                        <!-- ici les informations générales -->
-                        <?php echo '<img src="files/'.$res['idPersonne'].'/'.$res['urlphoto'].'" />'; ?>
-                        <?php echo $res['nom']; ?>
-                        <?php echo $res['prenom']; ?>
-                        <?php echo $res['date_naissance']; ?>
-                        <?php echo $res['adresse']; ?>
-                        <?php echo $res['adressecomp']; ?>
-                        <?php echo $res['date_naissance']; ?>
-                        <?php echo $res['Ville']; ?>
-                        <?php echo $res['code_postal']; ?>
-                        <?php echo $res['telephone']; ?>
-                        <?php echo $res['emeail']; ?>
+                        <div class="information">
+                            <div class="informationGeneral">
+                            <h6>Les informations générales :<h6>
+                                <!-- ici les informations générales -->
+                                <?php echo '<img src="files/'.$res['idPersonne'].'/'.$res['urlphoto'].'" />'; ?>
+                                <?php echo $res['nom']; ?>
+                                <?php echo $res['prenom']; ?>
+                                <?php echo $res['date_naissance']; ?>
+                                <?php echo $res['adresse']; ?>
+                                <?php echo $res['adressecomp']; ?>
+                                <?php echo $res['date_naissance']; ?>
+                                <?php echo $res['Ville']; ?>
+                                <?php echo $res['code_postal']; ?>
+                                <?php echo $res['telephone']; ?>
+                                <?php echo $res['emeail']; ?>
+                            </div>
+                            <div class="informationAutre">
+                            <h6>Les autres informations :<h6>
+                                <?php if($res['status'] == 1) : ?>
 
-                        <?php if($res['status'] == 1) : ?> 
+                                <!-- si on a affaire a un patient-->
+                                <?php echo $res['Taille']; ?>
+                                <?php echo $res['Poids']; ?>
+                                <?php echo $res['GroupeSanguin']; ?>
 
-                        <!-- si on a affaire a un patient-->
-                        <?php echo $res['Taille']; ?>
-                        <?php echo $res['Poids']; ?>
-                        <?php echo $res['GroupeSanguin']; ?>
+                                <?php endif; ?>
 
-                        <?php endif; ?>
+                                <?php if($res['status'] == 2) : ?>
 
-                        <?php if($res['status'] == 2) : ?>
+                                <!-- si on a affaire a un medecin-->
+                                <?php echo $res['grade']; ?>
+                                <?php echo $res['nomService']; ?>
+                                <?php echo $res['dateEmbauche']; ?>
 
-                        <!-- si on a affaire a un medecin-->
-                        <?php echo $res['grade']; ?>
-                        <?php echo $res['nomService']; ?>
-                        <?php echo $res['dateEmbauche']; ?>
+                                <?php endif; ?>
 
-                        <?php endif; ?>
-
-
-
-
-
-
-
-
-
-
-                        <?php
+                            </div>
+                            <?php
                             echo '<iframe src="files/'.$res['idPersonne'].'/documents/" ></iframe>';
                         ?>
+                        </div>
                     </div>
                 </div>
             </div>
