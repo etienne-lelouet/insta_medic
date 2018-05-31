@@ -35,9 +35,9 @@ iframe {
                                 <!-- ici les informations générales -->
                                 <?php
                                 if (file_exists('files/' . $res['idPersonne'] . '/' . $res['urlphoto'])) {
-                                    echo '<img src="files/' . $res['idPersonne'] . '/' . $res['urlphoto'] . '" />';
+                                    echo '<img src="files/' . $res['idPersonne'] . '/' . $res['urlphoto'] . '" height="150" width="150" />';
                                 } else {
-                                    echo '<img src="files/default.jpg">';
+                                    echo '<img src="files/default.jpg" height="150" width="150">';
                                 }
                                 ?>
                                 <p><u>Nom</u> : <?php echo $res['nom']; ?></p>

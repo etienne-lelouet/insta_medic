@@ -12,7 +12,7 @@ require_once 'controleurs/accueil.php';
                             $url = "files/".$_SESSION['id']. "/".$res_user['urlphoto'];
                             if (file_exists($url))
                             {  
-                                echo '<img src="'.$url.'">';
+                                echo '<img height="150" width="150" src="'.$url.'">';
                             }
                             else
                             {
