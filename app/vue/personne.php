@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
     <meta charset="utf-8" />
     <title>
-        <?php echo $res['prenom'].' '.$res['nom']; ?>
+        <?php echo $res['prenom'] . ' ' . $res['nom']; ?>
     </title>
     <style>
         .information img {
@@ -33,49 +33,58 @@ iframe {
                             <div class="informationGeneral">
                             <h6>Les informations générales :</h6>
                                 <!-- ici les informations générales -->
-                                <?php echo '<img src="files/'.$res['idPersonne'].'/'.$res['urlphoto'].'" />'; ?>
-                                <p><?php echo $res['nom']; ?>
-                                <?php echo $res['prenom']; ?></p>
-                                <p><?php echo $res['adresse']; ?></p>
-                                <p><?php echo $res['adressecomp']; ?></p>
-                                <p><?php echo $res['Ville']; ?>
+                                <?php
+                                if (file_exists('files/' . $res['idPersonne'] . '/' . $res['urlphoto'])) {
+                                    echo '<img src="files/' . $res['idPersonne'] . '/' . $res['urlphoto'] . '" />';
+                                } else {
+                                    echo '<img src="files/default.jpg">';
+                                }
+                                ?>
+                                <p><u>Nom : </u><?php echo $res['nom']; ?></p>
+                                <p><u>Prenom : </u><?php echo $res['prenom']; ?></p>
+                                <p><u>Né le : </u><?php echo $res['date_naissance']; ?></p>
+                                <p><u>Adresse : </u><?php echo $res['adresse']; ?></p>
+                                <?php
+                                if (!empty($res['adressecomp'])) {
+                                    echo '<p><u>Adresse 2 : </u>' . $res['adressecomp'] . '</p>';
+                                }
+                                ?>
+                                <p><u>Ville : </u><?php echo $res['Ville']; ?>
                                 <?php echo $res['code_postal']; ?></p>
-
-                                <p><?php echo $res['date_naissance']; ?></p>
-                                <p><?php echo $res['telephone']; ?></p>
-                                <p><?php echo $res['email']; ?></p>
+                                <p><u>Télephone : </u><?php echo $res['telephone']; ?></p>
+                                <p><u>Adresse mail : </u><?php echo $res['email']; ?></p>
                             </div>
                             <div class="informationAutre">
                             <h6>Les autres informations :</h6>
-                                <?php if($res['status'] == 1) : ?>
+                                <?php if ($res['status'] == 1) : ?>
 
                                 <!-- si on a affaire a un patient-->
-                                <p><?php echo $res['Taille']; ?></p>
-                                <p><?php echo $res['Poids']; ?></p>
-                                <p><?php echo $res['GroupeSanguin']; ?></p>
+                                <p><u>Poids : </u><?php echo $res['Taille']; ?></p>
+                                <p><u>Taille : </u><?php echo $res['Poids']; ?></p>
+                                <p><u>Groupe Sanguin : </u><?php echo $res['GroupeSanguin']; ?></p>
 
                                 <?php endif; ?>
 
-                                <?php if($res['status'] == 2) : ?>
+                                <?php if ($res['status'] == 2) : ?>
 
                                 <!-- si on a affaire a un medecin-->
-                                <p><?php echo $res['grade']; ?></p>
-                                <p><?php echo $res['nomService']; ?></p>
-                                <p><?php echo $res['dateEmbauche']; ?></p>
+                                <p><u>Poste : </u><?php echo $res['grade']; ?></p>
+                                <p><u>Service : </u><?php echo $res['nomService']; ?></p>
+                                <p><u>En poste depuis le : </u><?php echo $res['dateEmbauche']; ?></p>
 
                                 <?php endif; ?>
 
                             </div>
                             <?php
-                            echo '<iframe src="files/'.$res['idPersonne'].'/documents/" ></iframe>';
-                        ?>
+                            echo '<iframe src="files/' . $res['idPersonne'] . '/documents/" ></iframe>';
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <?php  require 'footer.php'; ?>
+    <?php require 'footer.php'; ?>
 </body>
 
 </html>
