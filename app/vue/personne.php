@@ -1,4 +1,4 @@
-<?php var_dump($res); ?>
+<?php //var_dump($res); ?>
 <!DOCTYPE html>
 <html>
 
