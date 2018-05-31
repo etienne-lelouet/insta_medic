@@ -5,8 +5,8 @@ header('Content-type: text/html; charset=UTF-8'); //connection à la base de don
 function connexion ()
 {
     $dbhost='localhost';
-    $dbuser='admin';
-    $dbpass='Btssio';
+    $dbuser='wef';
+    $dbpass='ppe2018wef';
     $dbname='Clinique';
     
     $conn= null;

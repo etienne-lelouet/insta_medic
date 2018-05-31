@@ -40,13 +40,7 @@ class Modele
         $now = time();
         $tsToday = strtotime(date('d.m.Y', $now));
 
-        $requete = "SELECT t1.*, t2.nom, t2.prenom, t2.date_naissance, t3.numero, t3.etage
-                    FROM Hospitalisation t1, Personne t2, Chambre t3,
-                    WHERE t1.idPersonne = t2.idPersonne 
-                    AND t1.idService = :idService
-                    AND t1.idChambre = t3.idChambre
-                    AND t1.idPersonne NOT IN ( SELECT * FROM donneesJournalieres 
-                                                   WHERE derniereMaj < :tsToday )";
+        $requete = "SELECT * FROM listePatientHospitalise WHERE dateSortie IS NULL)";
 
         $select = Modele::$pdo->prepare($requete);
         $select->execute();
