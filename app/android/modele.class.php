@@ -33,14 +33,26 @@ class Modele
         return $res;
     }
 
-    public static function listerlespatients($idService)
+    public static function listerPatients($idService)
+    {
+        Modele::connexion();
+
+        $requete = "SELECT * FROM listePatientHospitalise WHERE dateSortie IS NULL";
+
+        $select = Modele::$pdo->prepare($requete);
+        $select->execute();
+        $resultats = $select->fetchAll();
+        return $resultats;
+    }
+
+    public static function getDonneesJournalieres($idService)
     {
         Modele::connexion();
 
         $now = time();
         $tsToday = strtotime(date('d.m.Y', $now));
 
-        $requete = "SELECT * FROM listePatientHospitalise WHERE dateSortie IS NULL)";
+        $requete = "SELECT * FROM listePatientHospitalise WHERE dateSortie IS NULL";
 
         $select = Modele::$pdo->prepare($requete);
         $select->execute();
@@ -53,10 +65,10 @@ class Modele
         Modele::connexion();
         $requete = "INSERT INTO donneesJournalieres (temperature, tension, poids, autres, idPatient, idHospitalisation, idInfirmier) 
         VALUES (:temperature, :tension, :poids, :autres, :idPatient, :idHospitalisation, :idInfirmier)";
-
+        $data=prepData($data);
         $insert = Modele::$pdo->prepare($requete);
 
-        if ($insert->execute($donnees)) {
+        if ($insert->execute($data)) {
             return true;
         } else {
             return false;
@@ -67,36 +79,14 @@ class Modele
     {
         Modele::connexion();
 
-        $requete = "UPDATE donneesJournalieres SET WHERE idDonnees = :idDonnees";
-
-        $strSet = '';
-
-        $res = array();
-
-        foreach ($data as $key => $sub) {
-            if ($key != "idDonnees") {
-                $strSet .= $key . "= :" . $key;
-            }
-        }
-
+        $requete = "UPDATE donneesJournalieres SET temperature = :temperature, poids = : poids, autres = :autres, 
+                                                idPatient = :idPatient, idHospitalistion = :idHospitalistion,
+                                                idInfirmier = :idInfirmier 
+                                                WHERE idDonnees = :idDonnees";
+        $data=prepData($data);
 
         $select = Modele::$pdo->prepare($requete);
-        $donnees = array(":action" => $action, ":idinscrire" => $idinscrire);
-        if ($select->execute($donnees)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public static function desinscrire($idinscrire)
-    {
-        Modele::connexion();
-        $requete = "DELETE from inscrire WHERE idinscrire = :idinscrire";
-
-        $select = Modele::$pdo->prepare($requete);
-        $donnees = array(":idinscrire" => $idinscrire);
-        if ($select->execute($donnees)) {
+        if ($select->execute($data)) {
             return true;
         } else {
             return false;

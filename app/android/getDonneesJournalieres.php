@@ -7,20 +7,20 @@ require_once 'modele.class.php';
 require_once '../config.php';
 
 
-if (isset($_REQUEST['idService']))
+if (isset($_REQUEST['idPatient']))
 {
-    if (!preg_match('/^\d{1,}$/', $_REQUEST['idService'])) {
+    if (!preg_match('/^\d{1,}$/', $_REQUEST['idPatient'])) {
 
         exit('{"erreur":"Pas d\'id fourni"}"');
     }
-    $idService = $_REQUEST['idService'];
+    $idPatient = $_REQUEST['idPatient'];
 }
 else
 {
     exit('{"error":"login non renseigné"}');
 }
 
-$result [] = Modele :: listerPatients($idService);
+$result [] = Modele :: getDonneesJournalieres($idPatient);
 
 if (count($result) == 0)
 {
