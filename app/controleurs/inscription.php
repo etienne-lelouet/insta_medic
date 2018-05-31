@@ -46,8 +46,7 @@ if (isset($_SESSION['id'])) //si personne est connecté
             $errorlist['email'] = 'Email déjà uilisé, veuillez réessayer';
         }
 
-        if (empty($errorlist)) {
-        
+        if (empty($errorlist)) {	
             //On rentre dans l'upload d'image
             $maxsize = 3500000;
 
@@ -91,10 +90,11 @@ if (isset($_SESSION['id'])) //si personne est connecté
 
             $fullname = $now * rand(1, 9);
             $urlphoto = $fullname . '.' . $extension_upload;
-            $data['urlphoto'] = $urlphoto;
-            $id = register_user($data);
-
-            if ($id > 0) {
+	    $data['urlphoto'] = $urlphoto;
+	    
+	    $id = register_user($data);
+	    
+	    if ($id > 0) {
                 $dirname = 'files/' . $id;
 
                 if (!mkdir($dirname, 750)) {

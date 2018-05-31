@@ -4,9 +4,9 @@ date_default_timezone_set('Europe/Paris');
 header('Content-type: text/html; charset=UTF-8'); //connection à la base de donnée
 function connexion ()
 {
-    $dbhost='163.172.49.216';
-    $dbuser='wef';
-    $dbpass='ppe2018wef';
+    $dbhost='localhost';
+    $dbuser='admin';
+    $dbpass='Btssio';
     $dbname='Clinique';
     
     $conn= null;
