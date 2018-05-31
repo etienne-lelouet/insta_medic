@@ -40,37 +40,37 @@ iframe {
                                     echo '<img src="files/default.jpg">';
                                 }
                                 ?>
-                                <p><u>Nom : </u><?php echo $res['nom']; ?></p>
-                                <p><u>Prenom : </u><?php echo $res['prenom']; ?></p>
-                                <p><u>Né le : </u><?php echo $res['date_naissance']; ?></p>
-                                <p><u>Adresse : </u><?php echo $res['adresse']; ?></p>
+                                <p><u>Nom </u> :<?php echo $res['nom']; ?></p>
+                                <p><u>Prenom </u> :<?php echo $res['prenom']; ?></p>
+                                <p><u>Né le </u> :<?php echo $res['date_naissance']; ?></p>
+                                <p><u>Adresse </u> :<?php echo $res['adresse']; ?></p>
                                 <?php
                                 if (!empty($res['adressecomp'])) {
-                                    echo '<p><u>Adresse 2 : </u>' . $res['adressecomp'] . '</p>';
+                                    echo '<p><u>Adresse 2 </u> :' . $res['adressecomp'] . '</p>';
                                 }
                                 ?>
-                                <p><u>Ville : </u><?php echo $res['Ville']; ?>
+                                <p><u>Ville </u> :<?php echo $res['Ville']; ?>
                                 <?php echo $res['code_postal']; ?></p>
-                                <p><u>Télephone : </u><?php echo $res['telephone']; ?></p>
-                                <p><u>Adresse mail : </u><?php echo $res['email']; ?></p>
+                                <p><u>Télephone </u> :<?php echo $res['telephone']; ?></p>
+                                <p><u>Adresse mail </u> :<?php echo $res['email']; ?></p>
                             </div>
                             <div class="informationAutre">
                             <h6>Les autres informations :</h6>
                                 <?php if ($res['status'] == 1) : ?>
 
                                 <!-- si on a affaire a un patient-->
-                                <p><u>Poids : </u><?php echo $res['Taille']; ?></p>
-                                <p><u>Taille : </u><?php echo $res['Poids']; ?></p>
-                                <p><u>Groupe Sanguin : </u><?php echo $res['GroupeSanguin']; ?></p>
+                                <p><u>Poids </u> :<?php echo $res['Taille']; ?></p>
+                                <p><u>Taille </u> :<?php echo $res['Poids']; ?></p>
+                                <p><u>Groupe Sanguin </u> :<?php echo $res['GroupeSanguin']; ?></p>
 
                                 <?php endif; ?>
 
                                 <?php if ($res['status'] == 2) : ?>
 
                                 <!-- si on a affaire a un medecin-->
-                                <p><u>Poste : </u><?php echo $res['grade']; ?></p>
-                                <p><u>Service : </u><?php echo $res['nomService']; ?></p>
-                                <p><u>En poste depuis le : </u><?php echo $res['dateEmbauche']; ?></p>
+                                <p><u>Poste </u> :<?php echo $res['grade']; ?></p>
+                                <p><u>Service </u> :<?php echo $res['nomService']; ?></p>
+                                <p><u>En poste depuis le </u> :<?php echo $res['dateEmbauche']; ?></p>
 
                                 <?php endif; ?>
 
