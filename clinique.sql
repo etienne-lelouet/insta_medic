@@ -34,13 +34,13 @@ DROP PROCEDURE IF EXISTS `deletePatient`$$
 CREATE DEFINER=`wef`@`%` PROCEDURE `deletePatient` (IN `id` INT(11))  NO SQL
 begin
 
-DELETE FROM `Clinique`.`RDV` WHERE `RDV`.`idPersonne` = id;
-DELETE FROM `Clinique`.`DonneesBiologiques` WHERE `DonneesBiologiques`.`idPersonne` = id;
-DELETE FROM `Clinique`.`DonneesMedicales` WHERE `DonneesMedicales`.`idPersonne` = id;
-DELETE FROM `Clinique`.`prescrir` WHERE `lien`.`idPatient` = id;
-DELETE FROM `Clinique`.`Hospitalisation` WHERE `Hospitalisation`.`idPersonne` = id;
-DELETE FROM `Clinique`.`lien` WHERE `lien`.`idPersonne` = id;
-DELETE FROM `Clinique`.`Personne` WHERE `Personne`.`idPersonne` = id;
+DELETE FROM `clinique`.`rdv` WHERE `rdv`.`idPersonne` = id;
+DELETE FROM `clinique`.`donneesbiologiques` WHERE `donneesbiologiques`.`idPersonne` = id;
+DELETE FROM `clinique`.`donneesmedicales` WHERE `donneesmedicales`.`idPersonne` = id;
+DELETE FROM `clinique`.`prescrire` WHERE `lien`.`idPatient` = id;
+DELETE FROM `clinique`.`hospitalisation` WHERE `hospitalisation`.`idPersonne` = id;
+DELETE FROM `clinique`.`lien` WHERE `lien`.`idPersonne` = id;
+DELETE FROM `clinique`.`personne` WHERE `personne`.`idPersonne` = id;
 
 end$$
 
@@ -50,12 +50,12 @@ CREATE DEFINER=`wef`@`%` PROCEDURE `insertInfirmier` (IN `argetat_civil` VARCHAR
     declare argid int(3);
 	declare argInfir int(3);
 
-    INSERT INTO Personne (etat_civil, nom, prenom, date_naissance, adresse, adressecomp, code_postal, Ville,
+    INSERT INTO personne (etat_civil, nom, prenom, date_naissance, adresse, adressecomp, code_postal, Ville,
      telephone, login, email, password, urlphoto) 
     VALUES (argetat_civil, argnom, argprenom, argdate_naissance, argadresse, argadressecomp, argcode_postal,
      argville, argtelephone, arglogin, argemail, argpassword, argurlphoto);
 
-    INSERT INTO Infirmier (dateEmbauche, idPersonne, idService)
+    INSERT INTO infirmier (dateEmbauche, idPersonne, idService)
     VALUES (argdateEmbauche, LAST_INSERT_ID(), argidService);
 	
 	SELECT LAST_INSERT_ID();
@@ -68,12 +68,12 @@ CREATE DEFINER=`wef`@`%` PROCEDURE `insertMedecin` (IN `argetat_civil` VARCHAR(1
 	declare argid int(3);
 	declare argmed int(3);
 
-	INSERT INTO Personne (etat_civil, nom, prenom, date_naissance, adresse, adressecomp, code_postal, Ville,
+	INSERT INTO personne (etat_civil, nom, prenom, date_naissance, adresse, adressecomp, code_postal, Ville,
      telephone, login, email, password, urlphoto) 
     VALUES (argetat_civil, argnom, argprenom, argdate_naissance, argadresse, argadressecomp, argcode_postal,
      argville, argtelephone, arglogin, argemail, argpassword, argurlphoto);
 
-    INSERT INTO Medecin (dateEmbauche, dateDiplome, grade, idPersonne, idSpecialite, idService) 
+    INSERT INTO medecin (dateEmbauche, dateDiplome, grade, idPersonne, idSpecialite, idService) 
     VALUES (argdateEmbauche, argdateDiplome, arggrade, LAST_INSERT_ID(), argidSpecialite, argidService);
 
 	SELECT LAST_INSERT_ID();
@@ -86,7 +86,7 @@ CREATE DEFINER=`wef`@`%` PROCEDURE `insertPatient` (IN `argetat_civil` VARCHAR(1
     declare argid int(3);
     declare argdossier int(3);
 
-    INSERT INTO Personne (etat_civil, nom, prenom, date_naissance, adresse, adressecomp, code_postal, Ville,
+    INSERT INTO personne (etat_civil, nom, prenom, date_naissance, adresse, adressecomp, code_postal, Ville,
      telephone, login, email, password, urlphoto) 
     VALUES (argetat_civil, argnom, argprenom, argdate_naissance, argadresse, argadressecomp, argcode_postal,
      argville, argtelephone, arglogin, argemail, argpassword, argurlphoto);
@@ -100,10 +100,10 @@ end$$
 
 DROP PROCEDURE IF EXISTS `liste_medecin`$$
 CREATE DEFINER=`wef`@`%` PROCEDURE `liste_medecin` (IN `argspe` INT)  BEGIN
-    SELECT * FROM Medecin
-      INNER JOIN Personne
-        ON Medecin.idPersonne = Personne.idPersonne
-	WHERE Medecin.idSpecialite = argspe;
+    SELECT * FROM medecin
+      INNER JOIN personne
+        ON medecin.idPersonne = personne.idPersonne
+	WHERE medecin.idSpecialite = argspe;
 
   END$$
 
@@ -566,7 +566,7 @@ ALTER TABLE `donneesbiologiques`
 -- Contraintes pour la table `donneesjournalieres`
 --
 ALTER TABLE `donneesjournalieres`
-  ADD CONSTRAINT `donneesJournalieres_ibfk_2` FOREIGN KEY (`idHospitalisation`) REFERENCES `hospitalisation` (`idHospi`),
+  ADD CONSTRAINT `donneesjournalieres_ibfk_2` FOREIGN KEY (`idHospitalisation`) REFERENCES `hospitalisation` (`idHospi`),
   ADD CONSTRAINT `donneesjournalieres_ibfk_1` FOREIGN KEY (`idPatient`) REFERENCES `donneesbiologiques` (`idPersonne`),
   ADD CONSTRAINT `fk_donneesjournalieres_idInfirmier` FOREIGN KEY (`idInfirmier`) REFERENCES `infirmier` (`idPersonne`);
 
