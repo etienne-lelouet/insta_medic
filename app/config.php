@@ -7,7 +7,7 @@ function connexion ()
     $dbhost='localhost';
     $dbuser='wef';
     $dbpass='ppe2018wef';
-    $dbname='Clinique';
+    $dbname='clinique';
     
     $conn= null;
 

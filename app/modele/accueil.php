@@ -5,7 +5,7 @@ function getinfo($id)
 {
     $conn = connexion();
 
-    $query = 'SELECT * FROM Personne WHERE idPersonne = :id';
+    $query = 'SELECT * FROM personne WHERE idPersonne = :id';
     $query = $conn->prepare($query);
     $query->bindparam(':id', $id);
     $query->execute();
