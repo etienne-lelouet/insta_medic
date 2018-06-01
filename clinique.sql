@@ -91,7 +91,7 @@ CREATE DEFINER=`wef`@`%` PROCEDURE `insertPatient` (IN `argetat_civil` VARCHAR(1
     VALUES (argetat_civil, argnom, argprenom, argdate_naissance, argadresse, argadressecomp, argcode_postal,
      argville, argtelephone, arglogin, argemail, argpassword, argurlphoto);
 
-	INSERT INTO DonneesBiologiques (idPersonne, Taille, GroupeSanguin, Poids)
+	INSERT INTO donneesbiologiques (idPersonne, Taille, GroupeSanguin, Poids)
 	VALUES (LAST_INSERT_ID(), 0, NULL, 0);
 	
 	SELECT LAST_INSERT_ID();
