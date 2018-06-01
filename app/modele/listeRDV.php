@@ -4,7 +4,7 @@ function getListeRDV($id)
 {
 	$conn=connexion();
 	$query = 'SELECT t1.*, t2.*, t3.*, t4.libelle 
-		  FROM RDV t1, Personne t2, Medecin t3, Specialite t4
+		  FROM rdv t1, personne t2, medecin t3, specialite t4
 		  WHERE t1.idPatient = :id
 		  AND t1.idMedecin = t3.idPersonne
 		  AND t2.idPersonne = t3.idPersonne 
@@ -21,7 +21,7 @@ function getListeRDVMedecin($id)
 {
 	$conn=connexion();
 	$query = 'SELECT t1.*, t2.* 
-		  FROM RDV t1, Personne t2
+		  FROM rdv t1, personne t2
 		  WHERE t1.idMedecin = :id
 		  AND t1.idPatient = t2.idPersonne';
 	$query = $conn->prepare($query);

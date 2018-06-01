@@ -4,7 +4,7 @@
 function verifier_doublons($fieldname, $fieldvalue){
     $conn = connexion();
 
-    $query = $conn->prepare('SELECT count(*) AS nb FROM Personne WHERE ' . $fieldname . ' = :fieldvalue');
+    $query = $conn->prepare('SELECT count(*) AS nb FROM personne WHERE ' . $fieldname . ' = :fieldvalue');
 
     $query->bindParam(':fieldvalue', $fieldvalue);
 

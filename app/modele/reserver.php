@@ -3,7 +3,7 @@
 function insertRDV($idmedecin, $idpatient, $startRDV, $description)
 {
 	$conn=connexion();
-	$query = 'INSERT INTO RDV (startRDV, endRDV, idPatient, idMedecin, libelleRDV) VALUES (:startRDV, :endRDV, :idPatient, :idMedecin, :description)';
+	$query = 'INSERT INTO rdv (startRDV, endRDV, idPatient, idMedecin, libelleRDV) VALUES (:startRDV, :endRDV, :idPatient, :idMedecin, :description)';
 
 	$query = $conn->prepare($query);
 	$endRDV = intval($startRDV)+1800;
@@ -52,7 +52,7 @@ function getMedInfo($idMedecin)
 {
 	$conn=connexion();
 	$query = "SELECT t1.*, t2.*
-		 FROM Personne t1, Medecin t2
+		 FROM personne t1, medecin t2
 		 WHERE t1.idPersonne = :idMedecin AND t2.idPersonne=t1.idPersonne";	
 	$query = $conn->prepare($query);
 	$query->bindParam(':idMedecin', $idMedecin);
