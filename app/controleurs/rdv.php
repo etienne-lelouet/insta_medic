@@ -66,12 +66,6 @@ while($beginworkday < $endworkday)
 		{
 			if ($beginworkday == $value['startRDV'])
 			{
-				// if($value['idPersonne'] == $_SESSION['id'])
-				// {
-				// 	$resTemp = getMedInfo($value['idPersonne_1']);
-				// 	$planning[$beginworkday]='<th class="rdv">Rendez vous avec '.$resTemp['etat_civil'].' '.$resTemp['nom'].' '.$resTemp['prenom'].'</th>';
-				// 	break;
-				// }
 				$planning[$beginworkday]='<th class="rdv">Ce créneau horaire est déja réservé</th>';
 				$beginworkday=$beginworkday+1800;
 				break;

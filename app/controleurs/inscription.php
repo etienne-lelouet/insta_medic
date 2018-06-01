@@ -123,7 +123,7 @@ if (isset($_SESSION['id'])) //si personne est connecté
                 }
                 session_start();
                 $_SESSION['id'] = $id;
-                $_SESSION['level'] = 1;
+                $_SESSION['status'] = 1;
                 header('location: index.php');
             } else {
                 $errorlist['error'] = 'Une erreur s\'est produite, lors de la création de votre compte, veuillez réessayer plus tard';

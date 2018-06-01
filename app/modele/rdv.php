@@ -7,7 +7,7 @@ function liste_rdv_medecin($id, $timestamp)
 	$now = time();
 	$now = $now + 1800;
 	$end_day_ts = $timestamp + 86400;
-	$query='SELECT * FROM RDV WHERE idPersonne_1 = :id AND startRDV > :now AND startRDV < :end_day_ts'; 
+	$query='SELECT * FROM RDV WHERE idMedecin = :id AND startRDV > :now AND startRDV < :end_day_ts'; 
 	
 	$query=$conn->prepare($query);
 	
@@ -32,8 +32,8 @@ function liste_rdv_patient($id, $timestamp)
 
 	$query = 'SELECT t1.*, t2.*
 		FROM RDV t1, Personne t2
-		WHERE t1.idPersonne = :idpatient AND t1.startRDV > :now AND startRDV < :end_day_ts
-		AND t2.idPersonne = t1.idPersonne_1';
+		WHERE t1.idPatient = :idpatient AND t1.startRDV > :now AND startRDV < :end_day_ts
+		AND t2.idPersonne = t1.idMedecin';
 	$query = $conn->prepare($query);
 	
 	$query->bindParam(':idpatient', $id);
