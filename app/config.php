@@ -14,10 +14,10 @@ function connexion ()
     try 
     {
 	    $conn = new PDO('mysql:host='.$dbhost.';dbname='.$dbname, $dbuser, $dbpass);
-	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//retour erreur supèrieur 
-	    $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-	    $conn->setAttribute(PDO::ATTR_TIMEOUT, 5); //si session dépasse 5seconde donc arrete
-        $conn->exec('SET CHARACTER SET utf8');
+	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//configuration du retour d'erreur PDO 
+	    $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); //signifie que PDO envoie séparément les requètes et les variables
+	    $conn->setAttribute(PDO::ATTR_TIMEOUT, 5); //si session dépasse 5 secondes on arrète
+        $conn->exec('SET CHARACTER SET utf8'); //Définition du charset des resultats
     }
     catch (PDOException $error) 
     {
