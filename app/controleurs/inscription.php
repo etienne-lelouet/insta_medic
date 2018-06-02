@@ -96,7 +96,6 @@ if (isset($_SESSION['id'])) //si personne est connecté
 	    
 	    if ($id > 0) {
                 $dirname = 'files/' . $id;
-
                 if (!mkdir($dirname, 750)) {
                     $errorlist['error'] = 'Une erreur s\'est produite lors de la creation de votre dossier perso, veuillez réessayer plus tard';
                     require 'vue/inscription.php';
@@ -111,15 +110,12 @@ if (isset($_SESSION['id'])) //si personne est connecté
                     $errorlist['error'] = 'Impossible de copier le fichier de visualisation';
                     require 'vue/inscription.php';
                     exit();
-
                 }
                 $fullname = $dirname . '/' . $urlphoto;
-
                 if (!move_uploaded_file($_FILES['image']['tmp_name'], $fullname)) {
                     $errorlist['error'] = 'Une erreur s\'est produite lors de l\'upload de votre photo, veuillez réessayer plus tard';
                     require 'vue/inscription.php';
                     exit();
-
                 }
                 session_start();
                 $_SESSION['id'] = $id;

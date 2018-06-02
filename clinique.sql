@@ -80,6 +80,7 @@ CREATE DEFINER=`wef`@`%` PROCEDURE `insertMedecin` (IN `argetat_civil` VARCHAR(1
 
 end$$
 
+
 DROP PROCEDURE IF EXISTS `insertPatient`$$
 CREATE DEFINER=`wef`@`%` PROCEDURE `insertPatient` (IN `argetat_civil` VARCHAR(10), IN `argnom` VARCHAR(50), IN `argprenom` VARCHAR(50), IN `argdate_naissance` VARCHAR(45), IN `argadresse` VARCHAR(150), IN `argadressecomp` VARCHAR(100), IN `argcode_postal` VARCHAR(10), IN `argville` VARCHAR(45), IN `argtelephone` VARCHAR(25), IN `arglogin` VARCHAR(50), IN `argemail` VARCHAR(75), IN `argpassword` VARCHAR(100), IN `argurlphoto` VARCHAR(75))  begin 
 
@@ -98,6 +99,7 @@ CREATE DEFINER=`wef`@`%` PROCEDURE `insertPatient` (IN `argetat_civil` VARCHAR(1
 
 end$$
 
+
 DROP PROCEDURE IF EXISTS `liste_medecin`$$
 CREATE DEFINER=`wef`@`%` PROCEDURE `liste_medecin` (IN `argspe` INT)  BEGIN
     SELECT * FROM medecin
@@ -108,7 +110,6 @@ CREATE DEFINER=`wef`@`%` PROCEDURE `liste_medecin` (IN `argspe` INT)  BEGIN
   END$$
 
 DELIMITER ;
-
 -- --------------------------------------------------------
 
 --
@@ -298,8 +299,8 @@ INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(19, 6
 INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(20, 63, 130, '2018-05-29 20:24:49');
 INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(21, 63, 132, '2018-05-29 20:35:39');
 INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(22, 78, 132, '2018-05-29 20:36:46');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(23, 78, 130, '2018-06-01 14:12:42');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(24, 63, 139, '2018-06-01 15:22:06');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(23, 78, 130, '2018-05-31 14:12:42');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(24, 63, 139, '2018-05-31 15:22:06');
 
 -- --------------------------------------------------------
 
@@ -443,9 +444,9 @@ INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naiss
 INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(135, 'Mme', 'Lillo', 'Agnes', '22/11/1964', '24 rue du marechal Joffre', '', '75013', 'Paris', '0745867895', 'a_lillo', 'alillo@test.com', '05a671c66aefea124cc08b76ea6d30bb', 'test.pnh', '2018-05-31 14:14:00', 1);
 INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(136, 'Autre', 'test', 'test', '17/12/1965', '24 ets', '', '75000', 'test', '0111111111', 'testtest', 'test256@test.com', '05a671c66aefea124cc08b76ea6d30bb', '1527778618.jpg', '2018-05-31 14:56:58', 1);
 INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(137, 'M.', 'Cissé', 'Steeve', '03/12/1964', '13 rue des vallons', '', '75015', 'Paris', '0190785696', 'scisse', 'scisse@gmail.com', '05a671c66aefea124cc08b76ea6d30bb', 'default.jpg', '2018-05-31 18:41:17', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(138, 'M.', 'Buis', 'Florian', '29/10/1991', '7 Rue de la Paix', '', '91600', 'Savigny-Sur-Orge', '0111111111', 'fbuis', 'fbuis@test.com', '05a671c66aefea124cc08b76ea6d30bb', '9167195208.jpg', '2018-06-01 15:11:08', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(139, 'Autre', 'Thibault ', 'Colin', '21/09/1995', '36 rue des ecoles', '', '75005', 'Paris', '0111111111', 'tobicolin', 'tibtib@test.com', '05a671c66aefea124cc08b76ea6d30bb', '6111465260.jpg', '2018-06-01 15:18:35', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(140, 'M.', 'Julite', 'Nil', '17/11/1996', '2 rue fernand', '', '75014', 'Paris', '0111111111', 'njulite', 'njulite@test.com', '05a671c66aefea124cc08b76ea6d30bb', '4583604261.jpg', '2018-06-01 15:48:07', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(138, 'M.', 'Buis', 'Florian', '29/10/1991', '7 Rue de la Paix', '', '91600', 'Savigny-Sur-Orge', '0111111111', 'fbuis', 'fbuis@test.com', '05a671c66aefea124cc08b76ea6d30bb', '9167195208.jpg', '2018-05-31 15:11:08', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(139, 'Autre', 'Thibault ', 'Colin', '21/09/1995', '36 rue des ecoles', '', '75005', 'Paris', '0111111111', 'tobicolin', 'tibtib@test.com', '05a671c66aefea124cc08b76ea6d30bb', '6111465260.jpg', '2018-05-31 15:18:35', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(140, 'M.', 'Julite', 'Nil', '17/11/1996', '2 rue fernand', '', '75014', 'Paris', '0111111111', 'njulite', 'njulite@test.com', '05a671c66aefea124cc08b76ea6d30bb', '4583604261.jpg', '2018-05-31 15:48:07', 1);
 
 -- --------------------------------------------------------
 
@@ -566,7 +567,7 @@ ALTER TABLE `donneesbiologiques`
 -- Contraintes pour la table `donneesjournalieres`
 --
 ALTER TABLE `donneesjournalieres`
-  ADD CONSTRAINT `donneesjournalieres_ibfk_2` FOREIGN KEY (`idHospitalisation`) REFERENCES `hospitalisation` (`idHospi`),
+  ADD CONSTRAINT `donneesJournalieres_ibfk_2` FOREIGN KEY (`idHospitalisation`) REFERENCES `hospitalisation` (`idHospi`),
   ADD CONSTRAINT `donneesjournalieres_ibfk_1` FOREIGN KEY (`idPatient`) REFERENCES `donneesbiologiques` (`idPersonne`),
   ADD CONSTRAINT `fk_donneesjournalieres_idInfirmier` FOREIGN KEY (`idInfirmier`) REFERENCES `infirmier` (`idPersonne`);
 
