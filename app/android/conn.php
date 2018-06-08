@@ -27,7 +27,7 @@ if (isset($_REQUEST['password'])) {
     exit('{"erreur":"mdp non renseigné"}');
 }
 
-$result[] = Modele::verifConnexion($login, $password);
+$result = Modele::verifConnexion($login, $password);
 
 if ($result[0]['nb'] == 0) {
     exit('{"erreur":"couple d\'identifiants inconnus"}"');

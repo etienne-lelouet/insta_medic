@@ -22,7 +22,6 @@ class Modele
         $requete = "SELECT count(*) as nb, t1.*, t2.idService, t3.nomService FROM personne t1, infirmier t2, service t3
         WHERE t1.login = :login AND t1.password = :password 
         AND t1.status = 3 AND t1.idPersonne = t2.idPersonne AND t2.idService = t3.idService";
-
         $select = Modele::$pdo->prepare($requete);
 
         $data = array(":login" => $login, ":password" => $password);
