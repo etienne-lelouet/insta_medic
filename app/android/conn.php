@@ -14,7 +14,7 @@ if (isset($_REQUEST['login'])) {
     }
     $login = $_REQUEST['login'];
 } else {
-    exit('{"error":"login non renseigné"}');
+    exit('{"erreur":"login non renseigné"}');
 }
 
 if (isset($_REQUEST['password'])) {
@@ -24,7 +24,7 @@ if (isset($_REQUEST['password'])) {
     }
     $password = $_REQUEST['password'];
 } else {
-    exit('{"error":"mdp non renseigné"}');
+    exit('{"erreur":"mdp non renseigné"}');
 }
 
 $result[] = Modele::verifConnexion($login, $password);
