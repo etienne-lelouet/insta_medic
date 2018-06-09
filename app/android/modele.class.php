@@ -49,11 +49,11 @@ class Modele
     {
         if ($action == 'insert')
         {
-            return insertionDonneesJournalieres($data);
+            return Modele::insertionDonneesJournalieres($data);
         }
         else if ($action == ('update'))
         {
-            return updateDonneesJournalieres($data);
+            return Modele::updateDonneesJournalieres($data);
         }
     }
 
