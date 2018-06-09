@@ -84,7 +84,7 @@ class Modele
         Modele::connexion();
         $requete = "INSERT INTO donneesjournalieres (temperature, tension, poids, autres, idPatient, idHospitalisation, idInfirmier) 
         VALUES (:temperature, :tension, :poids, :autres, :idPatient, :idHospitalisation, :idInfirmier)";
-        $data = prepData($data);
+        $data = Modele::prepData($data);
         $insert = Modele::$pdo->prepare($requete);
 
         if ($insert->execute($data)) {
@@ -102,7 +102,7 @@ class Modele
                                                 idPatient = :idPatient, idHospitalistion = :idHospitalistion,
                                                 idInfirmier = :idInfirmier 
                                                 WHERE idDonnees = :idDonnees";
-        $data = prepData($data);
+        $data = Modele::prepData($data);
 
         $select = Modele::$pdo->prepare($requete);
         if ($select->execute($data)) {
