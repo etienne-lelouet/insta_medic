@@ -64,7 +64,8 @@ class Modele
         $now = time();
         $tsToday = date("Y-m-d H:i:s", strtotime(date('d.m.Y', $now)));
 
-        $requete = "SELECT count(idDonnes) as nb, t1.nom, t1.prenom, t1.date_naissance, t1.urlphoto, t2.* 
+        $requete = "SELECT count(idDonnes) as nb, t1.nom, t1.prenom, t1.date_naissance, t1.urlphoto, t1.idPersonne as idPatient, 
+        t2.idDonnes, t2.temperature, t2.tension, t2.poids, t2.autres, t2.derniereMaj, t2.idHospitalisation, t2.idInfirmier
         FROM personne t1 LEFT JOIN donneesjournalieres t2 ON t1.idPersonne = t2.idPatient 
         WHERE derniereMAJ > :tsToday AND t1.idPersonne = :idPatient LIMIT 1";
 
