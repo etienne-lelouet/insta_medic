@@ -14,8 +14,8 @@ class Modele
 
     public static function verifConnexion($login, $password)
     {
-	
-	Modele::connexion();
+
+        Modele::connexion();
 
         $password = md5($password);
 
@@ -27,8 +27,8 @@ class Modele
         $data = array(":login" => $login, ":password" => $password);
 
         $select->execute($data);
-        $res = $select->fetchAll(PDO::FETCH_ASSOC); 
-		
+        $res = $select->fetchAll(PDO::FETCH_ASSOC);
+
         return $res;
     }
 
@@ -52,11 +52,17 @@ class Modele
         $now = time();
         $tsToday = strtotime(date('d.m.Y', $now));
 
-        $requete = "SELECT t1.*, t2.* FROM donneesjournalieres t1, patient t2 WHERE derniereMAJ > :now AND idPatient = :idPatient AND dateSortie IS NULL";
+        $requete = "SELECT count(idDonnes) as nb, t1.nom, t1.prenom, t1.date_naissance, t1.urlphoto, t2.* 
+        FROM personne t1 LEFT JOIN donneesjournalieres t2 ON t1.idPersonne = t2.idPatient 
+        WHERE derniereMAJ > :tsToday AND t1.idPersonne = :idPatient ";
 
         $select = Modele::$pdo->prepare($requete);
+        $select->bindParam(":idPatient", $idPatient);
+        $select->bindParam(":tsToday", $tsToday);
+
         $select->execute();
         $resultats = $select->fetchAll();
+        
         return $resultats;
     }
 
@@ -65,7 +71,7 @@ class Modele
         Modele::connexion();
         $requete = "INSERT INTO donneesjournalieres (temperature, tension, poids, autres, idPatient, idHospitalisation, idInfirmier) 
         VALUES (:temperature, :tension, :poids, :autres, :idPatient, :idHospitalisation, :idInfirmier)";
-        $data=prepData($data);
+        $data = prepData($data);
         $insert = Modele::$pdo->prepare($requete);
 
         if ($insert->execute($data)) {
@@ -83,7 +89,7 @@ class Modele
                                                 idPatient = :idPatient, idHospitalistion = :idHospitalistion,
                                                 idInfirmier = :idInfirmier 
                                                 WHERE idDonnees = :idDonnees";
-        $data=prepData($data);
+        $data = prepData($data);
 
         $select = Modele::$pdo->prepare($requete);
         if ($select->execute($data)) {

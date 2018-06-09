@@ -20,12 +20,8 @@ else
     exit('{"error":"login non renseigné"}');
 }
 
-$result [] = Modele :: getDonneesJournalieres($idPatient);
+$result = Modele :: getDonneesJournalieres($idPatient);
 
-if (count($result) == 0)
-{
-    exit('{"result":"pas de patients hospitalisés"}"');
-}
 
 print(json_encode($result));
 
