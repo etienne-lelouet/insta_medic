@@ -61,8 +61,8 @@ class Modele
         $select->bindParam(":tsToday", $tsToday);
 
         $select->execute();
-        $resultats = $select->fetchAll();
-        
+        $resultats = $select->fetchAll(PDO::FETCH_ASSOC);
+
         return $resultats;
     }
 
