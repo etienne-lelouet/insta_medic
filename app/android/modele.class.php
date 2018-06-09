@@ -6,7 +6,7 @@ class Modele
     public static function connexion()
     {
         try {
-            Modele::$pdo = new PDO("mysql:host=163.172.49.216;dbname=Clinique", "wef", "ppe2018wef", array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            Modele::$pdo = new PDO("mysql:host=163.172.49.216;dbname=clinique", "wef", "ppe2018wef", array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         } catch (exception $e) {
             echo $e . '</br />';
         }
@@ -37,22 +37,23 @@ class Modele
     {
         Modele::connexion();
 
-        $requete = "SELECT * FROM listePatientHospitalise WHERE dateSortie IS NULL";
+        $requete = "SELECT * FROM listepatienthospitalise WHERE idService = :idService AND dateSortie IS NULL";
 
         $select = Modele::$pdo->prepare($requete);
+        $select->bindParam(':idService', $idService);
         $select->execute();
         $resultats = $select->fetchAll();
         return $resultats;
     }
 
-    public static function getDonneesJournalieres($idService)
+    public static function getDonneesJournalieres($idPatient)
     {
         Modele::connexion();
 
         $now = time();
         $tsToday = strtotime(date('d.m.Y', $now));
 
-        $requete = "SELECT * FROM listePatientHospitalise WHERE dateSortie IS NULL";
+        $requete = "SELECT t1.*, t2.* FROM donneesjournalieres t1, patient t2 WHERE derniereMAJ > :now AND idPatient = :idPatient AND dateSortie IS NULL";
 
         $select = Modele::$pdo->prepare($requete);
         $select->execute();
