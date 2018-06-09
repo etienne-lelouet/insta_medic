@@ -45,16 +45,28 @@ class Modele
         return $resultats;
     }
 
+    public static function majData($data, $action)
+    {
+        if ($action == 'insert')
+        {
+            return insertionDonneesJournalieres($data);
+        }
+        else if ($action == ('update'))
+        {
+            return updateDonneesJournalieres($data);
+        }
+    }
+
     public static function getDonneesJournalieres($idPatient)
     {
         Modele::connexion();
 
         $now = time();
-        $tsToday = strtotime(date('d.m.Y', $now));
+        $tsToday = date("Y-m-d H:i:s", strtotime(date('d.m.Y', $now)));
 
         $requete = "SELECT count(idDonnes) as nb, t1.nom, t1.prenom, t1.date_naissance, t1.urlphoto, t2.* 
         FROM personne t1 LEFT JOIN donneesjournalieres t2 ON t1.idPersonne = t2.idPatient 
-        WHERE derniereMAJ > :tsToday AND t1.idPersonne = :idPatient ";
+        WHERE derniereMAJ > :tsToday AND t1.idPersonne = :idPatient LIMIT 1";
 
         $select = Modele::$pdo->prepare($requete);
         $select->bindParam(":idPatient", $idPatient);
