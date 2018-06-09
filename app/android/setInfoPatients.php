@@ -18,7 +18,7 @@ if (isset($_REQUEST['temperature'])) {
 }
 
 if (isset($_REQUEST['tension'])) {
-    if (!preg_match('/^[0-9]*\.?[0-9]+$/', $_REQUEST['tension'])) {
+    if (!preg_match('/^[\d]*\/[\d]*$$/', $_REQUEST['tension'])) {
 
         exit('{"erreur":"tension invalide"}"');
     }
@@ -51,7 +51,7 @@ if (isset($_REQUEST['action'])) {
 
         if ($_REQUEST['action'] == 'insert') {
             if (isset($_REQUEST['poids'])) {
-                if (!preg_match('/^[0-9]*\.?[0-9]+$/', $_REQUEST['poids'])) {
+                if (!preg_match('/^[0-9]*$/', $_REQUEST['poids'])) {
 
                     exit('{"erreur":"poids Invalide"}"');
                 }
@@ -61,7 +61,7 @@ if (isset($_REQUEST['action'])) {
             }
         } else if ($_REQUEST['action'] == 'update') {
             if (isset($_REQUEST['poids'])) {
-                if (!preg_match('/^[0-9]*\.?[0-9]+$/', $_REQUEST['poids'])) {
+                if (!preg_match('/^[0-9]*$/', $_REQUEST['poids'])) {
 
                     exit('{"erreur":"poids Invalide"}"');
                 }
