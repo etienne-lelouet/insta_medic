@@ -98,7 +98,7 @@ class Modele
     {
         Modele::connexion();
 
-        $requete = "UPDATE donneesjournalieres SET temperature = :temperature, poids = : poids, autres = :autres, tension = :tension,
+        $requete = "UPDATE donneesjournalieres SET temperature = :temperature, poids = :poids, autres = :autres, tension = :tension,
                                                 idInfirmier = :idInfirmier 
                                                 WHERE idDonnes = :idDonnees";
         $data = Modele::prepData($data);
