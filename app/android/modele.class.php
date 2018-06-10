@@ -94,30 +94,32 @@ class Modele
         }
     }
 
-        public static function updateDonneesJournalieres ($data) {
-            Modele::connexion();
+    public static function updateDonneesJournalieres($data)
+    {
+        Modele::connexion();
 
-            $requete = "UPDATE donneesjournalieres SET temperature = :temperature, poids = : poids, autres = :autres, tension = :tension,
+        $requete = "UPDATE donneesjournalieres SET temperature = :temperature, poids = : poids, autres = :autres, tension = :tension,
                                                 idInfirmier = :idInfirmier 
                                                 WHERE idDonnes = :idDonnees";
-            $data = Modele::prepData($data);
+        $data = Modele::prepData($data);
 
-            $select = Modele::$pdo->prepare($requete);
-            if ($select->execute($data)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-            public static function prepData ($data) {
-            $res = array();
-            foreach ($data as $key => $value) {
-                $keyRes = ':' . $key;
-                $res[$keyRes] = $value;
-            }
-
-            return $res;
+        $select = Modele::$pdo->prepare($requete);
+        if ($select->execute($data)) {
+            return true;
+        } else {
+            return false;
         }
     }
-    ?>
+
+    public static function prepData($data)
+    {
+        $res = array();
+        foreach ($data as $key => $value) {
+            $keyRes = ':' . $key;
+            $res[$keyRes] = $value;
+        }
+
+        return $res;
+    }
+}
+?>

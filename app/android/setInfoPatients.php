@@ -100,11 +100,9 @@ if (isset($_REQUEST['action'])) {
 
 $result = Modele::majData($data, $action);
 
-if (count($result) == 0) {
-    exit('{"result":"pas de patients hospitalisés"}"');
-} else {
-    print(json_encode($result));
-}
+
+print(json_encode($result));
+
 
 
 ?>
