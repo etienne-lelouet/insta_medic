@@ -98,7 +98,9 @@ if (isset($_REQUEST['action'])) {
     exit('{"erreur":"action non renseignée"}');
 }
 
-$result = '[{"result":"'.Modele::majData($data, $action).'"}]';
+$res = Modele::majData($data, $action);
+
+$result = '[{"result":"'.$res.'"}]';
 
 print(json_encode($result));
 
