@@ -99,8 +99,27 @@ if (isset($_REQUEST['action'])) {
 }
 
 $res = Modele::majData($data, $action);
+if($res)
+{
+    if ($action == "insert")
+    {
+        $result = '[{"result":"Insertion réussie"}]';
+    } else if ($action == "update")
+    {
+        $result = '[{"result":"Mise à jour réussie"}]';
+    }
+}
+else
+{
+    if ($action == "insert")
+    {
+        $result = '[{"result":"Erreur lors de l\'insertion"}]';
+    } else if ($action == "update")
+    {
+        $result = '[{"result":"Echec de la mise à jour"}]';
+    }
+}
 
-$result = '[{"result":"'.$res.'"}]';
 
 print($result);
 
