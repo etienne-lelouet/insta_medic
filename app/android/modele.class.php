@@ -6,7 +6,7 @@ class Modele
     public static function connexion()
     {
         try {
-            Modele::$pdo = new PDO("mysql:host=163.172.49.216;dbname=clinique", "wef", "ppe2018wef", array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            Modele::$pdo = new PDO("mysql:host=localhost;dbname=clinique", "wef", "ppe2018wef", array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         } catch (exception $e) {
             echo $e . '</br />';
         }

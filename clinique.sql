@@ -1,14 +1,5 @@
--- phpMyAdmin SQL Dump
--- version 4.0.10deb1
--- http://www.phpmyadmin.net
---
--- Client: localhost
--- Généré le: Dim 03 Juin 2018 à 23:40
--- Version du serveur: 5.5.57-0ubuntu0.14.04.1
--- Version de PHP: 5.5.9-1ubuntu4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,6 +10,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `clinique`
 --
+
 DROP DATABASE IF EXISTS `Clinique`;
 DROP DATABASE IF EXISTS `clinique`;
 CREATE DATABASE IF NOT EXISTS `clinique` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
@@ -130,20 +122,15 @@ CREATE TABLE IF NOT EXISTS `chambre` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Vider la table avant d'insérer `chambre`
---
-
-TRUNCATE TABLE `chambre`;
---
 -- Contenu de la table `chambre`
 --
 
 INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(1, 1, 1, 'Occupée', 1);
-INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(2, 6, 2, 'Occupée', 2);
-INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(3, 2, 1, 'Libre', 1);
-INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(4, 3, 1, 'Libre', 1);
-INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(5, 4, 1, 'Libre', 1);
-INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(6, 5, 1, 'Libre', 1);
+INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(2, 2, 1, 'Occupée', 1);
+INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(3, 3, 1, 'Libre', 1);
+INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(4, 4, 1, 'Libre', 1);
+INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(5, 5, 1, 'Libre', 1);
+INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(6, 6, 1, 'Libre', 1);
 INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(7, 7, 2, 'Libre', 2);
 INSERT INTO `chambre` (`idChambre`, `numero`, `etage`, `statut`, `idService`) VALUES(8, 8, 2, 'Libre', 2);
 
@@ -158,32 +145,27 @@ CREATE TABLE IF NOT EXISTS `donneesbiologiques` (
   `idPersonne` int(11) NOT NULL AUTO_INCREMENT,
   `Taille` int(11) DEFAULT '0',
   `GroupeSanguin` varchar(5) DEFAULT '""',
-  `Poids` int(11) DEFAULT '0',
+  `Commentaires` varchar(50) DEFAULT '0',
   PRIMARY KEY (`idPersonne`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=146 ;
 
 --
--- Vider la table avant d'insérer `donneesbiologiques`
---
-
-TRUNCATE TABLE `donneesbiologiques`;
---
 -- Contenu de la table `donneesbiologiques`
 --
 
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(127, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(130, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(131, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(132, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(133, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(136, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(138, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(139, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(140, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(142, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(143, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(144, 0, NULL, 0);
-INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poids`) VALUES(145, 0, NULL, 0);
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(127, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(130, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(131, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(132, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(133, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(136, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(138, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(139, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(140, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(142, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(143, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(144, 0, NULL, '0');
+INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Commentaires`) VALUES(145, 0, NULL, '0');
 
 -- --------------------------------------------------------
 
@@ -193,7 +175,7 @@ INSERT INTO `donneesbiologiques` (`idPersonne`, `Taille`, `GroupeSanguin`, `Poid
 
 DROP TABLE IF EXISTS `donneesjournalieres`;
 CREATE TABLE IF NOT EXISTS `donneesjournalieres` (
-  `idDonnes` int(11) NOT NULL,
+  `idDonnes` int(11) NOT NULL AUTO_INCREMENT,
   `temperature` float NOT NULL,
   `tension` varchar(100) NOT NULL,
   `poids` float NOT NULL,
@@ -202,16 +184,12 @@ CREATE TABLE IF NOT EXISTS `donneesjournalieres` (
   `idPatient` int(11) NOT NULL,
   `idHospitalisation` int(11) NOT NULL,
   `idInfirmier` int(11) NOT NULL,
+  PRIMARY KEY (`idDonnes`),
   KEY `idPatient` (`idPatient`),
   KEY `idHospitalisation` (`idHospitalisation`),
   KEY `idInfirmier` (`idInfirmier`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
---
--- Vider la table avant d'insérer `donneesjournalieres`
---
-
-TRUNCATE TABLE `donneesjournalieres`;
 -- --------------------------------------------------------
 
 --
@@ -229,11 +207,6 @@ CREATE TABLE IF NOT EXISTS `donneesmedicales` (
   KEY `FK_idPatient` (`idPatient`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
---
--- Vider la table avant d'insérer `donneesmedicales`
---
-
-TRUNCATE TABLE `donneesmedicales`;
 --
 -- Contenu de la table `donneesmedicales`
 --
@@ -268,20 +241,17 @@ CREATE TABLE IF NOT EXISTS `hospitalisation` (
   KEY `FK_Hospitalisation_idService` (`idService`),
   KEY `Hospitalisation_Chambre_idChambre_fk` (`idChambre`),
   KEY `idPersonne` (`idPersonne`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
---
--- Vider la table avant d'insérer `hospitalisation`
---
-
-TRUNCATE TABLE `hospitalisation`;
 --
 -- Contenu de la table `hospitalisation`
 --
 
 INSERT INTO `hospitalisation` (`idHospi`, `motif`, `dateEntree`, `dateSortie`, `commentaire`, `idService`, `idPersonne`, `idChambre`) VALUES(3, 'Arythmie', '2018-05-01', NULL, NULL, 1, 127, 1);
 INSERT INTO `hospitalisation` (`idHospi`, `motif`, `dateEntree`, `dateSortie`, `commentaire`, `idService`, `idPersonne`, `idChambre`) VALUES(4, 'Délirium tremens', '2018-05-01', NULL, NULL, 2, 130, 7);
-INSERT INTO `hospitalisation` (`idHospi`, `motif`, `dateEntree`, `dateSortie`, `commentaire`, `idService`, `idPersonne`, `idChambre`) VALUES(5, 'Urgence AVC', '2018-04-01', '2018-05-04', 'Libéré, gardé sous suivi', 1, 127, 3);
+INSERT INTO `hospitalisation` (`idHospi`, `motif`, `dateEntree`, `dateSortie`, `commentaire`, `idService`, `idPersonne`, `idChambre`) VALUES(5, 'Urgence AVC', '2018-04-01', '2018-05-04', 'Libéré, gardé sous suivi', 1, 127, 2);
+INSERT INTO `hospitalisation` (`idHospi`, `motif`, `dateEntree`, `dateSortie`, `commentaire`, `idService`, `idPersonne`, `idChambre`) VALUES(6, 'test', '2018-05-03', NULL, 'TEEEEEEEEEEEEEEEEEEEST', 1, 136, 3);
+INSERT INTO `hospitalisation` (`idHospi`, `motif`, `dateEntree`, `dateSortie`, `commentaire`, `idService`, `idPersonne`, `idChambre`) VALUES(7, 'test', '2018-05-03', NULL, 'TEEEEEEEEEEEEEEEEEEEST', 1, 139, 4);
 
 -- --------------------------------------------------------
 
@@ -298,11 +268,6 @@ CREATE TABLE IF NOT EXISTS `infirmier` (
   KEY `FK_Infirmier_idService` (`idService`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Vider la table avant d'insérer `infirmier`
---
-
-TRUNCATE TABLE `infirmier`;
 --
 -- Contenu de la table `infirmier`
 --
@@ -330,27 +295,22 @@ CREATE TABLE IF NOT EXISTS `lien` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
--- Vider la table avant d'insérer `lien`
---
-
-TRUNCATE TABLE `lien`;
---
 -- Contenu de la table `lien`
 --
 
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(18, 78, 127, '2018-05-29 18:33:13');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(19, 63, 127, '2018-05-29 19:15:03');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(20, 63, 130, '2018-05-29 20:24:49');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(21, 63, 132, '2018-05-29 20:35:39');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(22, 78, 132, '2018-05-29 20:36:46');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(23, 78, 130, '2018-05-31 14:12:42');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(24, 63, 139, '2018-05-31 15:22:06');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(25, 78, 142, '2018-05-31 20:24:19');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(26, 63, 142, '2018-05-31 20:24:41');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(27, 78, 136, '2018-05-31 12:33:42');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(28, 78, 143, '2018-05-31 12:38:47');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(29, 63, 143, '2018-05-31 13:12:09');
-INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(30, 78, 145, '2018-05-31 17:10:46');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(18, 78, 127, '2018-05-29 20:33:13');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(19, 63, 127, '2018-05-29 21:15:03');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(20, 63, 130, '2018-05-29 22:24:49');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(21, 63, 132, '2018-05-29 22:35:39');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(22, 78, 132, '2018-05-29 22:36:46');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(23, 78, 130, '2018-05-31 16:12:42');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(24, 63, 139, '2018-05-31 17:22:06');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(25, 78, 142, '2018-05-31 22:24:19');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(26, 63, 142, '2018-05-31 22:24:41');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(27, 78, 136, '2018-05-31 14:33:42');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(28, 78, 143, '2018-05-31 14:38:47');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(29, 63, 143, '2018-05-31 15:12:09');
+INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(30, 78, 145, '2018-05-31 19:10:46');
 
 -- --------------------------------------------------------
 
@@ -359,7 +319,8 @@ INSERT INTO `lien` (`id`, `idMedecin`, `idPatient`, `DateCreation`) VALUES(30, 7
 --
 DROP VIEW IF EXISTS `listepatienthospitalise`;
 CREATE TABLE IF NOT EXISTS `listepatienthospitalise` (
-`nom` varchar(50)
+`idPatient` int(11)
+,`nom` varchar(50)
 ,`prenom` varchar(50)
 ,`date_naissance` varchar(45)
 ,`urlphoto` varchar(75)
@@ -367,6 +328,7 @@ CREATE TABLE IF NOT EXISTS `listepatienthospitalise` (
 ,`dateEntree` date
 ,`dateSortie` date
 ,`idService` int(11)
+,`idHospi` int(11)
 ,`nomService` varchar(25)
 ,`idChambre` int(11)
 ,`etage` int(11)
@@ -391,11 +353,6 @@ CREATE TABLE IF NOT EXISTS `medecin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Vider la table avant d'insérer `medecin`
---
-
-TRUNCATE TABLE `medecin`;
---
 -- Contenu de la table `medecin`
 --
 
@@ -415,11 +372,6 @@ CREATE TABLE IF NOT EXISTS `medicament` (
   PRIMARY KEY (`idMedicament`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
---
--- Vider la table avant d'insérer `medicament`
---
-
-TRUNCATE TABLE `medicament`;
 --
 -- Contenu de la table `medicament`
 --
@@ -460,15 +412,10 @@ CREATE TABLE IF NOT EXISTS `ordonnance` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
--- Vider la table avant d'insérer `ordonnance`
---
-
-TRUNCATE TABLE `ordonnance`;
---
 -- Contenu de la table `ordonnance`
 --
 
-INSERT INTO `ordonnance` (`idOrdonnance`, `dateordonnance`, `TextOrdonnance`, `idPatient`, `idMedecin`) VALUES(9, '2018-06-03 20:10:31', 'tezt', 127, 63);
+INSERT INTO `ordonnance` (`idOrdonnance`, `dateordonnance`, `TextOrdonnance`, `idPatient`, `idMedecin`) VALUES(9, '2018-06-03 22:10:31', 'tezt', 127, 63);
 
 -- --------------------------------------------------------
 
@@ -498,33 +445,28 @@ CREATE TABLE IF NOT EXISTS `personne` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=146 ;
 
 --
--- Vider la table avant d'insérer `personne`
---
-
-TRUNCATE TABLE `personne`;
---
 -- Contenu de la table `personne`
 --
 
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(63, 'Mlle', 'De Monaco', 'Stephanie', '17/11/1996', '25 test', 'testtest', '75000', 'Test', '0111111111', 'test25', 'test34@test.com', '05a671c66aefea124cc08b76ea6d30bb', 'testestsetest.jpg', '2017-12-07 18:07:35', 2);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(78, 'Mme', 'Mader', 'Jean Pierre', '17/03/1964', '9 rue broussais', '', '75015', 'Paris', '0106783359', 'mader_jeanpierre', 'jeanpierremader@gmail.com', '05a671c66aefea124cc08b76ea6d30bb', 'jeanpierre.jpg', '2017-12-08 12:54:25', 2);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(127, 'M.', 'Le Louët', 'Etienne', '17/11/1996', '24 Villa de Lourcine', 'Boite 40', '75014', 'Paris', '0754848257', 'etienne_lelouet', 'etiennelelouet@outlook.com', '05a671c66aefea124cc08b76ea6d30bb', '1527618297.jpg', '2018-05-29 18:24:57', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(130, 'Mme.', 'chat', 'chatchat', '11/09/1997', '20 rue des chats', '', '75010', 'Paris', '0102030405', 'chat', 'chat@gmail.com', '316e6bb49f736392f2023c166e19dd88', '4582874916.jpg', '2018-05-29 20:16:12', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(131, 'Autre', 'trash', 'trash', '17/11/1996', '666 trash', '', '75000', 'Trash', '0111111111', 'trash', 'trash@trash.com', '30639096bfe4ec4b9f17696ef1d02b9f', '3055250492.jpg', '2018-05-29 20:20:46', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(132, 'Mme.', 'Le Louet', 'Marie-Anne', '20/11/1992', '6 Rue de l''Amiral Mouchez', '', '75013', 'Paris', '0837462859', 'Marieanne', 'marieanne1@free.fr', '098f6bcd4621d373cade4e832627b4f6', '13748632884.png', '2018-05-29 20:31:16', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(133, 'Autre', 'test', 'test', '17/11/1996', '24 test', 'test', '75000', 'test', '0111111111', 'test456', 'testtest@est.com', '05a671c66aefea124cc08b76ea6d30bb', '9166627482.png', '2018-05-31 12:54:07', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(134, 'M.', 'House', 'Grigory', '12/05/1963', '10 Rue du Cherche-Midi', '', '75005', 'Paris', '0715787826', 'ghouse', 'ghouse@test.com', '05a671c66aefea124cc08b76ea6d30bb', 'test.jpg', '2018-05-31 14:12:05', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(135, 'Mme', 'Lillo', 'Agnes', '22/11/1964', '24 rue du marechal Joffre', '', '75013', 'Paris', '0745867895', 'a_lillo', 'alillo@test.com', '05a671c66aefea124cc08b76ea6d30bb', 'test.pnh', '2018-05-31 14:14:00', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(136, 'Autre', 'test', 'test', '17/12/1965', '24 ets', '', '75000', 'test', '0111111111', 'testtest', 'test256@test.com', '05a671c66aefea124cc08b76ea6d30bb', '1527778618.jpg', '2018-05-31 14:56:58', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(137, 'M.', 'Cissé', 'Steeve', '03/12/1964', '13 rue des vallons', '', '75015', 'Paris', '0190785696', 'scisse', 'scisse@gmail.com', '05a671c66aefea124cc08b76ea6d30bb', 'default.jpg', '2018-05-31 18:41:17', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(138, 'M.', 'Buis', 'Florian', '29/10/1991', '7 Rue de la Paix', '', '91600', 'Savigny-Sur-Orge', '0111111111', 'fbuis', 'fbuis@test.com', '05a671c66aefea124cc08b76ea6d30bb', '9167195208.jpg', '2018-05-31 15:11:08', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(139, 'Autre', 'Thibault ', 'Colin', '21/09/1995', '36 rue des ecoles', '', '75005', 'Paris', '0111111111', 'tobicolin', 'tibtib@test.com', '05a671c66aefea124cc08b76ea6d30bb', '6111465260.jpg', '2018-05-31 15:18:35', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(140, 'M.', 'Julite', 'Nil', '17/11/1996', '2 rue fernand', '', '75014', 'Paris', '0111111111', 'njulite', 'njulite@test.com', '05a671c66aefea124cc08b76ea6d30bb', '4583604261.jpg', '2018-05-31 15:48:07', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(141, 'Autre', 'libel', 'lolol', '17/11/1996', '24 test', 'test', '91170', 'viry chatillon', '0111111111', 'narth', 'narth@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '13750960455.jpg', '2018-05-31 20:21:35', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(142, 'Autre', 'etset', 'estfnjezk', '17/11/1996', '24 test', '', '75000', 'Test', '0111111111', 'testtest245', 'test78@tese.com', '05a671c66aefea124cc08b76ea6d30bb', '10695192410.jpg', '2018-05-31 20:23:50', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(143, 'Autre', 'buis', 'buis', '29/10/1991', '7 rue de la paix ', '', '91170', 'viry chatillon', '0111111111', 'justepourvoir', 'justepourvoir@gmail.com', 'f532a397fe7671763732bc4f6c14fed7', '12223544872.jpg', '2018-05-31 12:38:29', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(144, 'Autre', 'libel', 'estfnjezk', '29/10/1991', '24 test', '', '74000', 'viry chatillon', '0111111111', 'jpvsicamarche', 'jpv@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '12223561960.jpg', '2018-05-31 13:14:05', 1);
-INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(145, 'M.', 'test', 'test', '17/11/1996', '24 test', 'test', '75000', 'test', '0111111111', 'test256', 'test256@est.Lcom', '05a671c66aefea124cc08b76ea6d30bb', '1527959419.jpg', '2018-05-31 17:10:19', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(63, 'Mlle', 'De Monaco', 'Stephanie', '17/11/1996', '25 test', 'testtest', '75000', 'Test', '0111111111', 'test25', 'test34@test.com', '05a671c66aefea124cc08b76ea6d30bb', 'testestsetest.jpg', '2017-12-07 19:07:35', 2);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(78, 'Mme', 'Mader', 'Jean Pierre', '17/03/1964', '9 rue broussais', '', '75015', 'Paris', '0106783359', 'mader_jeanpierre', 'jeanpierremader@gmail.com', '05a671c66aefea124cc08b76ea6d30bb', 'jeanpierre.jpg', '2017-12-08 13:54:25', 2);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(127, 'M.', 'Le Louët', 'Etienne', '17/11/1996', '24 Villa de Lourcine', 'Boite 40', '75014', 'Paris', '0754848257', 'etienne_lelouet', 'etiennelelouet@outlook.com', '05a671c66aefea124cc08b76ea6d30bb', '1527618297.jpg', '2018-05-29 20:24:57', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(130, 'Mme.', 'chat', 'chatchat', '11/09/1997', '20 rue des chats', '', '75010', 'Paris', '0102030405', 'chat', 'chat@gmail.com', '316e6bb49f736392f2023c166e19dd88', '4582874916.jpg', '2018-05-29 22:16:12', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(131, 'Autre', 'trash', 'trash', '17/11/1996', '666 trash', '', '75000', 'Trash', '0111111111', 'trash', 'trash@trash.com', '30639096bfe4ec4b9f17696ef1d02b9f', '3055250492.jpg', '2018-05-29 22:20:46', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(132, 'Mme.', 'Le Louet', 'Marie-Anne', '20/11/1992', '6 Rue de l''Amiral Mouchez', '', '75013', 'Paris', '0837462859', 'Marieanne', 'marieanne1@free.fr', '098f6bcd4621d373cade4e832627b4f6', '13748632884.png', '2018-05-29 22:31:16', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(133, 'Autre', 'test', 'test', '17/11/1996', '24 test', 'test', '75000', 'test', '0111111111', 'test456', 'testtest@est.com', '05a671c66aefea124cc08b76ea6d30bb', '9166627482.png', '2018-05-31 14:54:07', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(134, 'M.', 'House', 'Grigory', '12/05/1963', '10 Rue du Cherche-Midi', '', '75005', 'Paris', '0715787826', 'ghouse', 'ghouse@test.com', '05a671c66aefea124cc08b76ea6d30bb', 'test.jpg', '2018-05-31 16:12:05', 3);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(135, 'Mme', 'Lillo', 'Agnes', '22/11/1964', '24 rue du marechal Joffre', '', '75013', 'Paris', '0745867895', 'a_lillo', 'alillo@test.com', '05a671c66aefea124cc08b76ea6d30bb', 'test.pnh', '2018-05-31 16:14:00', 3);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(136, 'Autre', 'test', 'test', '17/12/1965', '24 ets', '', '75000', 'test', '0111111111', 'testtest', 'test256@test.com', '05a671c66aefea124cc08b76ea6d30bb', '1527778618.jpg', '2018-05-31 16:56:58', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(137, 'M.', 'Cissé', 'Steeve', '03/12/1964', '13 rue des vallons', '', '75015', 'Paris', '0190785696', 'scisse', 'scisse@gmail.com', '05a671c66aefea124cc08b76ea6d30bb', 'default.jpg', '2018-05-31 20:41:17', 3);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(138, 'M.', 'Buis', 'Florian', '29/10/1991', '7 Rue de la Paix', '', '91600', 'Savigny-Sur-Orge', '0111111111', 'fbuis', 'fbuis@test.com', '05a671c66aefea124cc08b76ea6d30bb', '9167195208.jpg', '2018-05-31 17:11:08', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(139, 'Autre', 'Thibault ', 'Colin', '21/09/1995', '36 rue des ecoles', '', '75005', 'Paris', '0111111111', 'tobicolin', 'tibtib@test.com', '05a671c66aefea124cc08b76ea6d30bb', '6111465260.jpg', '2018-05-31 17:18:35', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(140, 'M.', 'Julite', 'Nil', '17/11/1996', '2 rue fernand', '', '75014', 'Paris', '0111111111', 'njulite', 'njulite@test.com', '05a671c66aefea124cc08b76ea6d30bb', '4583604261.jpg', '2018-05-31 17:48:07', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(141, 'Autre', 'libel', 'lolol', '17/11/1996', '24 test', 'test', '91170', 'viry chatillon', '0111111111', 'narth', 'narth@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '13750960455.jpg', '2018-05-31 22:21:35', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(142, 'Autre', 'etset', 'estfnjezk', '17/11/1996', '24 test', '', '75000', 'Test', '0111111111', 'testtest245', 'test78@tese.com', '05a671c66aefea124cc08b76ea6d30bb', '10695192410.jpg', '2018-05-31 22:23:50', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(143, 'Autre', 'buis', 'buis', '29/10/1991', '7 rue de la paix ', '', '91170', 'viry chatillon', '0111111111', 'justepourvoir', 'justepourvoir@gmail.com', 'f532a397fe7671763732bc4f6c14fed7', '12223544872.jpg', '2018-05-31 14:38:29', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(144, 'Autre', 'libel', 'estfnjezk', '29/10/1991', '24 test', '', '74000', 'viry chatillon', '0111111111', 'jpvsicamarche', 'jpv@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '12223561960.jpg', '2018-05-31 15:14:05', 1);
+INSERT INTO `personne` (`idPersonne`, `etat_civil`, `nom`, `prenom`, `date_naissance`, `adresse`, `adressecomp`, `code_postal`, `Ville`, `telephone`, `login`, `email`, `password`, `urlphoto`, `date_creation`, `status`) VALUES(145, 'M.', 'test', 'test', '17/11/1996', '24 test', 'test', '75000', 'test', '0111111111', 'test256', 'test256@est.Lcom', '05a671c66aefea124cc08b76ea6d30bb', '1527959419.jpg', '2018-05-31 19:10:19', 1);
 
 -- --------------------------------------------------------
 
@@ -547,11 +489,6 @@ CREATE TABLE IF NOT EXISTS `prescrire` (
   KEY `fk_prescrire_medicament` (`idMedicament`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
---
--- Vider la table avant d'insérer `prescrire`
---
-
-TRUNCATE TABLE `prescrire`;
 --
 -- Contenu de la table `prescrire`
 --
@@ -585,11 +522,6 @@ CREATE TABLE IF NOT EXISTS `rdv` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=70 ;
 
 --
--- Vider la table avant d'insérer `rdv`
---
-
-TRUNCATE TABLE `rdv`;
---
 -- Contenu de la table `rdv`
 --
 
@@ -621,11 +553,6 @@ CREATE TABLE IF NOT EXISTS `service` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Vider la table avant d'insérer `service`
---
-
-TRUNCATE TABLE `service`;
---
 -- Contenu de la table `service`
 --
 
@@ -646,11 +573,6 @@ CREATE TABLE IF NOT EXISTS `specialite` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Vider la table avant d'insérer `specialite`
---
-
-TRUNCATE TABLE `specialite`;
---
 -- Contenu de la table `specialite`
 --
 
@@ -664,17 +586,11 @@ INSERT INTO `specialite` (`idSpecialite`, `libelle`) VALUES(2, 'Neurologie');
 --
 DROP TABLE IF EXISTS `listepatienthospitalise`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`wef`@`%` SQL SECURITY DEFINER VIEW `listepatienthospitalise` AS select `personne`.`nom` AS `nom`,`personne`.`prenom` AS `prenom`,`personne`.`date_naissance` AS `date_naissance`,`personne`.`urlphoto` AS `urlphoto`,`hospitalisation`.`motif` AS `motif`,`hospitalisation`.`dateEntree` AS `dateEntree`,`hospitalisation`.`dateSortie` AS `dateSortie`,`hospitalisation`.`idService` AS `idService`,`service`.`nomService` AS `nomService`,`chambre`.`idChambre` AS `idChambre`,`chambre`.`etage` AS `etage` from (((`personne` join `hospitalisation`) join `chambre`) join `service`) where ((`hospitalisation`.`idPersonne` = `personne`.`idPersonne`) and (`hospitalisation`.`idChambre` = `chambre`.`idChambre`) and (`hospitalisation`.`idService` = `service`.`idService`));
+CREATE ALGORITHM=UNDEFINED DEFINER=`wef`@`%` SQL SECURITY DEFINER VIEW `listepatienthospitalise` AS select `personne`.`idPersonne` AS `idPatient`,`personne`.`nom` AS `nom`,`personne`.`prenom` AS `prenom`,`personne`.`date_naissance` AS `date_naissance`,`personne`.`urlphoto` AS `urlphoto`,`hospitalisation`.`motif` AS `motif`,`hospitalisation`.`dateEntree` AS `dateEntree`,`hospitalisation`.`dateSortie` AS `dateSortie`,`hospitalisation`.`idService` AS `idService`,`hospitalisation`.`idHospi` AS `idHospi`,`service`.`nomService` AS `nomService`,`chambre`.`idChambre` AS `idChambre`,`chambre`.`etage` AS `etage` from (((`personne` join `hospitalisation`) join `chambre`) join `service`) where ((`hospitalisation`.`idPersonne` = `personne`.`idPersonne`) and (`hospitalisation`.`idChambre` = `chambre`.`idChambre`) and (`hospitalisation`.`idService` = `service`.`idService`));
 
 --
 -- Contraintes pour les tables exportées
 --
-
---
--- Contraintes pour la table `chambre`
---
-ALTER TABLE `chambre`
-  ADD CONSTRAINT `FK_Chambre_idService` FOREIGN KEY (`idService`) REFERENCES `service` (`idService`);
 
 --
 -- Contraintes pour la table `donneesbiologiques`
