@@ -86,7 +86,7 @@ class Modele
         VALUES (:temperature, :tension, :poids, :autres, :idPatient, :idHospitalisation, :idInfirmier)";
         $data = Modele::prepData($data);
         $insert = Modele::$pdo->prepare($requete);
-
+        var_dump($data);
         if ($insert->execute($data)) {
             return true;
         } else {
@@ -98,8 +98,7 @@ class Modele
     {
         Modele::connexion();
 
-        $requete = "UPDATE donneesjournalieres SET temperature = :temperature, poids = : poids, autres = :autres, 
-                                                idPatient = :idPatient, idHospitalistion = :idHospitalistion,
+        $requete = "UPDATE donneesjournalieres SET temperature = :temperature, poids = : poids, autres = :autres, tension = :tension,
                                                 idInfirmier = :idInfirmier 
                                                 WHERE idDonnees = :idDonnees";
         $data = Modele::prepData($data);

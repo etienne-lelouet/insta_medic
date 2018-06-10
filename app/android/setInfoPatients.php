@@ -37,16 +37,6 @@ if (isset($_REQUEST['poids'])) {
     exit('{"error":"idHospi non renseigné"}');
 }
 
-if (isset($_REQUEST['idHospi'])) {
-    if (!preg_match('/^[0-9]*$/', $_REQUEST['idHospi'])) {
-
-        exit('{"erreur":"idHospi Invalide"}"');
-    }
-    $data['idHospi'] = $_REQUEST['idHospi'];
-} else {
-    exit('{"error":"idHospi non renseigné"}');
-}
-
 if (isset($_REQUEST['idInfirmier'])) {
     if (!preg_match('/^[0-9]*$/', $_REQUEST['idInfirmier'])) {
 
@@ -72,6 +62,7 @@ if (isset($_REQUEST['action'])) {
 
         if ($_REQUEST['action'] == 'insert') {
             if (isset($_REQUEST['idPatient'])) {
+                
                 if (!preg_match('/^[0-9]*$/', $_REQUEST['idPatient'])) {
 
                     exit('{"erreur":"action Invalide"}"');
@@ -79,6 +70,16 @@ if (isset($_REQUEST['action'])) {
                 $data['idPatient'] = $_REQUEST['idPatient'];
             } else {
                 exit('{"error":"idDones non renseigné"}');
+            }
+
+            if (isset($_REQUEST['idHospi'])) {
+                if (!preg_match('/^[0-9]*$/', $_REQUEST['idHospi'])) {
+            
+                    exit('{"erreur":"idHospi Invalide"}"');
+                }
+                $data['idHospi'] = $_REQUEST['idHospi'];
+            } else {
+                exit('{"error":"idHospi non renseigné"}');
             }
 
         } else if ($_REQUEST['action'] == 'update') {
