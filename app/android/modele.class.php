@@ -84,8 +84,12 @@ class Modele
         Modele::connexion();
         $requete = "INSERT INTO donneesjournalieres (temperature, tension, poids, commentaire, idPatient, idHospi, idInfirmier) 
         VALUES (:temperature, :tension, :poids, :autres, :idPatient, :idHospi, :idInfirmier)";
+
         $data = Modele::prepData($data);
+        var_dump($data);
+
         $insert = Modele::$pdo->prepare($requete);
+        
         try
         {   
             if ($insert->execute($data)) {
