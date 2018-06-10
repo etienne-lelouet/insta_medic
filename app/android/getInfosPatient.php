@@ -11,13 +11,13 @@ if (isset($_REQUEST['idPatient']))
 {
     if (!preg_match('/^\d{1,}$/', $_REQUEST['idPatient'])) {
 
-        exit('{"erreur":"Pas d\'id fourni"}"');
+        exit('[{"erreur":"Pas d\'id fourni"}]"');
     }
     $idPatient = $_REQUEST['idPatient'];
 }
 else
 {
-    exit('{"error":"login non renseigné"}');
+    exit('[{"error":"login non renseigné"}]');
 }
 
 $result = Modele :: getDonneesJournalieres($idPatient);

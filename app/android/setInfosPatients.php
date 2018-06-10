@@ -65,32 +65,32 @@ if (isset($_REQUEST['action'])) {
 
                 if (!preg_match('/^[0-9]*$/', $_REQUEST['idPatient'])) {
 
-                    exit('{"erreur":"action Invalide"}"');
+                    exit('[{"erreur":"action Invalide"}]');
                 }
                 $data['idPatient'] = $_REQUEST['idPatient'];
             } else {
-                exit('{"error":"idDones non renseigné"}');
+                exit('[{"error":"idDones non renseigné"}]');
             }
 
             if (isset($_REQUEST['idHospi'])) {
                 if (!preg_match('/^[0-9]*$/', $_REQUEST['idHospi'])) {
             
-                    exit('{"erreur":"idHospi Invalide"}"');
+                    exit('[{"erreur":"idHospi Invalide"}]');
                 }
                 $data['idHospi'] = $_REQUEST['idHospi'];
             } else {
-                exit('{"error":"idHospi non renseigné"}');
+                exit('[{"error":"idHospi non renseigné"}]');
             }
 
         } else if ($_REQUEST['action'] == 'update') {
             if (isset($_REQUEST['idDonnees'])) {
                 if (!preg_match('/^[0-9]*$/', $_REQUEST['idDonnees'])) {
 
-                    exit('{"erreur":"idDonnees Invalide"}"');
+                    exit('[{"erreur":"idDonnees Invalide"}]');
                 }
                 $data['idDonnees'] = $_REQUEST['idDonnees'];
             } else {
-                exit('{"error":"idDonnees non renseigné"}');
+                exit('[{"error":"idDonnees non renseigné"}]');
             }
         }
     }
@@ -98,7 +98,7 @@ if (isset($_REQUEST['action'])) {
     exit('{"error":"action non renseignée"}');
 }
 
-$result[] = '{"result":"'.Modele::majData($data, $action).'"}';
+$result = '[{"result":"'.Modele::majData($data, $action).'"}]';
 
 print(json_encode($result));
 

@@ -11,20 +11,20 @@ if (isset($_REQUEST['idService']))
 {
     if (!preg_match('/^\d{1,}$/', $_REQUEST['idService'])) {
 
-        exit('{"erreur":"id In"}"');
+        exit('[{"erreur":"id incorrect"}]');
     }
     $idService = $_REQUEST['idService'];
 }
 else
 {
-    exit('{"error":"id non renseigné"}');
+    exit('[{"error":"id non renseigné"}]');
 }
 
 $result = Modele :: listerPatients($idService);
 
 if (count($result) == 0)
 {
-    exit('{"result":"pas de patients hospitalisés"}"');
+    exit('[{"result":"pas de patients hospitalisés"}]');
 }
 else
 {
