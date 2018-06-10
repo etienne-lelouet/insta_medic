@@ -82,8 +82,8 @@ class Modele
     public static function insertionDonneesJournalieres($data)
     {
         Modele::connexion();
-        $requete = "INSERT INTO donneesjournalieres (temperature, tension, poids, autres, idPatient, idHospitalisation, idInfirmier) 
-        VALUES (:temperature, :tension, :poids, :autres, :idPatient, :idHospitalisation, :idInfirmier)";
+        $requete = "INSERT INTO donneesjournalieres (temperature, tension, poids, autres, idPatient, idHospi, idInfirmier) 
+        VALUES (:temperature, :tension, :poids, :autres, :idPatient, :idHospi, :idInfirmier)";
         $data = Modele::prepData($data);
         $insert = Modele::$pdo->prepare($requete);
         var_dump($data);
