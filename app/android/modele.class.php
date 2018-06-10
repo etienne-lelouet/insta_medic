@@ -47,12 +47,9 @@ class Modele
 
     public static function majData($data, $action)
     {
-        if ($action == 'insert')
-        {
+        if ($action == 'insert') {
             return Modele::insertionDonneesJournalieres($data);
-        }
-        else if ($action == ('update'))
-        {
+        } else if ($action == ('update')) {
             return Modele::updateDonneesJournalieres($data);
         }
     }
@@ -86,50 +83,41 @@ class Modele
         VALUES (:temperature, :tension, :poids, :autres, :idPatient, :idHospi, :idInfirmier)";
 
         $data = Modele::prepData($data);
-        var_dump($data);
 
         $insert = Modele::$pdo->prepare($requete);
-        
-        try
-        {   
-            if ($insert->execute($data)) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch(Exception $e)
-        {
-            echo $e;
-        }
 
-    }
 
-    public static function updateDonneesJournalieres($data)
-    {
-        Modele::connexion();
-
-        $requete = "UPDATE donneesjournalieres SET temperature = :temperature, poids = : poids, autres = :autres, tension = :tension,
-                                                idInfirmier = :idInfirmier 
-                                                WHERE idDonnees = :idDonnees";
-        $data = Modele::prepData($data);
-
-        $select = Modele::$pdo->prepare($requete);
-        if ($select->execute($data)) {
+        if ($insert->execute($data)) {
             return true;
         } else {
             return false;
         }
     }
 
-    public static function prepData($data)
-    {
-        $res = array();
-        foreach ($data as $key => $value) {
-            $keyRes = ':' . $key;
-            $res[$keyRes] = $value;
+        public static function updateDonneesJournalieres ($data) {
+            Modele::connexion();
+
+            $requete = "UPDATE donneesjournalieres SET temperature = :temperature, poids = : poids, autres = :autres, tension = :tension,
+                                                idInfirmier = :idInfirmier 
+                                                WHERE idDonnes = :idDonnees";
+            $data = Modele::prepData($data);
+
+            $select = Modele::$pdo->prepare($requete);
+            if ($select->execute($data)) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
-        return $res;
+            public static function prepData ($data) {
+            $res = array();
+            foreach ($data as $key => $value) {
+                $keyRes = ':' . $key;
+                $res[$keyRes] = $value;
+            }
+
+            return $res;
+        }
     }
-}
-?>
+    ?>

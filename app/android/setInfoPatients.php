@@ -62,7 +62,7 @@ if (isset($_REQUEST['action'])) {
 
         if ($_REQUEST['action'] == 'insert') {
             if (isset($_REQUEST['idPatient'])) {
-                
+
                 if (!preg_match('/^[0-9]*$/', $_REQUEST['idPatient'])) {
 
                     exit('{"erreur":"action Invalide"}"');
@@ -83,14 +83,14 @@ if (isset($_REQUEST['action'])) {
             }
 
         } else if ($_REQUEST['action'] == 'update') {
-            if (isset($_REQUEST['idDones'])) {
-                if (!preg_match('/^[0-9]*$/', $_REQUEST['idDones'])) {
+            if (isset($_REQUEST['idDonnees'])) {
+                if (!preg_match('/^[0-9]*$/', $_REQUEST['idDonnees'])) {
 
-                    exit('{"erreur":"idDones Invalide"}"');
+                    exit('{"erreur":"idDonnees Invalide"}"');
                 }
-                $data['idDones'] = $_REQUEST['idDones'];
+                $data['idDonnees'] = $_REQUEST['idDonnees'];
             } else {
-                exit('{"error":"idDones non renseigné"}');
+                exit('{"error":"idDonnees non renseigné"}');
             }
         }
     }
