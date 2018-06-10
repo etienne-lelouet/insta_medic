@@ -82,7 +82,7 @@ class Modele
     public static function insertionDonneesJournalieres($data)
     {
         Modele::connexion();
-        $requete = "INSERT INTO donneesjournalieres (temperature, tension, poids, commentaire, idPatient, idHospi, idInfirmier) 
+        $requete = "INSERT INTO donneesjournalieres (temperature, tension, poids, autres, idPatient, idHospitalisation, idInfirmier) 
         VALUES (:temperature, :tension, :poids, :autres, :idPatient, :idHospi, :idInfirmier)";
 
         $data = Modele::prepData($data);
