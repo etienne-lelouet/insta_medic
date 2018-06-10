@@ -90,6 +90,7 @@ class Modele
         if ($insert->execute($data)) {
             return true;
         } else {
+            $insert->debugDumpParams();
             return false;
         }
     }
