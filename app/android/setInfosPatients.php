@@ -102,7 +102,7 @@ $res = Modele::majData($data, $action);
 
 $result = '[{"result":"'.$res.'"}]';
 
-print(json_encode($result));
+print($result);
 
 
 
