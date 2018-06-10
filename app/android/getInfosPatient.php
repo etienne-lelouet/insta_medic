@@ -17,7 +17,7 @@ if (isset($_REQUEST['idPatient']))
 }
 else
 {
-    exit('[{"error":"login non renseigné"}]');
+    exit('[{"erreur":"login non renseigné"}]');
 }
 
 $result = Modele :: getDonneesJournalieres($idPatient);

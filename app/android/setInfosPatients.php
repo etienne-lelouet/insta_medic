@@ -14,7 +14,7 @@ if (isset($_REQUEST['temperature'])) {
     }
     $data['temperature'] = $_REQUEST['temperature'];
 } else {
-    exit('{"error":"temperature non renseigné"}');
+    exit('{"erreur":"temperature non renseigné"}');
 }
 
 if (isset($_REQUEST['tension'])) {
@@ -24,7 +24,7 @@ if (isset($_REQUEST['tension'])) {
     }
     $data['tension'] = $_REQUEST['tension'];
 } else {
-    exit('{"error":"tension non renseigné"}');
+    exit('{"erreur":"tension non renseigné"}');
 }
 
 if (isset($_REQUEST['poids'])) {
@@ -34,7 +34,7 @@ if (isset($_REQUEST['poids'])) {
     }
     $data['poids'] = $_REQUEST['poids'];
 } else {
-    exit('{"error":"idHospi non renseigné"}');
+    exit('{"erreur":"idHospi non renseigné"}');
 }
 
 if (isset($_REQUEST['idInfirmier'])) {
@@ -44,7 +44,7 @@ if (isset($_REQUEST['idInfirmier'])) {
     }
     $data['idInfirmier'] = $_REQUEST['idInfirmier'];
 } else {
-    exit('{"error":"idInfirmier non renseigné"}');
+    exit('{"erreur":"idInfirmier non renseigné"}');
 }
 
 if (isset($_REQUEST['autres'])) {
@@ -69,7 +69,7 @@ if (isset($_REQUEST['action'])) {
                 }
                 $data['idPatient'] = $_REQUEST['idPatient'];
             } else {
-                exit('[{"error":"idDones non renseigné"}]');
+                exit('[{"erreur":"idDones non renseigné"}]');
             }
 
             if (isset($_REQUEST['idHospi'])) {
@@ -79,7 +79,7 @@ if (isset($_REQUEST['action'])) {
                 }
                 $data['idHospi'] = $_REQUEST['idHospi'];
             } else {
-                exit('[{"error":"idHospi non renseigné"}]');
+                exit('[{"erreur":"idHospi non renseigné"}]');
             }
 
         } else if ($_REQUEST['action'] == 'update') {
@@ -90,12 +90,12 @@ if (isset($_REQUEST['action'])) {
                 }
                 $data['idDonnees'] = $_REQUEST['idDonnees'];
             } else {
-                exit('[{"error":"idDonnees non renseigné"}]');
+                exit('[{"erreur":"idDonnees non renseigné"}]');
             }
         }
     }
 } else {
-    exit('{"error":"action non renseignée"}');
+    exit('{"erreur":"action non renseignée"}');
 }
 
 $result = '[{"result":"'.Modele::majData($data, $action).'"}]';

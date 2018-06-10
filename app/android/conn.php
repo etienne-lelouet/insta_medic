@@ -20,7 +20,7 @@ if (isset($_REQUEST['login'])) {
 if (isset($_REQUEST['password'])) {
     if (!preg_match($regexValidation['password'], $_REQUEST['password'])) {
 
-        exit('[{ "error":"mot de passe invalide" }]');
+        exit('[{ "erreur":"mot de passe invalide" }]');
     }
     $password = $_REQUEST['password'];
 } else {
@@ -30,7 +30,7 @@ if (isset($_REQUEST['password'])) {
 $result = Modele::verifConnexion($login, $password);
 
 if ($result[0]['nb'] == 0) {
-    exit('[{ "error":"couple invalide" }]');
+    exit('[{ "erreur":"couple invalide" }]');
 }
 
 print(json_encode($result));

@@ -17,7 +17,7 @@ if (isset($_REQUEST['idService']))
 }
 else
 {
-    exit('[{"error":"id non renseigné"}]');
+    exit('[{"erreur":"id non renseigné"}]');
 }
 
 $result = Modele :: listerPatients($idService);
