@@ -14,7 +14,7 @@ if (isset($_REQUEST['temperature'])) {
     }
     $data['temperature'] = $_REQUEST['temperature'];
 } else {
-    exit('{"error":"id non renseigné"}');
+    exit('{"error":"temperature non renseigné"}');
 }
 
 if (isset($_REQUEST['tension'])) {
@@ -24,7 +24,7 @@ if (isset($_REQUEST['tension'])) {
     }
     $data['tension'] = $_REQUEST['tension'];
 } else {
-    exit('{"error":"id non renseigné"}');
+    exit('{"error":"tension non renseigné"}');
 }
 
 if (isset($_REQUEST['poids'])) {
@@ -34,11 +34,31 @@ if (isset($_REQUEST['poids'])) {
     }
     $data['poids'] = $_REQUEST['poids'];
 } else {
-    exit('{"error":"id non renseigné"}');
+    exit('{"error":"idHospi non renseigné"}');
+}
+
+if (isset($_REQUEST['idHospi'])) {
+    if (!preg_match('/^[0-9]*$/', $_REQUEST['idHospi'])) {
+
+        exit('{"erreur":"idHospi Invalide"}"');
+    }
+    $data['idHospi'] = $_REQUEST['idHospi'];
+} else {
+    exit('{"error":"idHospi non renseigné"}');
+}
+
+if (isset($_REQUEST['idInfirmier'])) {
+    if (!preg_match('/^[0-9]*$/', $_REQUEST['idInfirmier'])) {
+
+        exit('{"erreur":"idInfirmier Invalide"}"');
+    }
+    $data['idInfirmier'] = $_REQUEST['idInfirmier'];
+} else {
+    exit('{"error":"idInfirmier non renseigné"}');
 }
 
 if (isset($_REQUEST['autres'])) {
-    if (empty($_REQUEST['idService'])) {
+    if (empty($_REQUEST['autres'])) {
 
         $autres = "";
     }
@@ -46,28 +66,30 @@ if (isset($_REQUEST['autres'])) {
 }
 
 if (isset($_REQUEST['action'])) {
+
     if ($_REQUEST['action'] == 'insert' || $_REQUEST['action'] == 'update') {
         $action = $_REQUEST['action'];
 
         if ($_REQUEST['action'] == 'insert') {
-            if (isset($_REQUEST['poids'])) {
-                if (!preg_match('/^[0-9]*$/', $_REQUEST['poids'])) {
+            if (isset($_REQUEST['idPatient'])) {
+                if (!preg_match('/^[0-9]*$/', $_REQUEST['idPatient'])) {
 
-                    exit('{"erreur":"poids Invalide"}"');
+                    exit('{"erreur":"action Invalide"}"');
                 }
-                $data['poids'] = $_REQUEST['poids'];
+                $data['idPatient'] = $_REQUEST['idPatient'];
             } else {
-                exit('{"error":"id non renseigné"}');
+                exit('{"error":"idDones non renseigné"}');
             }
-        } else if ($_REQUEST['action'] == 'update') {
-            if (isset($_REQUEST['poids'])) {
-                if (!preg_match('/^[0-9]*$/', $_REQUEST['poids'])) {
 
-                    exit('{"erreur":"poids Invalide"}"');
+        } else if ($_REQUEST['action'] == 'update') {
+            if (isset($_REQUEST['idDones'])) {
+                if (!preg_match('/^[0-9]*$/', $_REQUEST['idDones'])) {
+
+                    exit('{"erreur":"idDones Invalide"}"');
                 }
-                $data['poids'] = $_REQUEST['poids'];
+                $data['idDones'] = $_REQUEST['idDones'];
             } else {
-                exit('{"error":"id non renseigné"}');
+                exit('{"error":"idDones non renseigné"}');
             }
         }
     }
