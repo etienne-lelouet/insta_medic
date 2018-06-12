@@ -34,7 +34,6 @@
 							</tr>
 							<?php
 								foreach ($resfutur as $val) {
-									var_dump($val['idPersonne']);
 									echo '<tr>';
 									echo '<th class="tabrdv">' . date('d/m/y', $val['startRDV']) . '</th>';
 									echo '<th class="tabrdv">' . date('H:i', $val['startRDV']) . '</th>';

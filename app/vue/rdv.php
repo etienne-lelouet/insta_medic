@@ -35,7 +35,7 @@
 						</form>
 						<div>
 							<center>
-								Planning de<?php echo $resmed['prenom'].' '.$resmed['nom'].' le '.date('d/m/Y', $begin_day_ts); ?>
+								Planning de <?php echo $resmed['prenom'] . ' ' . $resmed['nom'] . ' le ' . date('d/m/Y', $begin_day_ts); ?>
 							</center>
 							<table>
 								<tr>
@@ -43,29 +43,25 @@
 									<th>Disponibilité</th>
 								</tr>
 								<?php
-									foreach($planning as $key => $val)
-									{
-										echo '<tr>';
-										echo '<td>';
-										echo date('H:i', $key); //date argument (format du temxp) times temps unix
-										echo '</td>';
-										if (!$val)
-										{ 
-											echo '
+							foreach ($planning as $key => $val) {
+								echo '<tr>';
+								echo '<td>';
+								echo date('H:i', $key); //date argument (format du temxp) times temps unix
+								echo '</td>';
+								if (!$val) {
+									echo '
 											<th><form action="index.php?page=reserver" method="post">
-											<input type="hidden" name="startRDV" value="'.$key.'">
-											<input type="hidden" name="idMedecin" value="'.$_POST['id'].'">
+											<input type="hidden" name="startRDV" value="' . $key . '">
+											<input type="hidden" name="idMedecin" value="' . $_POST['id'] . '">
 											<input type="submit" value="CRENEAU DISPONIBLE" class="btn btn-primary ">
 											</form>
 											</th>';
-										}
-										else
-										{
-											echo $val;
-										}
-										
-									}
-								?>
+								} else {
+									echo $val;
+								}
+
+							}
+							?>
 							</table>
 						</div>
 					</div>

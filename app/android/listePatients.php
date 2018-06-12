@@ -11,22 +11,25 @@ if (isset($_REQUEST['idService']))
 {
     if (!preg_match('/^\d{1,}$/', $_REQUEST['idService'])) {
 
-        exit('{"erreur":"Pas d\'id fourni"}"');
+        exit('[{"erreur":"id incorrect"}]');
     }
     $idService = $_REQUEST['idService'];
 }
 else
 {
-    exit('{"error":"login non renseigné"}');
+    exit('[{"erreur":"id non renseigné"}]');
 }
 
-$result [] = Modele :: listerPatients($idService);
+$result = Modele :: listerPatients($idService);
 
 if (count($result) == 0)
 {
-    exit('{"result":"pas de patients hospitalisés"}"');
+    exit('[{"result":"pas de patients hospitalisés"}]');
+}
+else
+{
+    print(json_encode($result));
 }
 
-print(json_encode($result));
 
 ?>

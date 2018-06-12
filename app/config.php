@@ -7,17 +7,17 @@ function connexion ()
     $dbhost='localhost'; //mettre 172.16.0.3 si sur proxmox
     $dbuser='wef';
     $dbpass='ppe2018wef';
-    $dbname='Clinique';
+    $dbname='clinique';
     
     $conn= null;
 
     try 
     {
 	    $conn = new PDO('mysql:host='.$dbhost.';dbname='.$dbname, $dbuser, $dbpass);
-	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//retour erreur supèrieur 
-	    $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-	    $conn->setAttribute(PDO::ATTR_TIMEOUT, 5); //si session dépasse 5seconde donc arrete
-        $conn->exec('SET CHARACTER SET utf8');
+	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//configuration du retour d'erreur PDO 
+	    $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); //signifie que PDO envoie séparément les requètes et les variables
+	    $conn->setAttribute(PDO::ATTR_TIMEOUT, 5); //si session dépasse 5 secondes on arrète
+        $conn->exec('SET CHARACTER SET utf8'); //Définition du charset des resultats
     }
     catch (PDOException $error) 
     {
@@ -36,7 +36,7 @@ $regexValidation = array
     "adresse" => '/^([0-9]+?\s[\p{L}\p{Mn}\p{Pd}\'\s]+?)$/u',
     "adressecomp" => '/^([\p{L}\p{Mn}\d]+?[\p{L}\p{Mn}\p{Pd}\'\s\d]+?)$/u',
     "code_postal" => '/^([\d]{4,8})$/',
-    "ville" => '/^(?:[\p{L}\p{Mn}]+?[\p{L}\p{Mn}]+?)+$/u',
+    "ville" => '/^([\p{L}\p{Mn}]+([ -]|[\p{L}\p{Mn}])[\p{L}\p{Mn}])+$/u',
     "telephone" => '/^(0[\d]{9})$/',
     "login" => '/^[a-zA-Z]\w{3,14}$/',
     "password" => '/^([\d\p{L}$&*@#%!\-\s]+)$/',

@@ -6,7 +6,7 @@ class Modele
     public static function connexion()
     {
         try {
-            Modele::$pdo = new PDO("mysql:host=163.172.49.216;dbname=Clinique", "wef", "ppe2018wef", array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            Modele::$pdo = new PDO("mysql:host=localhost;dbname=clinique", "wef", "ppe2018wef", array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         } catch (exception $e) {
             echo $e . '</br />';
         }
@@ -14,22 +14,21 @@ class Modele
 
     public static function verifConnexion($login, $password)
     {
-	
-	Modele::connexion();
+
+        Modele::connexion();
 
         $password = md5($password);
 
-        $requete = "SELECT count(*) as nb, t1.*, t2.idService, t3.nomService FROM Personne t1, Infirmier t2, Service t3
+        $requete = "SELECT count(*) as nb, t1.*, t2.idService, t3.nomService FROM personne t1, infirmier t2, service t3
         WHERE t1.login = :login AND t1.password = :password 
         AND t1.status = 3 AND t1.idPersonne = t2.idPersonne AND t2.idService = t3.idService";
-
         $select = Modele::$pdo->prepare($requete);
 
         $data = array(":login" => $login, ":password" => $password);
 
         $select->execute($data);
-        $res = $select->fetchAll(PDO::FETCH_ASSOC); 
-		
+        $res = $select->fetchAll(PDO::FETCH_ASSOC);
+
         return $res;
     }
 
@@ -37,36 +36,56 @@ class Modele
     {
         Modele::connexion();
 
-        $requete = "SELECT * FROM listePatientHospitalise WHERE dateSortie IS NULL";
+        $requete = "SELECT * FROM listepatienthospitalise WHERE idService = :idService AND dateSortie IS NULL";
 
         $select = Modele::$pdo->prepare($requete);
+        $select->bindParam(':idService', $idService);
         $select->execute();
         $resultats = $select->fetchAll();
         return $resultats;
     }
 
-    public static function getDonneesJournalieres($idService)
+    public static function majData($data, $action)
+    {
+        if ($action == 'insert') {
+            return Modele::insertionDonneesJournalieres($data);
+        } else if ($action == ('update')) {
+            return Modele::updateDonneesJournalieres($data);
+        }
+    }
+
+    public static function getDonneesJournalieres($idPatient)
     {
         Modele::connexion();
 
         $now = time();
-        $tsToday = strtotime(date('d.m.Y', $now));
+        $tsToday = date("Y-m-d H:i:s", strtotime(date('d.m.Y', $now)));
 
-        $requete = "SELECT * FROM listePatientHospitalise WHERE dateSortie IS NULL";
+        $requete = "SELECT count(idDonnes) as nb, t1.nom, t1.prenom, t1.date_naissance, t1.urlphoto, t1.idPersonne as idPatient, 
+        t2.idDonnes, t2.temperature, t2.tension, t2.poids, t2.autres, t2.derniereMaj, t2.idHospitalisation, t2.idInfirmier
+        FROM personne t1 LEFT JOIN donneesjournalieres t2 ON t1.idPersonne = t2.idPatient 
+        WHERE derniereMAJ > :tsToday AND t1.idPersonne = :idPatient LIMIT 1";
 
         $select = Modele::$pdo->prepare($requete);
+        $select->bindParam(":idPatient", $idPatient);
+        $select->bindParam(":tsToday", $tsToday);
+
         $select->execute();
-        $resultats = $select->fetchAll();
+        $resultats = $select->fetchAll(PDO::FETCH_ASSOC);
+
         return $resultats;
     }
 
     public static function insertionDonneesJournalieres($data)
     {
         Modele::connexion();
-        $requete = "INSERT INTO donneesJournalieres (temperature, tension, poids, autres, idPatient, idHospitalisation, idInfirmier) 
-        VALUES (:temperature, :tension, :poids, :autres, :idPatient, :idHospitalisation, :idInfirmier)";
-        $data=prepData($data);
+        $requete = "INSERT INTO donneesjournalieres (temperature, tension, poids, autres, idPatient, idHospitalisation, idInfirmier) 
+        VALUES (:temperature, :tension, :poids, :autres, :idPatient, :idHospi, :idInfirmier)";
+
+        $data = Modele::prepData($data);
+
         $insert = Modele::$pdo->prepare($requete);
+
 
         if ($insert->execute($data)) {
             return true;
@@ -79,11 +98,10 @@ class Modele
     {
         Modele::connexion();
 
-        $requete = "UPDATE donneesJournalieres SET temperature = :temperature, poids = : poids, autres = :autres, 
-                                                idPatient = :idPatient, idHospitalistion = :idHospitalistion,
-                                                idInfirmier = :idInfirmier 
-                                                WHERE idDonnees = :idDonnees";
-        $data=prepData($data);
+        $requete = "UPDATE donneesjournalieres SET temperature = :temperature, poids = :poids, autres = :autres, tension = :tension,
+                                                idInfirmier = :idInfirmier, derniereMaj = null 
+                                                WHERE idDonnes = :idDonnees";
+        $data = Modele::prepData($data);
 
         $select = Modele::$pdo->prepare($requete);
         if ($select->execute($data)) {
