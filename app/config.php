@@ -4,7 +4,7 @@ date_default_timezone_set('Europe/Paris');
 header('Content-type: text/html; charset=UTF-8'); //connection à la base de donnée
 function connexion ()
 {
-    $dbhost='localhost';
+    $dbhost='localhost'; //mettre 172.16.0.3 si sur proxmox
     $dbuser='wef';
     $dbpass='ppe2018wef';
     $dbname='Clinique';
