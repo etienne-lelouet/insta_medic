@@ -9,7 +9,6 @@ function getinfo($id)
     $query->bindparam(':id', $id);
     $query->execute();
     $res = $query->fetch(PDO::FETCH_ASSOC);
-
     if ($res['status'] == 1) {
         $query2 = 'SELECT * FROM donneesbiologiques WHERE idPersonne = :id';
         $query2 = $conn->prepare($query2);

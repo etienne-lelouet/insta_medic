@@ -1,6 +1,5 @@
 <?php
 
-
 function validate($login, $password)
 {  
     $conn = connexion();

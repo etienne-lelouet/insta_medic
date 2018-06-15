@@ -6,8 +6,16 @@ if (!isset($_SESSION['id'])) {
 
 require 'modele/listeRDV.php';
 
+if (isset($_POST['date']))
+{
+	if(strtotime($_POST['date']))
+	{
+		$date = strtotime($_POST['date']);
+	}
+}
+
 if ($_SESSION['status'] == 1) {
-	$res = getListeRDV($_SESSION['id']); // on récupère tous les rendez vous
+	$res = getListeRDV($_SESSION['id'], $date); // on récupère tous les rendez vous
 	$now = time();
 	$resfutur = array();
 	$respasse = array();
@@ -20,7 +28,7 @@ if ($_SESSION['status'] == 1) {
 		}
 	}
 } else if ($_SESSION['status'] == 2) {
-	$res = getListeRDVMedecin($_SESSION['id']); // on récupère tous les rendez vous
+	$res = getListeRDVMedecin($_SESSION['id'], $date); // on récupère tous les rendez vous
 	$now = time();
 	$resfutur = array();
 	$respasse = array();

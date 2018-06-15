@@ -1,8 +1,8 @@
 <?php
 
-function getListeRDV($id)
+function getListeRDV($id, $date = null)
 {
-	$conn=connexion();
+	$conn = connexion();
 	$query = 'SELECT t1.*, t2.*, t3.*, t4.libelle 
 		  FROM rdv t1, personne t2, medecin t3, specialite t4
 		  WHERE t1.idPatient = :id
@@ -12,22 +12,35 @@ function getListeRDV($id)
 	$query = $conn->prepare($query);
 	$query->bindparam(':id', $id);
 	$query->execute();
-	$res=$query->fetchAll(PDO::FETCH_ASSOC);
+	$res = $query->fetchAll(PDO::FETCH_ASSOC);
 
 	return $res;
 }
 
-function getListeRDVMedecin($id)
+function getListeRDVMedecin($id, $date = null)
 {
-	$conn=connexion();
-	$query = 'SELECT t1.*, t2.* 
+	$conn = connexion();
+	if (isset($date)) {
+		$dateInf = $date;
+		$dateSup = $date + 86400;
+		$query = 'SELECT t1.*, t2.* 
+		FROM rdv t1, personne t2
+		WHERE t1.idMedecin = :id
+		AND t1.idPatient = t2.idPersonne AND t1.startRDV > :dateInf AND t1.startRDV < :dateSup';
+		$query = $conn->prepare($query);
+		$query->bindparam(':id', $id);
+		$query->bindparam(':dateSup', $dateSup);
+		$query->bindparam(':dateInf', $dateInf);
+	} else {
+		$query = 'SELECT t1.*, t2.* 
 		  FROM rdv t1, personne t2
 		  WHERE t1.idMedecin = :id
 		  AND t1.idPatient = t2.idPersonne';
-	$query = $conn->prepare($query);
-	$query->bindparam(':id', $id);
+		$query = $conn->prepare($query);
+		$query->bindparam(':id', $id);
+	}
 	$query->execute();
-	$res=$query->fetchAll(PDO::FETCH_ASSOC);
+	$res = $query->fetchAll(PDO::FETCH_ASSOC);
 
 	return $res;
 }
