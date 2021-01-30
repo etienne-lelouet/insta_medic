@@ -2,7 +2,8 @@
 header('Content-type: text/html; charset=UTF-8'); //connection à la base de donnée
 function connexion()
 {
-    $dbhost = '163.172.49.216';
+    // Don't bother, I changed it since, now I know how it works
+    $dbhost = 'no';
     $dbuser = 'wef';
     $dbpass = 'ppe2018wef';
     $dbname = 'Clinique';
