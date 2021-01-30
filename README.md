@@ -1,6 +1,8 @@
 # insta_medic
 Student project about the managment of medical data in a clinic
 
+No longer maintained (duh)
+
 # How to use
 
 1) Click on the button "Clone or Download" 
